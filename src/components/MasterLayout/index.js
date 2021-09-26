@@ -7,7 +7,7 @@ const MasterLayout = ({ children }) => {
     <React.Fragment>
       <Header />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };
