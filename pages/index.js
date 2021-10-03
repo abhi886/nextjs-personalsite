@@ -1,6 +1,15 @@
 import Head from "next/head";
-import MasterLayout from "../src/components/MasterLayout/index";
+import Header from "../src/components/HeaderSection/index";
+import HeroSection from "../src/components/HeroSection";
 
 export default function Home() {
-  return <MasterLayout></MasterLayout>;
+  return (
+    <div>
+      <Head>
+        <title>Abhishekh Maharjan</title>
+      </Head>
+      {/* <Header /> */}
+      <HeroSection />
+    </div>
+  );
 }
