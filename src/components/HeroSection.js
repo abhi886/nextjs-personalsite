@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import logo from "../../public/images/logoBlack.png";
+import { ChevronDownIcon } from "@heroicons/react/outline";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,8 +12,8 @@ import {
 
 function HeroSection() {
   return (
-    <div className='h-screen relative'>
-      <section className='flex justify-between p-10'>
+    <section className='h-screen relative'>
+      <div className='flex justify-between p-10'>
         <div>
           <Image
             src={logo}
@@ -37,19 +38,22 @@ function HeroSection() {
             </span>
           </span>
         </div>
-      </section>
-      <section className='bg-white absolute top-1/3 w-screen text-center'>
+      </div>
+      <div className='absolute top-1/3 w-full text-center'>
         {" "}
-        <p className='font-extrabold text-5xl'>Abhishekh Maharjan</p>
-        <p className='font-medium'>
-          Front-end Developer | BackendDeveloper | Full Stack Developer{" "}
-        </p>
-        <p>Modern Software Engineer</p>
+        <h1 className='font-extrabold text-4xl md:font-extrabold ma:text-6xl'>
+          I'm Abhishekh Maharjan.
+        </h1>
+        <h2 className='font-medium p-2'>
+          <span>Based on Canberra. </span> Front-end Developer | Back-end
+          Developer | Full Stack Developer{" "}
+        </h2>
+        <p>Software Engineer</p>
         <button className='text-purple-500 bg-white px-10 py-4 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
           Contact Me
         </button>
         {/* Social Icons */}
-        <div className=' text-center space-x-2'>
+        <div className=' text-center space-x-6'>
           <FontAwesomeIcon
             icon={("fab", faFacebookSquare)}
             size='2x'
@@ -62,8 +66,12 @@ function HeroSection() {
           />
           <FontAwesomeIcon icon={("fab", faGithub)} size='2x' color='#4078c0' />
         </div>
-      </section>
-    </div>
+      </div>
+      {/* scrollDown Button */}
+      <div className='absolute bottom-6 left-1/2 h-10  bg-purple-400 rounded-full'>
+        <ChevronDownIcon className='h-10' />
+      </div>
+    </section>
   );
 }
 
