@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../../public/images/logoBlack.png";
+import logo from "../../public/images/logo.png";
+import background from "../../public/images/background.jpeg";
+
 import { ChevronDownIcon } from "@heroicons/react/outline";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,7 +14,8 @@ import {
 
 function HeroSection() {
   return (
-    <section className='h-screen relative'>
+    <section className='relative h-screen '>
+      <Image src={background} objectFit='cover' layout='fill' />
       <div className='flex justify-between p-10'>
         <div>
           <Image
@@ -28,47 +31,59 @@ function HeroSection() {
           <span className='relative inline-flex rounded-md shadow-sm'>
             <button
               type='button'
-              className='inline-flex items-center px-4 py-2 border border-purple-400 text-base leading-6 font-medium rounded-md text-purple-800 bg-white hover:text-purple-700 hover:shadow-xl active:scale-90 transition duration-150'
+              className='inline-flex items-center px-4 py-2 border border-white text-base leading-6 font-medium rounded-md text-white bg-transparent hover:text-yellow-500 hover:shadow-xl active:scale-90 transition duration-150'
             >
               <p className='font-bold'>Blogs</p>
             </button>
             <span className='flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1'>
-              <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75'></span>
-              <span className='relative inline-flex rounded-full h-3 w-3 bg-purple-500'></span>
+              <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75'></span>
+              <span className='relative inline-flex rounded-full h-3 w-3 bg-yellow-500'></span>
             </span>
           </span>
         </div>
       </div>
       <div className='absolute top-1/3 w-full text-center'>
         {" "}
-        <h1 className='font-extrabold text-4xl md:font-extrabold ma:text-6xl'>
+        <h1 className='text-white font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl'>
           I'm Abhishekh Maharjan.
         </h1>
-        <h2 className='font-medium p-2'>
-          <span>Based on Canberra. </span> Front-end Developer | Back-end
-          Developer | Full Stack Developer{" "}
+        <h2 className='font-medium p-6 text-gray-300'>
+          <span className='text-gray-400'>Based on Canberra. </span> Front-end
+          Developer with an ambition of becoming a FULL Stack Developer.{" "}
         </h2>
-        <p>Software Engineer</p>
-        <button className='text-purple-500 bg-white px-10 py-4 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
-          Contact Me
-        </button>
+        {/* <p className='font-medium p-2 text-gray-100'>Software Engineer</p> */}
         {/* Social Icons */}
         <div className=' text-center space-x-6'>
           <FontAwesomeIcon
             icon={("fab", faFacebookSquare)}
             size='2x'
-            color='#3b5998'
+            // color='#3b5998'
+            color='#ffffff'
           />
           <FontAwesomeIcon
             icon={("fab", faLinkedin)}
             size='2x'
-            color='#0e76a8'
+            // color='#0e76a8'
+            color='#ffffff'
           />
-          <FontAwesomeIcon icon={("fab", faGithub)} size='2x' color='#4078c0' />
+          <FontAwesomeIcon
+            icon={("fab", faGithub)}
+            size='2x'
+            // color='#4078c0'
+            color='#ffffff'
+          />
+        </div>
+        <div className='space-x-2'>
+          <button className='text-black bg-white px-3 py-3 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
+            Contact Me
+          </button>
+          <button className='text-black bg-white px-4 py-3 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
+            Resume
+          </button>
         </div>
       </div>
       {/* scrollDown Button */}
-      <div className='absolute bottom-6 left-1/2 h-10  bg-purple-400 rounded-full'>
+      <div className='absolute bottom-6 left-1/2 h-10 border-2 bg-transparent rounded-full text-white'>
         <ChevronDownIcon className='h-10' />
       </div>
     </section>

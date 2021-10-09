@@ -2,8 +2,8 @@ import React from "react";
 
 function HireMe() {
   return (
-    <section className='flex flex-col bg-gray-600'>
-      <h1 className='text-2xl'>How Can I Help you ??</h1>
+    <section className='flex flex-col'>
+      <h1 className='text-2xl font-semibold '>4. How Can I Help you ??</h1>
       <p className=''>
         I Want To Hire You As A FrontEnd Developer | Backend Developer | Full
         Stack Developer{" "}
