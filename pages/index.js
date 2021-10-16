@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       {/* <Header /> */}
       <HeroSection />
-      <main className='max-w-7xl mx-auto px-8 sm:px-16'>
+      <main className='max-w-7xl mx-auto px-8 sm:px-16 bg-personal_blue'>
         <About />
         <Works />
         <Work2 />

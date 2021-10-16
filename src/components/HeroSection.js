@@ -15,8 +15,13 @@ import {
 
 function HeroSection() {
   return (
-    <section className='relative h-screen '>
-      <Image src={background} objectFit='cover' layout='fill' />
+    <section className='relative h-screen bg-personal_blue'>
+      {/* <Image
+        src={background}
+        objectFit='cover'
+        layout='fill'
+        className='bg-blue-500'
+      /> */}
       <div className='flex justify-between p-10'>
         <div>
           <Image
@@ -32,7 +37,7 @@ function HeroSection() {
           <span className='relative inline-flex rounded-md shadow-sm'>
             <button
               type='button'
-              className='inline-flex items-center px-4 py-2 border border-white text-base leading-6 font-medium rounded-md text-white bg-transparent hover:text-yellow-500 hover:shadow-xl active:scale-90 transition duration-150'
+              className='inline-flex items-center px-4 py-2 border border-green-200  text-base leading-6 font-medium rounded-md text-personal_blue-text  bg-transparent hover:text-personal_blue-text  hover:shadow-xl active:scale-90 transition duration-150'
             >
               <p className='font-bold'>Blogs</p>
             </button>
@@ -45,12 +50,14 @@ function HeroSection() {
       </div>
       <div className='absolute top-1/3 w-full text-center'>
         {" "}
-        <h1 className='text-white font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up'>
+        <h1 className='text-personal_blue-textTitle font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up'>
           I'm Abhishekh Maharjan.
         </h1>
         <div className='grid grid-cols-2 p-3'>
           <div className='text-right'>
-            <h2 className='font-medium text-gray-300'>Based on Canberra.</h2>
+            <h2 className='font-medium text-personal_blue-textTitle'>
+              Based on Canberra.
+            </h2>
           </div>
           <div className='text-left'>
             <Typed
@@ -59,7 +66,6 @@ function HeroSection() {
                 "Front-end Developer",
                 "Full Stack Developer",
                 "Software Engineer",
-                "And more",
               ]}
               typeSpeed={100}
               backSpeed={50}
@@ -69,10 +75,10 @@ function HeroSection() {
         </div>
         {/* <p className='font-medium p-2 text-gray-100'>Software Engineer</p> */}
         <div className='space-x-2'>
-          <button className='text-black bg-white px-3 py-3 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
+          <button className='text-personal_blue-text bg-transparent px-3 py-3 shadow-md rounded-full border-2 border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
             Contact Me
           </button>
-          <button className='text-black bg-white px-4 py-3 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
+          <button className='text-personal_blue-text bg-transparent px-4 py-3 shadow-md rounded-full border-2 border-personal_blue-text  font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
             Resume
           </button>
         </div>
@@ -82,25 +88,25 @@ function HeroSection() {
             icon={("fab", faFacebookSquare)}
             size='2x'
             // color='#3b5998'
-            color='#ffffff'
+            color='#ccd6f6'
           />
           <FontAwesomeIcon
             icon={("fab", faLinkedin)}
             size='2x'
             // color='#0e76a8'
-            color='#ffffff'
+            color='#ccd6f6'
           />
           <FontAwesomeIcon
             icon={("fab", faGithub)}
             size='2x'
             // color='#4078c0'
-            color='#ffffff'
+            color='#ccd6f6'
           />
         </div>
       </div>
       {/* scrollDown Button */}
-      <div className='absolute bottom-6 left-1/2 h-10 border-2 bg-transparent rounded-full text-white'>
-        <ChevronDownIcon className='h-10' />
+      <div className='absolute bottom-6 left-1/2 h-10 bg-transparent text-white'>
+        <ChevronDownIcon className='h-10 animate-bounce' />
       </div>
     </section>
   );

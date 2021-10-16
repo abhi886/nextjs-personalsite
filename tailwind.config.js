@@ -1,8 +1,21 @@
+// #201e1c
+
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        personal_blue: {
+          light: "#232F3E",
+          DEFAULT: "#0b192f",
+          text: "#64feda",
+          textTitle: "#ccd6f6",
+          textParagraph: "#8892b0",
+          workBackground: "#334d6a",
+          lightBlue: "#102340",
+        },
+      },
       keyframes: {
         "fade-in-down": {
           "0%": {
