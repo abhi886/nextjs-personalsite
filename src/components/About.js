@@ -1,16 +1,32 @@
 import React from "react";
+import { useState, useEffect } from "react";
+
 import Image from "next/image";
 import myPhoto from "../../public/images/me.jpg";
+import AnimateText from "./AnimateText";
 function About() {
+  const [isVisible, setIsVisible] = useState(false);
+  const listenToScroll = () => {
+    let heightToShowFrom = 380;
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    console.log(winScroll);
+    if (winScroll > heightToShowFrom) {
+      // isVisible && // to limit setting state only the first time
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, []);
   return (
     <section className='pb-32'>
-      <h1 className='font-bold text-2xl pt-6 pb-10 text-personal_blue-textTitle '>
-        <span className='text-sm text-personal_blue-text'> 01. </span> About Me
-        <div className='border-t w-30 border-blue-200 '></div>
-      </h1>
-
-      <div className='grid grid-cols-1  md:grid-cols-2 space-x-4 my-6'>
-        {/* <div className='px-40 mb-6 md:px-2 lg:px-16 relative'> */}
+      {isVisible && <AnimateText headingCount={1} mainHeading={"About Me"} />}
+      <div className='grid grid-cols-1  md:grid-cols-2 space-x-4 pt-20'>
         <div className='relative  flex justify-center'>
           <div className='w-44 md:w-64'>
             <Image

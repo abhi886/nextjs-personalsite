@@ -48,8 +48,8 @@ function HeroSection() {
           </span>
         </div>
       </div>
+      {/* <div className='h-20 w-10 bg-gray-200 hover:bg-red-700 hover:w-screen hover:transition ease-in duration-700'></div>{" "} */}
       <div className='absolute top-1/3 w-full text-center'>
-        {" "}
         <h1 className='text-personal_blue-textTitle font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up'>
           I'm Abhishekh Maharjan.
         </h1>
@@ -105,7 +105,7 @@ function HeroSection() {
         </div>
       </div>
       {/* scrollDown Button */}
-      <div className='absolute bottom-6 left-1/2 h-10 bg-transparent text-white'>
+      <div className='absolute bottom-6 left-2/4 h-10 bg-transparent text-white'>
         <ChevronDownIcon className='h-10 animate-bounce' />
       </div>
     </section>
