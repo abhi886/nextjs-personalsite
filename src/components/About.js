@@ -7,10 +7,9 @@ import AnimateText from "./AnimateText";
 function About() {
   const [isVisible, setIsVisible] = useState(false);
   const listenToScroll = () => {
-    let heightToShowFrom = 380;
+    let heightToShowFrom = 0;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
-    console.log(winScroll);
     if (winScroll > heightToShowFrom) {
       // isVisible && // to limit setting state only the first time
       setIsVisible(true);
@@ -24,10 +23,10 @@ function About() {
     return () => window.removeEventListener("scroll", listenToScroll);
   }, []);
   return (
-    <section className='pb-32'>
+    <section className='pb-16'>
       {isVisible && <AnimateText headingCount={1} mainHeading={"About Me"} />}
-      <div className='grid grid-cols-1  md:grid-cols-2 space-x-4 pt-20'>
-        <div className='relative  flex justify-center'>
+      <div className='grid grid-cols-1  md:grid-cols-2'>
+        <div className='relative  pt-16 pb-8 flex justify-center'>
           <div className='w-44 md:w-64'>
             <Image
               className='z-20 rounded-2xl'
@@ -37,7 +36,7 @@ function About() {
           </div>
         </div>
         <div className='lg:pt-0 text-personal_blue-textParagraph'>
-          <p className='text-justify tracking-wider font-sans'>
+          <p className='text-base'>
             Hi, I am Abhishekh Maharjan, a Software Engineer with a strong
             background that encompasses diverse aspects of Software Engineering.
             Currently, I am living in Canberra, Australia. I’m seeking to

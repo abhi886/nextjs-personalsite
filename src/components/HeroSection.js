@@ -75,10 +75,10 @@ function HeroSection() {
         </div>
         {/* <p className='font-medium p-2 text-gray-100'>Software Engineer</p> */}
         <div className='space-x-2'>
-          <button className='text-personal_blue-text bg-transparent px-3 py-3 shadow-md rounded-full border-2 border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
+          <button className='w-32 text-personal_blue-text bg-transparent px-3 py-3 shadow-md rounded-full border-2 border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
             Contact Me
           </button>
-          <button className='text-personal_blue-text bg-transparent px-4 py-3 shadow-md rounded-full border-2 border-personal_blue-text  font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
+          <button className='w-32 text-personal_blue-text bg-transparent px-4 py-3 shadow-md rounded-full border-2 border-personal_blue-text  font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
             Resume
           </button>
         </div>
@@ -105,7 +105,7 @@ function HeroSection() {
         </div>
       </div>
       {/* scrollDown Button */}
-      <div className='absolute bottom-6 left-2/4 h-10 bg-transparent text-white'>
+      <div className='absolute -ml-4  bottom-6 left-2/4 h-10 bg-transparent text-white'>
         <ChevronDownIcon className='h-10 animate-bounce' />
       </div>
     </section>
