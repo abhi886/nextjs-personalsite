@@ -1,4 +1,5 @@
 import React from "react";
+import ContactForm from "./ContactForm";
 
 function ContactMe() {
   return (
@@ -11,9 +12,11 @@ function ContactMe() {
           contact you as soon as possible. Thank you.{" "}
         </span>
       </h2>
-      <div className='border-2 p-4 border-personal_blue-text'>
+      {/* <div className='border-2 p-4 border-personal_blue-text'>
         <p className='text-white'>Email Section</p>
-      </div>
+      </div> */}
+
+      <ContactForm />
     </section>
   );
 }

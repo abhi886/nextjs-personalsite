@@ -23,7 +23,6 @@ export default function Home() {
         <Work2 />
         <HireMe />
         <ContactMe />
-        <Contact />
         <FooterSection />
       </main>
     </div>

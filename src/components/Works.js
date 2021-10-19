@@ -53,7 +53,7 @@ function Works() {
                 HTML5 | jquery | Laravel (php){" "}
               </p>
               <p className='font-bold text-xs p-2 text-personal_blue-textParagraph text-right hover:text-personal_blue-text cursor-pointer'>
-                View Site | Case Study
+                Visit Site | View Case Study
               </p>
             </div>
           </div>
@@ -87,7 +87,7 @@ function Works() {
               HTML5 | jquery | Laravel (php){" "}
             </p>
             <p className='font-bold text-xs p-2 text-personal_blue-textParagraph hover:text-personal_blue-text cursor-pointer'>
-              View Site | Case Study
+              Visit Site | Case Study
             </p>
           </div>
         </div>
