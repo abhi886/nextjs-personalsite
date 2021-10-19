@@ -3,12 +3,12 @@ import React from "react";
 function ContactMe() {
   return (
     <section className='flex flex-col pb-32'>
-      <h2 className='text-2xl font-semibold pt-8 pb-10 text-personal_blue-textTitle'>
+      <h2 className='text-2xl font-semibold pt-8 pb-10 text-personal_blue-textTitle text-center'>
         {" "}
-        <span className='text-sm text-personal_blue-text'> 05. </span> Get In
-        Touch <br />
+        Get In Touch <br />
         <span className='text-sm'>
-          I am actively looking for a FrontEnd Developer Position at the moment.
+          Please fill out the form and describe your project needs and I'll
+          contact you as soon as possible. Thank you.{" "}
         </span>
       </h2>
       <div className='border-2 p-4 border-personal_blue-text'>

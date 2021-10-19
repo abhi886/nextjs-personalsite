@@ -13,9 +13,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@heroicons/react": "^1.0.4",
+    "emailjs-com": "^3.2.0",
     "next": "^11.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.17.4",
     "react-typed": "^1.2.0",
     "tailwindcss-pseudo-elements": "^2.0.0"
   },

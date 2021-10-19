@@ -11,7 +11,7 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 function work2() {
   const [isVisible, setIsVisible] = useState(false);
   const listenToScroll = () => {
-    let heightToShowFrom = 2144;
+    let heightToShowFrom = 1739;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
     console.log(winScroll);
@@ -28,7 +28,7 @@ function work2() {
     return () => window.removeEventListener("scroll", listenToScroll);
   }, []);
   return (
-    <section className='pb-32'>
+    <section className='pb-20'>
       {isVisible && (
         <AnimateText
           headingCount={3}
@@ -37,7 +37,7 @@ function work2() {
         />
       )}
 
-      <div className='pt-24 p-3 space-y-2 md:space-y-0 md:space-x-2 grid grid-cols-1 md:grid-cols-2'>
+      <div className='pt-16 p-3 space-y-2 md:space-y-0 md:space-x-2 grid grid-cols-1 md:grid-cols-2'>
         <div className='cursor-pointer hover:scale-105 transform transition duration-300 ease-out'>
           <div className='h-70 w-70 relative p-2 bg-personal_blue-lightBlue hover:inline-flex'>
             <p className='mt-4 font-bold text-personal_blue-textParagraph'>

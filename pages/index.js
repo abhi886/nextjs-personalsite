@@ -7,6 +7,7 @@ import About from "../src/components/About";
 import Work2 from "../src/components/work2";
 import ContactMe from "../src/components/ContactMe";
 import FooterSection from "../src/components/FooterSection/index";
+import Contact from "../src/components/Contact";
 
 export default function Home() {
   return (
@@ -16,12 +17,13 @@ export default function Home() {
       </Head>
       {/* <Header /> */}
       <HeroSection />
-      <main className='px-8 sm:px-16 bg-personal_blue'>
+      <main className='px-6 bg-personal_blue'>
         <About />
         <Works />
         <Work2 />
         <HireMe />
         <ContactMe />
+        <Contact />
         <FooterSection />
       </main>
     </div>

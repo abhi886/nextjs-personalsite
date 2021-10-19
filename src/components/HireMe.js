@@ -2,7 +2,7 @@ import React from "react";
 
 function HireMe() {
   return (
-    <section className='flex flex-col pb-32'>
+    <section className='flex flex-col pb-16'>
       <h2 className='text-2xl font-semibold pt-8 pb-10 text-personal_blue-textTitle'>
         {" "}
         <span className='text-sm text-personal_blue-text'> 04. </span> How Can I

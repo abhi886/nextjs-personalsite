@@ -91,6 +91,9 @@ module.exports = {
         "reveal-block": "reveal-block 2s cubic-bezier(0.19, 1, 0.22, 1)",
         "appear-text": "appear-text 5s ease-out",
       },
+      fontFamily: {
+        body: ["Nunito"],
+      },
     },
   },
   variants: {
