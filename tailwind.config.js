@@ -88,8 +88,8 @@ module.exports = {
         "fade-out-down": "fade-out-down 0.5s ease-out",
         "fade-in-up": "fade-in-up 3s ease-out",
         "fade-out-up": "fade-out-up 0.5s ease-out",
-        "reveal-block": "reveal-block 2s cubic-bezier(0.19, 1, 0.22, 1)",
-        "appear-text": "appear-text 5s ease-out",
+        "reveal-block": "reveal-block 6s cubic-bezier(0.19, 1, 0.22, 1)",
+        "appear-text": "appear-text 7s ease-out",
       },
       fontFamily: {
         body: ["Nunito"],

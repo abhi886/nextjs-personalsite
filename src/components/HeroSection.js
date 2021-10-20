@@ -3,15 +3,9 @@ import Image from "next/image";
 import logo from "../../public/images/logo.png";
 import background from "../../public/images/background.jpeg";
 import Typed from "react-typed";
+import Social from "./Social";
 
 import { ChevronDownIcon } from "@heroicons/react/outline";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookSquare,
-  faLinkedin,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
 
 function HeroSection() {
   return (
@@ -83,26 +77,7 @@ function HeroSection() {
           </button>
         </div>
         {/* Social Icons */}
-        <div className=' text-center space-x-6 pt-4'>
-          <FontAwesomeIcon
-            icon={("fab", faFacebookSquare)}
-            size='2x'
-            // color='#3b5998'
-            color='#ccd6f6'
-          />
-          <FontAwesomeIcon
-            icon={("fab", faLinkedin)}
-            size='2x'
-            // color='#0e76a8'
-            color='#ccd6f6'
-          />
-          <FontAwesomeIcon
-            icon={("fab", faGithub)}
-            size='2x'
-            // color='#4078c0'
-            color='#ccd6f6'
-          />
-        </div>
+        <Social />
       </div>
       {/* scrollDown Button */}
       <div className='absolute -ml-4  bottom-6 left-2/4 h-10 bg-transparent text-white'>
