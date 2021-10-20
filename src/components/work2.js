@@ -11,7 +11,7 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 function work2() {
   const [isVisible, setIsVisible] = useState(false);
   const listenToScroll = () => {
-    let heightToShowFrom = 1739;
+    let heightToShowFrom = 1419;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
     console.log(winScroll);

@@ -17,17 +17,21 @@ const MyTextInput = ({ label, ...props }) => {
   return (
     <>
       <div className='grid gird-cols-1'>
-        <div>
-          <label className='text-white  ' htmlFor={props.id || props.name}>
+        <div className='pb-3'>
+          <label className='text-white' htmlFor={props.id || props.name}>
             {label}
           </label>
         </div>
-        <div>
-          <input className='text-input w-72' {...field} {...props} />
+        <div className='tems-center border-2 py-2 md:shadow-sm'>
+          <input
+            className='text-input w-full flex-grow pl-5 bg-transparent outline-none text-gray-600 placeholder-gray-400'
+            {...field}
+            {...props}
+          />
         </div>
         <div>
           {meta.touched && meta.error ? (
-            <div className='error text-white'>{meta.error}</div>
+            <div className='error text-personal_blue-text'>{meta.error}</div>
           ) : null}
           <br />{" "}
         </div>
@@ -41,18 +45,22 @@ const MyTextAreaInput = ({ label, ...props }) => {
   return (
     <>
       <div className='grid grid-cols-1'>
-        <div>
+        <div className='pb-4'>
           <label className='text-white ' htmlFor={props.id || props.name}>
             {label}
           </label>
         </div>{" "}
-        <div>
-          <textarea className='text-input w-72 h-36' {...field} {...props} />
+        <div className='items-center border-2 py-2 md:shadow-sm'>
+          <textarea
+            className='text-input flex-grow pl-5 bg-transparent outline-none text-gray-600 placeholder-gray-400 w-full h-20'
+            {...field}
+            {...props}
+          />
         </div>
         <div>
           {" "}
           {meta.touched && meta.error ? (
-            <div className='error text-white'>{meta.error}</div>
+            <div className='error text-personal_blue-text'>{meta.error}</div>
           ) : null}{" "}
           <br />
         </div>
@@ -64,7 +72,10 @@ const MyTextAreaInput = ({ label, ...props }) => {
 // And now we can use these
 const ContactForm = () => {
   function sendToastMessage() {
-    toast.success("Email Sent Successfully. Thank You !!! !");
+    toast("Thank You for the Email. I will get back to you as soon as I can!", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      className: "foo-bar",
+    });
   }
 
   const [successMessage, setSuccessMessage] = useState("");
@@ -169,7 +180,13 @@ const ContactForm = () => {
             type='text'
             placeholder=' Enter the description'
           />
-          <button type='submit'>Submit</button>
+
+          <button
+            className='w-32 text-personal_blue-text bg-transparent px-3 py-3 shadow-md border-2 rounded-full border-personal_blue-text font-bold my-3 hover:text-white hover:bg-personal_blue-text active:scale-90 transition duration-150'
+            type='submit'
+          >
+            Submit
+          </button>
         </Form>
       </Formik>
     </>
