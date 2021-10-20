@@ -15,8 +15,9 @@ function ContactMe() {
       {/* <div className='border-2 p-4 border-personal_blue-text'>
         <p className='text-white'>Email Section</p>
       </div> */}
-
-      <ContactForm />
+      <div className='pl-6'>
+        <ContactForm />
+      </div>
     </section>
   );
 }
