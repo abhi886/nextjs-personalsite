@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import logo from "../../public/images/logo.png";
 import background from "../../public/images/background.jpeg";
 import Typed from "react-typed";
+
 import Social from "./Social";
 
 import { ChevronDownIcon } from "@heroicons/react/outline";
@@ -69,9 +70,11 @@ function HeroSection() {
         </div>
         {/* <p className='font-medium p-2 text-gray-100'>Software Engineer</p> */}
         <div className='space-x-2'>
-          <button className='w-32 text-personal_blue-text bg-transparent px-3 py-3 shadow-md rounded-full border-2 border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
-            Contact Me
-          </button>
+          <a href='#contact'>
+            <button className='w-32 text-personal_blue-text bg-transparent px-3 py-3 shadow-md rounded-full border-2 border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
+              Contact Me
+            </button>
+          </a>
           <button className='w-32 text-personal_blue-text bg-transparent px-4 py-3 shadow-md rounded-full border-2 border-personal_blue-text  font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
             Resume
           </button>
@@ -81,7 +84,10 @@ function HeroSection() {
       </div>
       {/* scrollDown Button */}
       <div className='absolute -ml-4  bottom-6 left-2/4 h-10 bg-transparent text-white'>
-        <ChevronDownIcon className='h-10 animate-bounce' />
+        <a href='#about'>
+          {" "}
+          <ChevronDownIcon className='h-10 animate-bounce cursor-pointer' />
+        </a>
       </div>
     </section>
   );

@@ -23,7 +23,7 @@ function About() {
     return () => window.removeEventListener("scroll", listenToScroll);
   }, []);
   return (
-    <section className='pb-16'>
+    <section id='about' className='pb-16'>
       {isVisible && <AnimateText headingCount={1} mainHeading={"About Me"} />}
       <div className='grid grid-cols-1  md:grid-cols-2'>
         <div className='relative  pt-16 pb-8 flex justify-center'>

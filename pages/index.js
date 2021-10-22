@@ -8,8 +8,26 @@ import Work2 from "../src/components/work2";
 import ContactMe from "../src/components/ContactMe";
 import FooterSection from "../src/components/FooterSection/index";
 import Contact from "../src/components/Contact";
+import ScrollToTop from "../src/components/ScrollToTop";
+import { createClient } from "contentful";
 
-export default function Home() {
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({ content_type: "works" });
+
+  return {
+    props: {
+      works: res.items,
+    },
+    revalidate: 10,
+  };
+}
+
+export default function Home({ works }) {
   return (
     <div>
       <Head>
@@ -19,10 +37,11 @@ export default function Home() {
       <HeroSection />
       <main className='px-6 bg-personal_blue'>
         <About />
-        <Works />
+        <Works works={works} />
         <Work2 />
         <HireMe />
         <ContactMe />
+        <ScrollToTop />
         <FooterSection />
       </main>
     </div>
