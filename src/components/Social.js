@@ -21,7 +21,7 @@ function Social() {
         </a>
       </Link>
 
-      <Link href='  https://www.linkedin.com/in/abhishekh-maharjan-139581b3/'>
+      <Link href='https://www.linkedin.com/in/abhishekh-maharjan-139581b3/'>
         <a target='_blank'>
           <FontAwesomeIcon
             icon={("fab", faLinkedin)}

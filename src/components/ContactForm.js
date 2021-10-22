@@ -45,7 +45,7 @@ const MyTextAreaInput = ({ label, ...props }) => {
   return (
     <>
       <div className='grid grid-cols-1'>
-        <div className='pb-4'>
+        <div className='pb-3'>
           <label className='text-white ' htmlFor={props.id || props.name}>
             {label}
           </label>
@@ -147,39 +147,45 @@ const ContactForm = () => {
         }}
       >
         <Form>
-          <MyTextInput
-            label='Full Name'
-            name='fullName'
-            type='text'
-            placeholder=' Enter your name'
-          />
+          <div className='grid grid-cols-1 md:grid-cols-2 md:space-x-6'>
+            <div>
+              <MyTextInput
+                label='Full Name'
+                name='fullName'
+                type='text'
+                placeholder=' Enter your name'
+              />
 
-          <MyTextInput
-            label='Contact Number'
-            name='contact'
-            type='number'
-            placeholder=' Contact Number'
-          />
+              <MyTextInput
+                label='Contact Number'
+                name='contact'
+                type='number'
+                placeholder=' Contact Number'
+              />
 
-          <MyTextInput
-            label='Email Address'
-            name='email'
-            type='email'
-            placeholder=' jane@formik.com'
-          />
+              <MyTextInput
+                label='Email Address'
+                name='email'
+                type='email'
+                placeholder=' jane@formik.com'
+              />
+            </div>
 
-          <MyTextAreaInput
-            label='Subject'
-            name='subject'
-            type='text'
-            placeholder=' Enter the subject'
-          />
-          <MyTextAreaInput
-            label='Description'
-            name='description'
-            type='text'
-            placeholder=' Enter the description'
-          />
+            <div>
+              <MyTextAreaInput
+                label='Subject'
+                name='subject'
+                type='text'
+                placeholder=' Enter the subject'
+              />
+              <MyTextAreaInput
+                label='Description'
+                name='description'
+                type='text'
+                placeholder=' Enter the description'
+              />
+            </div>
+          </div>
 
           <button
             className='w-32 text-personal_blue-text bg-transparent px-3 py-3 shadow-md border-2 rounded-full border-personal_blue-text font-bold my-3 hover:text-white hover:bg-personal_blue-text active:scale-90 transition duration-150'

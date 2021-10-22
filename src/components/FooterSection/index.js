@@ -7,7 +7,7 @@ const FooterSection = () => {
       <Social />
 
       <p className='text-white text-xs text-center pt-4'>
-        Site Built Using: Next.js, TailwindCSS
+        Site Built Using: Next.js, TailwindCSS, Contentful
       </p>
     </footer>
   );
