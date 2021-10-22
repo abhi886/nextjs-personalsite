@@ -20,7 +20,7 @@ function HireMe() {
     return () => window.removeEventListener("scroll", listenToScroll);
   }, []);
   return (
-    <section className='pb-16'>
+    <section className='pb-16' id='hireMe'>
       {isVisible && (
         <AnimateText headingCount={4} mainHeading={"How Can I Help You ??"} />
       )}

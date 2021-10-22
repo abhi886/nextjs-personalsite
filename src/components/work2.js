@@ -1,12 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import AnimateText from "./AnimateText";
-
 import rollingPlansLogo from "../../public/images/rollingplans.png";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
+import WorkSocial from "./WorkSocial";
 
 function work2() {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,49 +48,7 @@ function work2() {
               NEXT.js | firebase | stripe | webhooks | Tailwindcss | Redux |
               RestAPI
             </p>
-            <div className='flex justify-end space-x-2 p-2'>
-              <FontAwesomeIcon
-                icon={("fas", faEye)}
-                size='1x'
-                // color='#4078c0'
-                color='#8892b0'
-              />{" "}
-              <FontAwesomeIcon
-                icon={("fab", faGithub)}
-                size='1x'
-                // color='#4078c0'
-                color='#8892b0'
-              />
-            </div>
-          </div>
-        </div>
-        <div className='cursor-pointer hover:scale-105 transform transition duration-300 ease-out'>
-          <div className='h-70 w-70 relative p-2 bg-personal_blue-lightBlue hover:inline-flex'>
-            <p className='mt-4 font-bold text-personal_blue-textParagraph'>
-              Airbnb Clone Site in JAM Stack
-            </p>
-            <p className='text-sm text-personal_blue-textParagraph'>
-              This clone site demonstrates the use of JAM Stack for an Ecommerce
-              Websites
-            </p>
-            <p className='text-xs pt-7 text-personal_blue-text'>
-              NEXT.js | firebase | stripe | webhooks | Tailwindcss | Redux |
-              RestAPI
-            </p>
-            <div className='flex justify-end space-x-2 p-2'>
-              <FontAwesomeIcon
-                icon={("fas", faEye)}
-                size='1x'
-                // color='#4078c0'
-                color='#8892b0'
-              />{" "}
-              <FontAwesomeIcon
-                icon={("fab", faGithub)}
-                size='1x'
-                // color='#4078c0'
-                color='#8892b0'
-              />
-            </div>
+            <WorkSocial />
           </div>
         </div>
       </div>

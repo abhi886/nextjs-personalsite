@@ -35,7 +35,7 @@ function About() {
             />
           </div>
         </div>
-        <div className='lg:pt-0 text-personal_blue-textParagraph'>
+        <div className='md:pt-14 text-personal_blue-textParagraph'>
           <p className='text-base'>
             Hi, I am Abhishekh Maharjan, a Software Engineer with a strong
             background that encompasses diverse aspects of Software Engineering.
@@ -59,6 +59,7 @@ function About() {
             <span className='text-personal_blue-text'>
               I have also worked using the following set of toolbox{" "}
             </span>{" "}
+            <br /> <br />
             Php, Code Ignitor, Laravel, Wordpress, Woocoommerce, jquery, XAMPP,
             CPanel, Sublime Text Editor
           </p>

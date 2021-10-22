@@ -16,7 +16,7 @@ function HeroSection() {
         layout='fill'
         className='bg-blue-500'
       /> */}
-      <div className='flex justify-between p-10'>
+      <div className='flex justify-between p-4'>
         <div>
           <Image
             src={logo}
