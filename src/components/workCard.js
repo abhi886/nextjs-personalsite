@@ -13,9 +13,8 @@ function workCard({ work }) {
     type,
     workDescription,
   } = work.fields;
-  console.log(work.fields);
   return (
-    <div className='relative space-x-4  bg-personal_blue-text-900'>
+    <div className='relative space-x-4  bg-personal_blue-text-900 mr-3 mb-3'>
       {/* First Div */}
       {/* <div className='bg-gray-900 opacity-50 '></div> */}
       <div className='flex h-80 w-80 justify-center text-personal_blue-text opacity-20 '>
@@ -35,22 +34,31 @@ function workCard({ work }) {
           {title} <br />
           <span className='text-sm text-personal_blue-text'>{jobPosition}</span>
         </h1>
-        <p className='text-sm text-justify p-3 text-personal_blue-textParagraph'>
+        <div className='text-sm text-justify p-3 text-personal_blue-textParagraph'>
           {documentToReactComponents(workDescription)}
-        </p>
+        </div>
         <div className='absolute bottom-0 right-0'>
           <p className='p-2 text-xs text-personal_blue-text font-mono text-right'>
             {" "}
             {language &&
               language.map((lang) => <span key={lang}> {lang} | </span>)}
           </p>
-          <p className='font-bold text-xs p-2 text-personal_blue-textParagraph text-right hover:text-personal_blue-text cursor-pointer'>
+          <p className='font-bold text-xs p-2 text-personal_blue-textParagraph text-right '>
             {siteUrl && (
-              <a href={siteUrl} target='_blank'>
+              <a
+                href={siteUrl}
+                target='_blank'
+                className='hover:text-personal_blue-text cursor-pointer'
+              >
                 Visit Site{" "}
               </a>
             )}
-            <a href=''>| View Case Study</a>
+            <a
+              className='hover:text-personal_blue-text cursor-pointer'
+              href={`/works/${encodeURIComponent(slug)}`}
+            >
+              | View Case Study
+            </a>
           </p>
         </div>
       </div>

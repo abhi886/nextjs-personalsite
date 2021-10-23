@@ -9,7 +9,6 @@ function Works({ works }) {
     let heightToShowFrom = 783;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
-    console.log(winScroll);
     if (winScroll > heightToShowFrom) {
       // isVisible && // to limit setting state only the first time
       setIsVisible(true);
@@ -26,7 +25,7 @@ function Works({ works }) {
   return (
     <section className='flex flex-col pb-20'>
       {isVisible && <AnimateText headingCount={2} mainHeading={"My Works"} />}
-      <div className='pt-16 self-center grid grid-cols-1 space-x-0 space-y-2 md:space-y-0  md:grid-cols-2 lg:grid-cols-3 md:space-x-2'>
+      <div className='pt-16 self-center grid grid-cols-1 space-y-2 md:space-y-0  md:grid-cols-2 lg:grid-cols-3 '>
         {works.map((work) => (
           <WorkCard key={work.sys.id} work={work}></WorkCard>
         ))}

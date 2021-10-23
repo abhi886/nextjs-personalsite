@@ -28,6 +28,9 @@ export async function getStaticProps() {
 }
 
 export default function Home({ works }) {
+  const lWorks = works.filter((work) => work.fields.type == "liveWorks");
+  const oWorks = works.filter((work) => work.fields.type == "otherWorks");
+
   return (
     <div>
       <Head>
@@ -37,8 +40,8 @@ export default function Home({ works }) {
       <HeroSection />
       <main className='px-6 bg-personal_blue'>
         <About />
-        <Works works={works} />
-        <Work2 />
+        <Works works={lWorks} />
+        <Work2 works={oWorks} />
         <HireMe />
         <ContactMe />
         <ScrollToTop />
