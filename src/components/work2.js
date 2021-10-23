@@ -4,14 +4,14 @@ import AnimateText from "./AnimateText";
 import rollingPlansLogo from "../../public/images/rollingplans.png";
 import Image from "next/image";
 import WorkSocial from "./WorkSocial";
+import Work2Card from "./Work2Card";
 
-function work2() {
+function work2({ works }) {
   const [isVisible, setIsVisible] = useState(false);
   const listenToScroll = () => {
     let heightToShowFrom = 1419;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
-    console.log(winScroll);
     if (winScroll > heightToShowFrom) {
       // isVisible && // to limit setting state only the first time
       setIsVisible(true);
@@ -35,22 +35,9 @@ function work2() {
       )}
 
       <div className='pt-16 p-3 space-y-2 md:space-y-0 md:space-x-2 grid grid-cols-1 md:grid-cols-2'>
-        <div className='cursor-pointer hover:scale-105 transform transition duration-300 ease-out'>
-          <div className='h-70 w-70 relative p-2 bg-personal_blue-lightBlue hover:inline-flex'>
-            <p className='mt-4 font-bold text-personal_blue-textParagraph'>
-              Airbnb Clone Site in JAM Stack
-            </p>
-            <p className='text-sm text-personal_blue-textParagraph'>
-              This clone site demonstrates the use of JAM Stack for an Ecommerce
-              Websites
-            </p>
-            <p className='text-xs pt-7 text-personal_blue-text'>
-              NEXT.js | firebase | stripe | webhooks | Tailwindcss | Redux |
-              RestAPI
-            </p>
-            <WorkSocial />
-          </div>
-        </div>
+        {works.map((work) => (
+          <Work2Card key={work.sys.id} work={work} />
+        ))}
       </div>
     </section>
   );

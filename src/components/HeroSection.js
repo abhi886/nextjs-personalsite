@@ -3,6 +3,8 @@ import Image from "next/image";
 import logo from "../../public/images/logo.png";
 import background from "../../public/images/background.jpeg";
 import Typed from "react-typed";
+// import CV from "../../public/files/Abhishekh_maharjan.pdf";
+import Link from "next/link";
 
 import Social from "./Social";
 
@@ -75,9 +77,13 @@ function HeroSection() {
               Contact Me
             </button>
           </a>
-          <button className='w-32 text-personal_blue-text bg-transparent px-4 py-3 shadow-md rounded-full border-2 border-personal_blue-text  font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
-            Resume
-          </button>
+
+          <a href='../../public/files/Abhishekh_maharjan.pdf' download>
+            {" "}
+            <button className='w-32 text-personal_blue-text bg-transparent px-4 py-3 shadow-md rounded-full border-2 border-personal_blue-text  font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
+              Resume
+            </button>
+          </a>
         </div>
         {/* Social Icons */}
         <Social />
