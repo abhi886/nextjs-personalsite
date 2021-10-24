@@ -12,6 +12,7 @@ function workCard({ work }) {
     title,
     type,
     workDescription,
+    gitUrl,
   } = work.fields;
   return (
     <div className='relative space-x-4  bg-personal_blue-text-900 mr-3 mb-3'>
@@ -51,6 +52,16 @@ function workCard({ work }) {
                 className='hover:text-personal_blue-text cursor-pointer'
               >
                 Visit Site{" "}
+              </a>
+            )}
+
+            {gitUrl && (
+              <a
+                href={gitUrl}
+                target='_blank'
+                className='hover:text-personal_blue-text cursor-pointer'
+              >
+                Visit Github{" "}
               </a>
             )}
             <a

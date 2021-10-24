@@ -13,9 +13,10 @@ function Work2Card({ work }) {
     title,
     type,
     workDescription,
+    gitUrl,
   } = work.fields;
   return (
-    <div className='cursor-pointer hover:scale-105 transform transition duration-300 ease-out'>
+    <div className='cursor-pointer hover:scale-105 transform transition duration-300 ease-out pb-2 pr-2'>
       <div className='h-70 w-70 relative p-2 bg-personal_blue-lightBlue hover:inline-flex'>
         <p className='mt-4 font-bold text-personal_blue-textParagraph'>
           {title}
@@ -27,7 +28,7 @@ function Work2Card({ work }) {
           {language &&
             language.map((lang) => <span key={lang}> {lang} | </span>)}
         </p>
-        <WorkSocial />
+        <WorkSocial siteUrl={siteUrl} gitUrl={gitUrl} slug={slug} />
       </div>
     </div>
   );
