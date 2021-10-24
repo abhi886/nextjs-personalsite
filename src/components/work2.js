@@ -34,7 +34,7 @@ function work2({ works }) {
         />
       )}
 
-      <div className='pt-16 p-3 space-y-2 md:space-y-0 md:space-x-2 grid grid-cols-1 md:grid-cols-2'>
+      <div className='pt-16 p-3  grid grid-cols-1 md:grid-cols-2'>
         {works.map((work) => (
           <Work2Card key={work.sys.id} work={work} />
         ))}
