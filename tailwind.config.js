@@ -15,6 +15,7 @@ module.exports = {
           textParagraph: "#8892b0",
           workBackground: "#334d6a",
           lightBlue: "#102340",
+          blogsLightBlue: "#242b4c",
         },
       },
       keyframes: {
