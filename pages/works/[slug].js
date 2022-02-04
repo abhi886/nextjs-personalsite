@@ -52,7 +52,7 @@ export async function getStaticProps({ params }) {
 
 function aslug({ works }) {
   const { title, blogImage, workDescription } = works.fields;
-  console.log(works);
+  console.log(works.fields);
   return (
     <>
       <div>
@@ -63,10 +63,10 @@ function aslug({ works }) {
           <br />
         </div>
       </div>
-      <div class='mx-auto mt-10 px-4 pb-28 sm:mt-16 sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl'>
+      <div className='mx-auto mt-10 px-4 pb-28 sm:mt-16 sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl'>
         <main>
           <article className='relative pt-10 max-w-3xl mx-auto xl:max-w-none xl:grid xl:grid-cols-3 xl:gap-x-8'>
-            <h1 class='col-span-full text-3xl sm:text-4xl sm:text-center xl:mb-16 font-extrabold tracking-tight text-slate-900 dark:text-slate-200'>
+            <h1 className='col-span-full text-3xl sm:text-4xl sm:text-center xl:mb-16 font-extrabold tracking-tight text-slate-900 dark:text-slate-200'>
               {title}
             </h1>
             <div className='text-sm leading-6 mb-16 xl:mb-0'>
@@ -81,7 +81,7 @@ function aslug({ works }) {
               <dl>
                 <dt className='sr-only'>Date</dt>
                 <dd className='absolute top-0 inset-x-0 text-slate-700 sm:text-center dark:text-slate-400'>
-                  <time datetime='2022-01-24T19:00:00.000Z'>
+                  <time dateTime='2022-01-24T19:00:00.000Z'>
                     Tuesday, January 25, 2022
                   </time>
                 </dd>
