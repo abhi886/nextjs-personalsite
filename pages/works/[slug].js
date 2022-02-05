@@ -164,31 +164,29 @@ function aslug({ works }) {
                 </div>
               </dl>
             </div>
-            <div className='prose prose-slate dark:prose-dark col-span-2'>
+            <div className='prose max-w-none prose-img:rounded-xl prose-slate dark:prose-dark col-span-2'>
               <div className='my-4'>
-                <a href='https://github.com/tailwindlabs/prettier-plugin-tailwindcss'>
-                  <div className='relative not-prose my-[2em] first:mt-0 last:mb-0 rounded-lg overflow-hidden text-center'>
-                    <Image
-                      src={`https:${blogImage.fields.file.url}`}
-                      alt='Main picture of the blog'
-                      objectFit='fill'
-                      width={blogImage.fields.file.details.image.width}
-                      height={blogImage.fields.file.details.image.height}
-                      className='mr-3 w-10 h-10 bg-slate-50 dark:bg-slate-800'
-                    ></Image>
-                    <div className='absolute inset-0 rounded-lg ring-1 ring-inset ring-slate-900/10'></div>
-                  </div>
-                </a>
+                <div className='relative not-prose my-[2em] first:mt-0 last:mb-0 rounded-lg overflow-hidden text-center'>
+                  <Image
+                    src={`https:${blogImage.fields.file.url}`}
+                    alt='Main picture of the blog'
+                    objectFit='fill'
+                    width={blogImage.fields.file.details.image.width}
+                    height={blogImage.fields.file.details.image.height}
+                    className=' w-10 h-10 bg-slate-50 dark:bg-slate-800'
+                  ></Image>
+                  <div className='absolute inset-0 rounded-lg ring-1 ring-inset ring-slate-900/10'></div>
+                </div>
               </div>
               <p className='p-2 text-xs text-personal_blue-workBackground font-mono text-right'>
                 {" "}
                 {language &&
                   language.map((lang) => <span key={lang}> {lang} | </span>)}
               </p>
+              <div className='prose max-w-none  prose-a:text-blue-600'>
+                {documentToReactComponents(workDescription, renderOptions)}
+              </div>
             </div>
-          </article>
-          <article className='prose max-w-none  prose-a:text-blue-600'>
-            {documentToReactComponents(workDescription, renderOptions)}
           </article>
         </main>
       </div>
