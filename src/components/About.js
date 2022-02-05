@@ -1,30 +1,36 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import Image from "next/image";
 import myPhoto from "../../public/images/me.jpg";
 import AnimateText from "./AnimateText";
-function About() {
-  const [isVisible, setIsVisible] = useState(false);
-  const listenToScroll = () => {
-    let heightToShowFrom = 0;
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    if (winScroll > heightToShowFrom) {
-      // isVisible && // to limit setting state only the first time
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
+import { ref } from "yup";
 
-  useEffect(() => {
-    window.addEventListener("scroll", listenToScroll);
-    return () => window.removeEventListener("scroll", listenToScroll);
-  }, []);
+// function useOnScreen(options) {
+//   const ref = useRef();
+//   const [visible, setVisible] = useState(false);
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(([entry]) => {
+//       setVisible(entry.isIntersecting);
+//     }, options);
+//     if (ref.current) {
+//       observer.observe(ref.current);
+//     }
+
+//     return () => {
+//       if (ref.current) {
+//         observer.unobserve(ref.current);
+//       }
+//     };
+//   }, [ref, options]);
+//   return [ref, visible];
+// }
+
+function About({ useOnScreen }) {
+  const [ref, visible] = useOnScreen({ rootMargin: "-200px" });
   return (
-    <section id='about' className='pb-16'>
-      {isVisible && <AnimateText headingCount={1} mainHeading={"About Me"} />}
+    <section ref={ref} id='about' className='pb-16'>
+      {visible ? <AnimateText headingCount={1} mainHeading={"About Me"} /> : ""}
       <div className='grid grid-cols-1  md:grid-cols-2'>
         <div className='relative  pt-16 pb-8 flex justify-center'>
           <div className='w-44 md:w-64'>

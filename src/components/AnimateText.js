@@ -10,12 +10,6 @@ function AnimateText({ headingCount, mainHeading, subHeading }) {
             0{headingCount}.{" "}
           </span>{" "}
           {mainHeading}
-          {/* {subHeading && (
-            <p className='text-sm pl-8'>
-              <br />
-              View the archive
-            </p>
-          )} */}
         </h1>
         <div className='absolute top-0 h-8 w-0 bg-personal_blue-text animate-reveal-block after:empty-content'></div>
       </div>

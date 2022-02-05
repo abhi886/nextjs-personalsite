@@ -10,7 +10,7 @@ function WorkSocial({ siteUrl, gitUrl, slug }) {
     <div className='flex justify-end space-x-2 p-2'>
       {siteUrl && (
         <Link href={siteUrl}>
-          <a target='_blank'>
+          <a target='_blank' title='Visit Website '>
             <FontAwesomeIcon
               icon={("fas", faEye)}
               size='1x'
@@ -22,7 +22,7 @@ function WorkSocial({ siteUrl, gitUrl, slug }) {
       )}
       {gitUrl && (
         <Link href={gitUrl}>
-          <a target='_blank'>
+          <a target='_blank' title='View Github '>
             <FontAwesomeIcon
               icon={("fab", faGithub)}
               size='1x'
@@ -33,7 +33,7 @@ function WorkSocial({ siteUrl, gitUrl, slug }) {
         </Link>
       )}
       <Link href={`/works/${encodeURIComponent(slug)}`}>
-        <a target='_blank'>
+        <a target='_blank' title='View Case Study '>
           <FontAwesomeIcon
             icon={("fab", faBook)}
             size='1x'

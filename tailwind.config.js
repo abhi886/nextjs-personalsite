@@ -2,8 +2,12 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    "./pages/**/*.{html,js}",
+    "./src/components/**/*.{html,js}",
+    "./src/layouts/**/*.{html,js}",
+    "./src/index.html",
+  ],
   theme: {
     extend: {
       colors: {
@@ -15,6 +19,7 @@ module.exports = {
           textParagraph: "#8892b0",
           workBackground: "#334d6a",
           lightBlue: "#102340",
+          blogsLightBlue: "#242b4c",
         },
       },
       keyframes: {
@@ -96,10 +101,9 @@ module.exports = {
       },
     },
   },
-  variants: {
-    width: ["responsive", "hover", "focus"],
-  },
+
   plugins: [
+    require("@tailwindcss/typography"),
     require("tailwindcss-pseudo-elements"),
     plugin(({ addUtilities }) => {
       const newUtilities = {

@@ -1,27 +1,12 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import AnimateText from "./AnimateText";
 
-function HireMe() {
-  const [isVisible, setIsVisible] = useState(false);
-  const listenToScroll = () => {
-    let heightToShowFrom = 1721;
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    if (winScroll > heightToShowFrom) {
-      // isVisible && // to limit setting state only the first time
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", listenToScroll);
-    return () => window.removeEventListener("scroll", listenToScroll);
-  }, []);
+function HireMe({ useOnScreen }) {
+  const [ref, visible] = useOnScreen({ rootMargin: "-200px" });
   return (
-    <section className='pb-16' id='hireMe'>
-      {isVisible && (
+    <section ref={ref} className='pb-16' id='hireMe'>
+      {visible && (
         <AnimateText headingCount={4} mainHeading={"How Can I Help You ??"} />
       )}
       <div className='pt-10 pl-6'>
