@@ -2,9 +2,9 @@ import React from "react";
 import { createClient } from "contentful";
 import HeaderSection from "../../src/components/HeaderSection";
 import Image from "next/image";
-// import logo from "../../../public/images/logo.png";
 import myPhoto from "../../public/images/me.jpg";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
@@ -50,9 +50,61 @@ export async function getStaticProps({ params }) {
   };
 }
 
+const renderOptions = {
+  renderNode: {
+    [INLINES.EMBEDDED_ENTRY]: (node, children) => {
+      // target the contentType of the EMBEDDED_ENTRY to display as you need
+      if (node.data.target.sys.contentType.sys.id === "blogPost") {
+        return (
+          <a href={`/blog/${node.data.target.fields.slug}`}>
+            {" "}
+            {node.data.target.fields.title}
+          </a>
+        );
+      }
+    },
+    [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
+      // target the contentType of the EMBEDDED_ENTRY to display as you need
+      if (node.data.target.sys.contentType.sys.id === "codeBlock") {
+        return (
+          <pre>
+            <code>{node.data.target.fields.code}</code>
+          </pre>
+        );
+      }
+
+      if (node.data.target.sys.contentType.sys.id === "videoEmbed") {
+        return (
+          <iframe
+            src={node.data.target.fields.embedUrl}
+            height='100%'
+            width='100%'
+            frameBorder='0'
+            scrolling='no'
+            title={node.data.target.fields.title}
+            allowFullScreen={true}
+          />
+        );
+      }
+    },
+
+    [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+      // render the EMBEDDED_ASSET as you need
+      return (
+        <img
+          src={`https://${node.data.target.fields.file.url}`}
+          height={node.data.target.fields.file.details.image.height}
+          width={node.data.target.fields.file.details.image.width}
+          alt={node.data.target.fields.description}
+        />
+      );
+    },
+  },
+};
 function aslug({ works }) {
-  const { title, blogImage, workDescription } = works.fields;
-  console.log(works.fields);
+  console.log(works);
+  const { title, blogImage, workDescription, language } = works.fields;
+
   return (
     <>
       <div>
@@ -73,7 +125,7 @@ function aslug({ works }) {
               <div className='hidden mb-5 pb-5 border-b border-slate-200 xl:block dark:border-slate-200/5'>
                 <a
                   className='group flex font-semibold text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white'
-                  href='/blog'
+                  href='/'
                 >
                   {`< Go back to blog`}
                 </a>
@@ -116,14 +168,10 @@ function aslug({ works }) {
               <div className='my-4'>
                 <a href='https://github.com/tailwindlabs/prettier-plugin-tailwindcss'>
                   <div className='relative not-prose my-[2em] first:mt-0 last:mb-0 rounded-lg overflow-hidden text-center'>
-                    {/* <Image
-                    src='/_next/static/media/banner.0b2d8db3e6f1e9e306ec2ae1914da760.jpg'
-                    alt=''
-                  /> */}
                     <Image
                       src={`https:${blogImage.fields.file.url}`}
-                      // layout='fill'
-                      objectFit='cover'
+                      alt='Main picture of the blog'
+                      objectFit='fill'
                       width={blogImage.fields.file.details.image.width}
                       height={blogImage.fields.file.details.image.height}
                       className='mr-3 w-10 h-10 bg-slate-50 dark:bg-slate-800'
@@ -132,8 +180,15 @@ function aslug({ works }) {
                   </div>
                 </a>
               </div>
-              {documentToReactComponents(workDescription)}
+              <p className='p-2 text-xs text-personal_blue-workBackground font-mono text-right'>
+                {" "}
+                {language &&
+                  language.map((lang) => <span key={lang}> {lang} | </span>)}
+              </p>
             </div>
+          </article>
+          <article className='prose max-w-none  prose-a:text-blue-600'>
+            {documentToReactComponents(workDescription, renderOptions)}
           </article>
         </main>
       </div>
