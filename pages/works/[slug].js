@@ -3,6 +3,7 @@ import { createClient } from "contentful";
 import HeaderSection from "../../src/components/HeaderSection";
 import Image from "next/image";
 import myPhoto from "../../public/images/me.jpg";
+import FooterSection from "../../src/components/FooterSection";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
@@ -189,6 +190,9 @@ function aslug({ works }) {
             </div>
           </article>
         </main>
+      </div>
+      <div className='bg-personal_blue'>
+        <FooterSection />
       </div>
     </>
   );

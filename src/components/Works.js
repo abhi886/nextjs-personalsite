@@ -5,7 +5,7 @@ import WorkCard from "./workCard";
 import AnimateText from "./AnimateText";
 
 function Works({ works, useOnScreen }) {
-  const [ref, visible] = useOnScreen({ rootMargin: "-200px" });
+  const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
 
   return (
     <section ref={ref} className='flex flex-col pb-20'>

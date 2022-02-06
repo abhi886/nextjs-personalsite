@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import AnimateText from "./AnimateText";
 
 function HireMe({ useOnScreen }) {
-  const [ref, visible] = useOnScreen({ rootMargin: "-200px" });
+  const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   return (
     <section ref={ref} className='pb-16' id='hireMe'>
       {visible && (
