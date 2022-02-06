@@ -7,7 +7,7 @@ import WorkSocial from "./WorkSocial";
 import Work2Card from "./Work2Card";
 
 function work2({ works, useOnScreen }) {
-  const [ref, visible] = useOnScreen({ rootMargin: "-200px" });
+  const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   return (
     <section ref={ref} className='pb-20'>
       {visible && (

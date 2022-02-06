@@ -27,7 +27,7 @@ import { ref } from "yup";
 // }
 
 function About({ useOnScreen }) {
-  const [ref, visible] = useOnScreen({ rootMargin: "-200px" });
+  const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   return (
     <section ref={ref} id='about' className='pb-16'>
       {visible ? <AnimateText headingCount={1} mainHeading={"About Me"} /> : ""}
