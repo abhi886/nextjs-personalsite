@@ -6,6 +6,7 @@ import myPhoto from "../../public/images/me.jpg";
 import FooterSection from "../../src/components/FooterSection";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import Skeleton from "../../src/components/Skeleton";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -25,7 +26,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -47,7 +48,7 @@ export async function getStaticProps({ params }) {
     props: {
       works: items[0],
     },
-    revalidate: 10,
+    revalidate: 1,
   };
 }
 
@@ -104,6 +105,7 @@ const renderOptions = {
 };
 function aslug({ works }) {
   console.log(works);
+  if (!works) return <Skeleton></Skeleton>;
   const { title, blogImage, workDescription, language } = works.fields;
 
   return (

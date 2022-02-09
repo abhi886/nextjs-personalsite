@@ -24,7 +24,7 @@ export async function getStaticProps() {
     props: {
       works: res.items,
     },
-    revalidate: 10,
+    revalidate: 1,
   };
 }
 function useOnScreen(options) {
