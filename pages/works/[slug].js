@@ -137,7 +137,7 @@ function aslug({ works }) {
               {title}
             </h1>
 
-            <div className='text-sm leading-6 mb-16 xl:mb-0'>
+            <div className='text-sm leading-6  xl:mb-0'>
               <div className='hidden mb-5 pb-5 border-b border-slate-200 xl:block  dark:border-slate-200/5'>
                 <a
                   className='group flex font-semibold text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white'
@@ -172,7 +172,7 @@ function aslug({ works }) {
                       objectFit='contain'
                       className='mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800'
                     />
-                    <div>
+                    <div className='ml-4'>
                       <div className='text-slate-900 dark:text-slate-200'>
                         Abhishekh Maharjan
                       </div>
@@ -188,17 +188,17 @@ function aslug({ works }) {
               </dl>
             </div>
             <div className='prose max-w-none prose-img:rounded-xl prose-slate dark:prose-dark col-span-2'>
-              <div className='my-4'>
+              <div className=''>
                 <div className='flex items-center space-x-4 justify-end text-gray-500'>
                   <div className='flex items-center space-x-1'>
                     <ClockIcon className='h-6' />
                   </div>
-                  <p className='md:inline-flex cursor-pointer'>
+                  <p className='md:inline-flex cursor-pointer text-sm'>
                     Read Time : {readTime} mins
                   </p>
                 </div>
 
-                <div className='relative not-prose my-[2em] first:mt-0 last:mb-0 rounded-lg overflow-hidden text-center'>
+                <div className='relative not-prose first:mt-0 last:mb-0 rounded-lg overflow-hidden text-center'>
                   <Image
                     src={`https:${blogImage.fields.file.url}`}
                     alt='Main picture of the blog'
