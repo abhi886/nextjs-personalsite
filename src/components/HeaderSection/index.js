@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../../../public/images/logo.png";
 import { MenuIcon } from "@heroicons/react/outline";
 
@@ -7,16 +8,18 @@ const HeaderSection = () => {
   return (
     <>
       <div className='flex justify-between h-18'>
-        <div>
-          <Image
-            src={logo}
-            alt='Abhishekh Maharjan Logo'
-            width={85}
-            height={85}
-            // layout='fill'
-            objectFit='contain'
-          />
-        </div>
+        <Link href='/'>
+          <a>
+            <Image
+              src={logo}
+              alt='Abhishekh Maharjan Logo'
+              width={85}
+              height={85}
+              // layout='fill'
+              objectFit='contain'
+            />
+          </a>
+        </Link>
         <div className='mt-6'>
           <span className='relative inline-flex rounded-md shadow-sm'>
             <button
