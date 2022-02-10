@@ -173,9 +173,7 @@ function aslug({ works }) {
                       className='mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800'
                     />
                     <div className='ml-4'>
-                      <div className='text-slate-900 dark:text-slate-200'>
-                        Abhishekh Maharjan
-                      </div>
+                      <div className=''>Abhishekh Maharjan</div>
                       <a
                         href='/'
                         className='text-blue-500 hover:text-sky-600 dark:text-sky-400'
@@ -205,7 +203,7 @@ function aslug({ works }) {
                     objectFit='fill'
                     width={blogImage.fields.file.details.image.width}
                     height={blogImage.fields.file.details.image.height}
-                    className=' w-10 h-10 bg-slate-50 dark:bg-slate-800'
+                    className=' w-10 h-10'
                   ></Image>
                   <div className='absolute inset-0 rounded-lg ring-1 ring-inset ring-slate-900/10'></div>
                 </div>
