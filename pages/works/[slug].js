@@ -7,6 +7,7 @@ import FooterSection from "../../src/components/FooterSection";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import Skeleton from "../../src/components/Skeleton";
+import { RewindIcon, ClockIcon } from "@heroicons/react/solid";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -103,10 +104,21 @@ const renderOptions = {
     },
   },
 };
+
+function convertDate(date) {
+  const properDate = new Date(date.split("T")[0]);
+  const day = properDate.getDate();
+  const month = properDate.toLocaleString("default", { month: "long" });
+  const year = properDate.getFullYear();
+  const UTCDate = month + " " + day + ", " + year;
+  return UTCDate;
+}
 function aslug({ works }) {
   console.log(works);
   if (!works) return <Skeleton></Skeleton>;
-  const { title, blogImage, workDescription, language } = works.fields;
+  const { title, blogImage, workDescription, language, readTime } =
+    works.fields;
+  const { updatedAt } = works.sys;
 
   return (
     <>
@@ -114,9 +126,9 @@ function aslug({ works }) {
         <div className='px-4 py-2 bg-personal_blue'>
           <HeaderSection />
         </div>
-        <div className='bg-personal_blue h-4 w-full border-t'>
+        {/* <div className='bg-personal_blue h-4 w-full border-t'>
           <br />
-        </div>
+        </div> */}
       </div>
       <div className='mx-auto mt-10 px-4 pb-28 sm:mt-16 sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl'>
         <main>
@@ -124,20 +136,28 @@ function aslug({ works }) {
             <h1 className='col-span-full text-3xl sm:text-4xl sm:text-center xl:mb-16 font-extrabold tracking-tight text-slate-900 dark:text-slate-200'>
               {title}
             </h1>
+
             <div className='text-sm leading-6 mb-16 xl:mb-0'>
-              <div className='hidden mb-5 pb-5 border-b border-slate-200 xl:block dark:border-slate-200/5'>
+              <div className='hidden mb-5 pb-5 border-b border-slate-200 xl:block  dark:border-slate-200/5'>
                 <a
                   className='group flex font-semibold text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white'
                   href='/'
                 >
-                  {`< Go back to blog`}
+                  <div className='flex items-center space-x-4 justify-end text-gray-500'>
+                    <div className='flex items-center space-x-2 border-2 p-2 rounded-full'>
+                      <RewindIcon className='h-6' />
+                    </div>
+                    <p className='hidden md:inline-flex cursor-pointer'>
+                      Go Back
+                    </p>
+                  </div>
                 </a>
               </div>
               <dl>
                 <dt className='sr-only'>Date</dt>
                 <dd className='absolute top-0 inset-x-0 text-slate-700 sm:text-center dark:text-slate-400'>
-                  <time dateTime='2022-01-24T19:00:00.000Z'>
-                    Tuesday, January 25, 2022
+                  <time dateTime={updatedAt}>
+                    Last Updated At: {convertDate(updatedAt)}
                   </time>
                 </dd>
                 <div className='sm:flex sm:flex-wrap sm:justify-center xl:block'>
@@ -169,6 +189,15 @@ function aslug({ works }) {
             </div>
             <div className='prose max-w-none prose-img:rounded-xl prose-slate dark:prose-dark col-span-2'>
               <div className='my-4'>
+                <div className='flex items-center space-x-4 justify-end text-gray-500'>
+                  <div className='flex items-center space-x-1'>
+                    <ClockIcon className='h-6' />
+                  </div>
+                  <p className='md:inline-flex cursor-pointer'>
+                    Read Time : {readTime} mins
+                  </p>
+                </div>
+
                 <div className='relative not-prose my-[2em] first:mt-0 last:mb-0 rounded-lg overflow-hidden text-center'>
                   <Image
                     src={`https:${blogImage.fields.file.url}`}
