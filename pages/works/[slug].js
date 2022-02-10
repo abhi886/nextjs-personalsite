@@ -133,17 +133,17 @@ function aslug({ works }) {
       <div className='mx-auto mt-10 px-4 pb-28 sm:mt-16 sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl'>
         <main>
           <article className='relative pt-10 max-w-3xl mx-auto xl:max-w-none xl:grid xl:grid-cols-3 xl:gap-x-8'>
-            <h1 className='col-span-full text-3xl sm:text-4xl sm:text-center xl:mb-16 font-extrabold tracking-tight text-slate-900 dark:text-slate-200'>
+            <h1 className='col-span-full text-3xl sm:text-4xl sm:text-center xl:mb-16 font-extrabold tracking-tight'>
               {title}
             </h1>
 
             <div className='text-sm leading-6  xl:mb-0'>
               <div className='hidden mb-5 pb-5 border-b border-slate-200 xl:block  dark:border-slate-200/5'>
                 <a
-                  className='group flex font-semibold text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white'
+                  className='group flex font-semibold text-slate-700 hover:text-slate-900'
                   href='/'
                 >
-                  <div className='flex items-center space-x-4 justify-end text-gray-500'>
+                  <div className='flex items-center space-x-4 justify-end'>
                     <div className='flex items-center space-x-2 border-2 p-2 rounded-full'>
                       <RewindIcon className='h-6' />
                     </div>
@@ -155,7 +155,7 @@ function aslug({ works }) {
               </div>
               <dl>
                 <dt className='sr-only'>Date</dt>
-                <dd className='absolute top-0 inset-x-0 text-slate-700 sm:text-center dark:text-slate-400'>
+                <dd className='absolute top-0 inset-x-0 text-slate-700 sm:text-center'>
                   <time dateTime={updatedAt}>
                     Last Updated At: {convertDate(updatedAt)}
                   </time>
