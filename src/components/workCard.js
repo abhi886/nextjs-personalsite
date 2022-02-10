@@ -11,7 +11,7 @@ function workCard({ work }) {
     thumbnail,
     title,
     type,
-    workDescription,
+    shortDescription,
     gitUrl,
   } = work.fields;
   return (
@@ -36,7 +36,7 @@ function workCard({ work }) {
           <span className='text-sm text-personal_blue-text'>{jobPosition}</span>
         </h1>
         <div className='text-sm text-justify p-3 text-personal_blue-textParagraph'>
-          {documentToReactComponents(workDescription)}
+          {shortDescription}
         </div>
         <div className='absolute bottom-0 right-0'>
           <p className='p-2 text-xs text-personal_blue-text font-mono text-right'>

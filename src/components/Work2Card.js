@@ -12,7 +12,7 @@ function Work2Card({ work }) {
     thumbnail,
     title,
     type,
-    workDescription,
+    shortDescription,
     gitUrl,
   } = work.fields;
   return (
@@ -22,7 +22,7 @@ function Work2Card({ work }) {
           {title}
         </p>
         <div className='text-sm text-personal_blue-textParagraph'>
-          {documentToReactComponents(workDescription)}
+          {shortDescription}
         </div>
         <p className='text-xs pt-7 text-personal_blue-text'>
           {language &&
