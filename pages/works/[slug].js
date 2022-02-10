@@ -103,10 +103,20 @@ const renderOptions = {
     },
   },
 };
+
+function convertDate(date) {
+  const properDate = new Date(date.split("T")[0]);
+  const day = properDate.getDate();
+  const month = properDate.toLocaleString("default", { month: "long" });
+  const year = properDate.getFullYear();
+  const UTCDate = month + " " + day + ", " + year;
+  return UTCDate;
+}
 function aslug({ works }) {
   console.log(works);
   if (!works) return <Skeleton></Skeleton>;
   const { title, blogImage, workDescription, language } = works.fields;
+  const { updatedAt } = works.sys;
 
   return (
     <>
@@ -136,8 +146,8 @@ function aslug({ works }) {
               <dl>
                 <dt className='sr-only'>Date</dt>
                 <dd className='absolute top-0 inset-x-0 text-slate-700 sm:text-center dark:text-slate-400'>
-                  <time dateTime='2022-01-24T19:00:00.000Z'>
-                    Tuesday, January 25, 2022
+                  <time dateTime={updatedAt}>
+                    Last Updated At: {convertDate(updatedAt)}
                   </time>
                 </dd>
                 <div className='sm:flex sm:flex-wrap sm:justify-center xl:block'>
