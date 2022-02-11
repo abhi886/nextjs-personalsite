@@ -1,5 +1,6 @@
 import React from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Image from "next/image";
 
 function workCard({ work }) {
   const {
@@ -15,21 +16,23 @@ function workCard({ work }) {
     gitUrl,
   } = work.fields;
   return (
-    <div className='relative space-x-4  bg-personal_blue-text-900 mr-3 mb-3'>
+    <div className='relative  bg-personal_blue-text-900 md:pr-2 md:pb-2'>
       {/* First Div */}
       {/* <div className='bg-gray-900 opacity-50 '></div> */}
-      <div className='flex h-80 w-80 justify-center text-personal_blue-text opacity-20 '>
+      <div className='flex relative h-80 w-72 justify-center text-personal_blue-text opacity-20 '>
         {thumbnail.fields.file.url && (
-          <img
+          <Image
+            className=''
             src={`https:${thumbnail.fields.file.url}`}
             alt='Companys image'
+            layout='fill'
           />
         )}
       </div>
 
       {/* Second Div */}
 
-      <div className='flex flex-col absolute top-0 -left-4 bg-personal_blue-lightBlue bg-opacity-75  h-80 w-80 '>
+      <div className='flex flex-col absolute top-0  bg-personal_blue-lightBlue bg-opacity-75  h-80 w-72 '>
         {/* <div className='absolute inset-0 bg-gray-900 bg-opacity-1 '></div> */}
         <h1 className='font-bold p-2 text-personal_blue-textParagraph '>
           {title} <br />
