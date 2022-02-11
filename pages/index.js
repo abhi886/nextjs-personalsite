@@ -49,7 +49,7 @@ function useOnScreen(options) {
 export default function Home({ works }) {
   const lWorks = works.filter((work) => work.fields.type == "liveWorks");
   const oWorks = works.filter((work) => work.fields.type == "otherWorks");
-
+  const profile = works.filter((work) => work.fields.type == "Profile");
   return (
     <div>
       <Head>
@@ -58,7 +58,7 @@ export default function Home({ works }) {
       {/* <Header /> */}
       <HeroSection />
       <main className='px-6 bg-personal_blue'>
-        <About useOnScreen={useOnScreen} />
+        <About profile={profile} useOnScreen={useOnScreen} />
         <Works useOnScreen={useOnScreen} works={lWorks} />
         <Work2 useOnScreen={useOnScreen} works={oWorks} />
         <HireMe useOnScreen={useOnScreen} />
