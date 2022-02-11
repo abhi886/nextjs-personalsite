@@ -54,6 +54,15 @@ export default function Home({ works }) {
     <div>
       <Head>
         <title>Abhishekh Maharjan</title>
+        <meta
+          property='og:title'
+          content={profile[0].fields.shortDescription}
+          key='title'
+        />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1.0'
+        ></meta>
       </Head>
       {/* <Header /> */}
       <HeroSection />

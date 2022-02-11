@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/dist/shared/lib/head";
 import { createClient } from "contentful";
 import HeaderSection from "../../src/components/HeaderSection";
 import Image from "next/image";
@@ -116,13 +117,27 @@ function convertDate(date) {
 function aslug({ works }) {
   console.log(works);
   if (!works) return <Skeleton></Skeleton>;
-  const { title, blogImage, workDescription, language, readTime } =
-    works.fields;
+  const {
+    title,
+    blogImage,
+    workDescription,
+    language,
+    readTime,
+    shortDescription,
+  } = works.fields;
   const { updatedAt } = works.sys;
 
   return (
     <>
       <div>
+        <Head>
+          <title>{title}</title>
+          <meta property='og:title' content={shortDescription} key={title} />
+          <meta
+            name='viewport'
+            content='width=device-width, initial-scale=1.0'
+          ></meta>
+        </Head>
         <div className='px-4 py-2 bg-personal_blue'>
           <HeaderSection />
         </div>
