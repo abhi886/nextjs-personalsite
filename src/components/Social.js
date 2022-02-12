@@ -21,23 +21,23 @@ function Social() {
         </a>
       </Link>
 
-      <Link href='https://www.linkedin.com/in/abhishekh-maharjan-139581b3/'>
-        <a target='_blank'>
-          <FontAwesomeIcon
-            icon={("fab", faLinkedin)}
-            size='2x'
-            // color='#0e76a8'
-            color='#ccd6f6'
-          />
-        </a>
-      </Link>
-
       <Link href='https://github.com/abhi886'>
         <a target='_blank'>
           <FontAwesomeIcon
             icon={("fab", faGithub)}
             size='2x'
             // color='#4078c0'
+            color='#ccd6f6'
+          />
+        </a>
+      </Link>
+
+      <Link href='https://www.linkedin.com/in/abhishekh-maharjan-139581b3/'>
+        <a target='_blank'>
+          <FontAwesomeIcon
+            icon={("fab", faLinkedin)}
+            size='2x'
+            // color='#0e76a8'
             color='#ccd6f6'
           />
         </a>

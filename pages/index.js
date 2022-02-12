@@ -49,16 +49,25 @@ function useOnScreen(options) {
 export default function Home({ works }) {
   const lWorks = works.filter((work) => work.fields.type == "liveWorks");
   const oWorks = works.filter((work) => work.fields.type == "otherWorks");
-
+  const profile = works.filter((work) => work.fields.type == "Profile");
   return (
     <div>
       <Head>
         <title>Abhishekh Maharjan</title>
+        <meta
+          property='og:title'
+          content={profile[0].fields.shortDescription}
+          key='title'
+        />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1.0'
+        ></meta>
       </Head>
       {/* <Header /> */}
       <HeroSection />
       <main className='px-6 bg-personal_blue'>
-        <About useOnScreen={useOnScreen} />
+        <About profile={profile} useOnScreen={useOnScreen} />
         <Works useOnScreen={useOnScreen} works={lWorks} />
         <Work2 useOnScreen={useOnScreen} works={oWorks} />
         <HireMe useOnScreen={useOnScreen} />

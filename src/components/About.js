@@ -5,39 +5,20 @@ import Image from "next/image";
 import myPhoto from "../../public/images/me.jpg";
 import AnimateText from "./AnimateText";
 import { ref } from "yup";
-
-// function useOnScreen(options) {
-//   const ref = useRef();
-//   const [visible, setVisible] = useState(false);
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(([entry]) => {
-//       setVisible(entry.isIntersecting);
-//     }, options);
-//     if (ref.current) {
-//       observer.observe(ref.current);
-//     }
-
-//     return () => {
-//       if (ref.current) {
-//         observer.unobserve(ref.current);
-//       }
-//     };
-//   }, [ref, options]);
-//   return [ref, visible];
-// }
-
-function About({ useOnScreen }) {
+function About({ useOnScreen, profile }) {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
+  const { blogImage } = profile[0].fields;
   return (
     <section ref={ref} id='about' className='pb-16'>
       {visible ? <AnimateText headingCount={1} mainHeading={"About Me"} /> : ""}
       <div className='grid grid-cols-1  md:grid-cols-2'>
         <div className='relative  pt-16 pb-8 flex justify-center'>
-          <div className='w-44 md:w-64'>
+          <div className='relative w-44 h-72 md:w-48 md:h-72 lg:w-72 lg:h-auto xl:w-72 '>
             <Image
-              className='z-20 rounded-2xl'
-              src={myPhoto}
+              className='rounded-2xl'
+              src={`https:${blogImage.fields.file.url}`}
               alt='Abhishekh Maharjans Photo'
+              layout='fill'
             />
           </div>
         </div>

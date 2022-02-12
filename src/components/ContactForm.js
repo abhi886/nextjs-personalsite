@@ -24,7 +24,7 @@ const MyTextInput = ({ label, ...props }) => {
         </div>
         <div className='tems-center border-2 py-2 md:shadow-sm'>
           <input
-            className='text-input w-full flex-grow pl-5 bg-transparent outline-none text-gray-600 placeholder-gray-400'
+            className='text-input w-full flex-grow pl-5 bg-transparent outline-none text-white placeholder-gray-400'
             {...field}
             {...props}
           />
@@ -52,7 +52,7 @@ const MyTextAreaInput = ({ label, ...props }) => {
         </div>{" "}
         <div className='items-center border-2 py-2 md:shadow-sm'>
           <textarea
-            className='text-input flex-grow pl-5 bg-transparent outline-none text-gray-600 placeholder-gray-400 w-full h-20'
+            className='text-input flex-grow pl-5 bg-transparent outline-none text-white placeholder-gray-400 w-full h-20'
             {...field}
             {...props}
           />
@@ -121,11 +121,9 @@ const ContactForm = () => {
             .email("Invalid email address")
             .required("Required"),
           subject: Yup.string()
-            .max(20, "Must be 20 characters or less")
+            .max(100, "Must be 20 characters or less")
             .required("Required"),
-          description: Yup.string()
-            .max(20, "Must be 20 characters or less")
-            .required("Required"),
+          description: Yup.string().required("Required"),
         })}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setTimeout(() => {
@@ -147,7 +145,7 @@ const ContactForm = () => {
         }}
       >
         <Form>
-          <div className='grid grid-cols-1 md:grid-cols-2 md:space-x-6'>
+          <div className='grid grid-cols-1 md:grid-cols-2 md:space-x-6 '>
             <div>
               <MyTextInput
                 label='Full Name'
@@ -167,7 +165,7 @@ const ContactForm = () => {
                 label='Email Address'
                 name='email'
                 type='email'
-                placeholder=' jane@formik.com'
+                placeholder=' email@email.com'
               />
             </div>
 
