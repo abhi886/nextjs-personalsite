@@ -13,28 +13,9 @@ import { ChevronDownIcon } from "@heroicons/react/outline";
 function HeroSection() {
   return (
     <section className='relative h-screen bg-personal_blue'>
-      {/* <div className='flex absolute items-center bottom-0 space-x-2 transform -rotate-90'>
-        <div className='w-20 '>
-          {" "}
-          <hr className='border-2' />
-        </div>
-        <div className='items-center font-bold text-sm text-personal_blue-textTitle'>
-          {" "}
-          abhishekmhrzn.14@gmail.com
-        </div>
-      </div> */}
-      {/* <Image
-        src={background}
-        objectFit='cover'
-        layout='fill'
-        className='bg-blue-500'
-      /> */}
       <div className='p-4'>
         <HeaderSection />
       </div>
-
-      {/* <div className='h-20 w-10 bg-gray-200 hover:bg-red-700 hover:w-screen hover:transition ease-in duration-700'></div>{" "} */}
-
       <div className='absolute top-1/3 w-full text-center'>
         <h1 className='text-personal_blue-textTitle font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up'>
           I'm Abhishekh Maharjan.
@@ -59,7 +40,7 @@ function HeroSection() {
             />
           </div>
         </div>
-        {/* <p className='font-medium p-2 text-gray-100'>Software Engineer</p> */}
+
         <div className='space-x-2'>
           <a href='#contact'>
             <button className='w-32 text-personal_blue-text bg-transparent px-3 py-3 shadow-md rounded-full border-2 border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
