@@ -16,10 +16,9 @@ function workCard({ work }) {
     gitUrl,
   } = work.fields;
   return (
-    <div className='relative  bg-personal_blue-text-900 md:pr-2 md:pb-2'>
+    <div className='relative  bg-personal_blue-text-900 mr-1 mb-1'>
       {/* First Div */}
-      {/* <div className='bg-gray-900 opacity-50 '></div> */}
-      <div className='flex relative h-80 w-72 justify-center text-personal_blue-text opacity-20 '>
+      <div className='flex relative h-80 justify-center text-personal_blue-text opacity-20  '>
         {thumbnail.fields.file.url && (
           <Image
             className=''
@@ -31,9 +30,7 @@ function workCard({ work }) {
       </div>
 
       {/* Second Div */}
-
-      <div className='flex flex-col absolute top-0  bg-personal_blue-lightBlue bg-opacity-75  h-80 w-72 '>
-        {/* <div className='absolute inset-0 bg-gray-900 bg-opacity-1 '></div> */}
+      <div className='flex flex-col absolute top-0  bg-personal_blue-lightBlue bg-opacity-75  h-80 '>
         <h1 className='font-bold p-2 text-personal_blue-textParagraph '>
           {title} <br />
           <span className='text-sm text-personal_blue-text'>{jobPosition}</span>

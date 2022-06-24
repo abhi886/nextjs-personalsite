@@ -9,7 +9,7 @@ import Work2Card from "./Work2Card";
 function work2({ works, useOnScreen }) {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   return (
-    <section ref={ref} className='pb-20'>
+    <section ref={ref} className='pb-20 lg:px-48'>
       {visible && (
         <AnimateText
           headingCount={3}
@@ -18,7 +18,7 @@ function work2({ works, useOnScreen }) {
         />
       )}
 
-      <div className='pt-16 p-3  grid grid-cols-1 md:grid-cols-2'>
+      <div className='pt-16  grid grid-cols-1 md:grid-cols-2'>
         {works.map((work) => (
           <Work2Card key={work.sys.id} work={work} />
         ))}
