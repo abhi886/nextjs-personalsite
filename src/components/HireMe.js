@@ -5,14 +5,14 @@ import AnimateText from "./AnimateText";
 function HireMe({ useOnScreen }) {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   return (
-    <section ref={ref} className='pb-16' id='hireMe'>
+    <section ref={ref} className='pb-16 lg:mx-48' id='hireMe'>
       {visible && (
         <AnimateText headingCount={4} mainHeading={"How Can I Help You ??"} />
       )}
-      <div className='pt-10 pl-6'>
+      <div className='pt-10'>
         <p className='mt-4 text-sm font-bold text-personal_blue-textParagraph'>
-          I Want To Hire You As A FrontEnd Developer | Backend Developer | Full
-          Stack Developer{" "}
+          Hire Me As A FrontEnd Developer | Backend Developer | Full Stack
+          Developer{" "}
         </p>
         <p className='mt-4 text-sm font-bold text-personal_blue-textParagraph'>
           Build A Website For You . Single Page Website | Multiple Page Website

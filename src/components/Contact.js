@@ -54,11 +54,11 @@ const Contacts = () => {
   };
 
   return (
-    <div id='contacts' className='contacts'>
+    <section id='contacts' className='flex flex-col pb-20 lg:mx-48'>
       <div className='text-center'>
         <h1>Contact Me</h1>
         <p>
-          Please fill out the form and describe your project needs and I'll
+          sPlease fill out the form and describe your project needs and I'll
           contact you as soon as possible. Thank you.
         </p>
         {/* hook  */}
@@ -180,7 +180,7 @@ const Contacts = () => {
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

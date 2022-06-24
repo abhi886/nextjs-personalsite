@@ -16,7 +16,7 @@ function Work2Card({ work }) {
     gitUrl,
   } = work.fields;
   return (
-    <div className='cursor-pointer hover:scale-105 transform transition duration-300 ease-out pb-2 pr-2'>
+    <div className='cursor-pointer hover:scale-105 transform transition duration-300 ease-out pb-1 pr-1'>
       <div className='h-70 w-70 relative p-2 bg-personal_blue-lightBlue '>
         <p className='mt-4 font-bold text-personal_blue-textParagraph'>
           {title}
