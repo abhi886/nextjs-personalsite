@@ -5,7 +5,41 @@ import Image from "next/image";
 import AnimateText from "./AnimateText";
 import { ref } from "yup";
 
-
+const AboutComponentAcumen = {
+  AboutAcumen: function AboutAcumen({ heading, content }) {
+    return (
+      <>
+        <div className='flex items-center text-personal_blue-text'>
+          <HiArrowCircleRight />
+          <p>&nbsp;{heading}</p>
+        </div>
+        <br />
+        {content}
+        <br /> <br />
+      </>
+    );
+  },
+  aboutData: [
+    {
+      heading: "My current set of toolbox",
+      content:
+        "React.js with typescript, Next.js," +
+        "Node.js, npm , Express.js, MongoDB,MySQL, HTML5 &amp; CSS3, Bootstrap, React-Bootstrap, Tailwind, Styled-Components," +
+        "contentFul, shopify, graphQl, firebase, Docker," +
+        "Babel, Git, Github, postman, Visual Studio Code, Heroku, Jest Unit Testing",
+    },
+    {
+      heading: "My current set of toolbox",
+      content:
+        " React Native, GatsbyJS, GraphQL, AWS Lambda, AWS Amplify, Google Cloud Platform, Kubernetes, Webpack",
+    },
+    {
+      heading: "Technologies I have worked with in the past",
+      content:
+        " Php, Code Ignitor, Laravel, Wordpress, Woocoommerce, jquery, XAMPP, CPanel, Sublime Text Editor",
+    },
+  ],
+};
 function About({ useOnScreen, profile }) {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   const { blogImage } = profile[0].fields;
@@ -34,31 +68,14 @@ function About({ useOnScreen, profile }) {
             Hello there !! I am a Software Engineer with a passion for solving
             problems and learning new things. I build things to help people and
             community. My programming acumen includes: <br /> <br />
-            <div className='flex items-center text-personal_blue-text'>
-              <HiArrowCircleRight />
-              <p>&nbsp;My current set of toolbox</p>
-            </div>
-            <br />
-            React.js with typescript, Next.js, Node.js, npm , Express.js,
-            MongoDB, MySQL, HTML5 &amp; CSS3, Bootstrap, React-Bootstrap,
-            Tailwind, Styled-Components, contentFul, shopify, graphQl, firebase,
-            Docker, Babel, Git, Github, postman, Visual Studio Code, Heroku,
-            Jest Unit Testing
-            <br /> <br />
-            <div className='flex items-center text-personal_blue-text'>
-              <HiArrowCircleRight />
-              <p>&nbsp; My future plans in learning</p>
-            </div>
-            <br />
-            React Native, GatsbyJS, GraphQL, AWS Lambda, AWS Amplify, Google
-            Cloud Platform, Kubernetes, Webpack <br /> <br />{" "}
-            <div className='flex items-center text-personal_blue-text'>
-              <HiArrowCircleRight />
-              <p>&nbsp; Technologies I have worked with in the past</p>
-            </div>
-            <br />
-            Php, Code Ignitor, Laravel, Wordpress, Woocoommerce, jquery, XAMPP,
-            CPanel, Sublime Text Editor
+            {AboutComponentAcumen.aboutData.map((about) => {
+              return (
+                <AboutComponentAcumen.AboutAcumen
+                  heading={about.heading}
+                  content={about.content}
+                />
+              );
+            })}
           </p>
         </div>
       </div>
