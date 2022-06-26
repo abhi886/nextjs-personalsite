@@ -11,7 +11,7 @@ function Social() {
   return (
     <div className=' text-center space-x-6 pt-4'>
       <Link href='https://www.facebook.com/abhishek.mhrzn/'>
-        <a target='_blank'>
+        <a target='_blank' aria-label='Facebook'>
           <FontAwesomeIcon
             icon={("fab", faFacebookSquare)}
             size='2x'
@@ -22,7 +22,7 @@ function Social() {
       </Link>
 
       <Link href='https://github.com/abhi886'>
-        <a target='_blank'>
+        <a target='_blank' aria-label='Github'>
           <FontAwesomeIcon
             icon={("fab", faGithub)}
             size='2x'
@@ -33,7 +33,7 @@ function Social() {
       </Link>
 
       <Link href='https://www.linkedin.com/in/abhishekh-maharjan-139581b3/'>
-        <a target='_blank'>
+        <a target='_blank' aria-label='LinkedIn'>
           <FontAwesomeIcon
             icon={("fab", faLinkedin)}
             size='2x'
