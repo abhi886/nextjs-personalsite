@@ -65,9 +65,12 @@ function About({ useOnScreen, profile }) {
         </div>
         <div className='md:pt-14 text-personal_blue-textParagraph lg:col-span-2'>
           <p className='text-base '>
-            Hello there !! I am a Software Engineer with a passion for solving
-            problems and learning new things. I build things to help people and
-            community. My programming acumen includes: <br /> <br />
+            <p class='font-extrabold text-transparent   bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>
+              {`<Hello there />`}
+            </p>
+            I am a Software Engineer with a passion for solving problems and
+            learning new things. I build things to help people and community. My
+            programming acumen includes: <br /> <br />
             {AboutComponentAcumen.aboutData.map((about) => {
               return (
                 <AboutComponentAcumen.AboutAcumen
