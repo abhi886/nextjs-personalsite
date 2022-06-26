@@ -2,12 +2,9 @@ import React, { useRef } from "react";
 import background from "../../public/images/background.jpeg";
 import resume from "../../public/images/logo.png";
 import Typed from "react-typed";
-// import CV from "../../public/files/Abhishekh_maharjan.pdf";
 import Link from "next/link";
 import HeaderSection from "./HeaderSection";
-
 import Social from "./Social";
-
 import { ChevronDownIcon } from "@heroicons/react/outline";
 
 function HeroSection() {
@@ -41,14 +38,18 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className='space-x-2'>
+        <div className='space-x-2' aria-label='Contact Me'>
           <a href='#contact'>
             <button className='w-32 text-personal_blue-text bg-transparent px-3 py-3 shadow-md rounded-full border-2 border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
               Contact Me
             </button>
           </a>
 
-          <a href={"/files/Abhishekh_maharjan.pdf"} download>
+          <a
+            href={"/files/Abhishekh_maharjan.pdf"}
+            aria-label='Download Resume'
+            download
+          >
             {" "}
             <button className='w-32 text-personal_blue-text bg-transparent px-4 py-3 shadow-md rounded-full border-2 border-personal_blue-text  font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150'>
               Resume
