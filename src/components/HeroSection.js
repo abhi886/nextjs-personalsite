@@ -20,7 +20,7 @@ function HeroSection() {
         <div className='grid grid-cols-2 p-3'>
           <div className='text-right'>
             <h2 className='font-medium text-personal_blue-textTitle'>
-              Based on Canberra.
+              Based in Canberra.
             </h2>
           </div>
           <div className='text-left'>
