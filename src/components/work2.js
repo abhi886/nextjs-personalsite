@@ -18,7 +18,7 @@ function work2({ works, useOnScreen }) {
         />
       )}
 
-      <div className='pt-16  grid grid-cols-1 md:grid-cols-2'>
+      <div className='pt-16 grid grid-cols-1 md:grid-cols-2 gap-1'>
         {works.map((work) => (
           <Work2Card key={work.sys.id} work={work} />
         ))}

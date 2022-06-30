@@ -18,7 +18,7 @@ function workCard({ work }) {
   return (
     <div className='relative  bg-personal_blue-text-900 mr-1 mb-1'>
       {/* First Div */}
-      <div className='flex relative h-80 justify-center text-personal_blue-text opacity-20  '>
+      <div className='flex relative h-80 justify-center text-personal_blue-text opacity-20'>
         {thumbnail.fields.file.url && (
           <Image
             className=''
