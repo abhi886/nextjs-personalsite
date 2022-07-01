@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { HiArrowCircleRight } from "react-icons/hi";
+import { BiRightArrow } from "react-icons/bi";
 import Image from "next/image";
 import AnimateText from "./AnimateText";
 import { ref } from "yup";
@@ -12,7 +12,7 @@ const AboutComponentAcumen = {
     }
     return (
       <div className='flex items-center text-personal_blue-text my-2'>
-        <HiArrowCircleRight />
+        <BiRightArrow size={"12"} />
         <p>&nbsp;{content}</p>
       </div>
     );
