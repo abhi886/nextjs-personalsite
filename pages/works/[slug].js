@@ -10,6 +10,7 @@ import Skeleton from "../../src/components/Skeleton";
 import { RewindIcon, ClockIcon } from "@heroicons/react/solid";
 import renderOptions from "../../src/utils/contentfulRenderOptions";
 import client from "../../src/utils/contentfulCreateClient";
+import { convertDate } from "../../src/utils/date";
 
 export async function getStaticPaths() {
   const res = await client.getEntries({
@@ -50,14 +51,6 @@ export async function getStaticProps({ params }) {
   };
 }
 
-function convertDate(date) {
-  const properDate = new Date(date.split("T")[0]);
-  const day = properDate.getDate();
-  const month = properDate.toLocaleString("default", { month: "long" });
-  const year = properDate.getFullYear();
-  const UTCDate = month + " " + day + ", " + year;
-  return UTCDate;
-}
 function aslug({ works }) {
   console.log(works);
   if (!works) return <Skeleton></Skeleton>;
