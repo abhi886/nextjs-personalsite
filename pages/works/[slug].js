@@ -8,8 +8,8 @@ import FooterSection from "../../src/components/FooterSection";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Skeleton from "../../src/components/Skeleton";
 import { RewindIcon, ClockIcon } from "@heroicons/react/solid";
-import renderOptions from "../../common/contentfulRenderOptions";
-import client from "../../common/contentfulCreateClient";
+import renderOptions from "../../src/utils/contentfulRenderOptions";
+import client from "../../src/utils/contentfulCreateClient";
 
 export async function getStaticPaths() {
   const res = await client.getEntries({

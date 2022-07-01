@@ -9,7 +9,7 @@ import Work2 from "../src/components/work2";
 import ContactMe from "../src/components/ContactMe";
 import FooterSection from "../src/components/FooterSection/index";
 import ScrollToTop from "../src/components/ScrollToTop";
-import client from "../common/contentfulCreateClient";
+import client from "../src/utils/contentfulCreateClient";
 
 export async function getStaticProps() {
   const res = await client.getEntries({ content_type: "works" });
