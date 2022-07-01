@@ -5,7 +5,7 @@ import AnimateText from "./AnimateText";
 function HireMe({ useOnScreen }) {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   return (
-    <section ref={ref} className='pb-16 lg:mx-48' id='hireMe'>
+    <section ref={ref} className='pb-20 lg:mx-28 xl:mx-48' id='hireMe'>
       {visible && (
         <AnimateText headingCount={4} mainHeading={"How Can I Help You ??"} />
       )}

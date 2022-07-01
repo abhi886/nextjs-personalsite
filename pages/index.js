@@ -8,7 +8,6 @@ import About from "../src/components/About";
 import Work2 from "../src/components/work2";
 import ContactMe from "../src/components/ContactMe";
 import FooterSection from "../src/components/FooterSection/index";
-import Contact from "../src/components/Contact";
 import ScrollToTop from "../src/components/ScrollToTop";
 import { createClient } from "contentful";
 
