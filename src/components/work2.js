@@ -5,11 +5,12 @@ import rollingPlansLogo from "../../public/images/rollingplans.png";
 import Image from "next/image";
 import WorkSocial from "./WorkSocial";
 import Work2Card from "./Work2Card";
+import { useOnScreen } from "../utils/use-onScreen";
 
-function work2({ works, useOnScreen }) {
+function work2({ works }) {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   return (
-    <section ref={ref} className='pb-20 lg:px-48'>
+    <section ref={ref} className='pb-20 lg:mx-28 xl:mx-48'>
       {visible && (
         <AnimateText
           headingCount={3}
