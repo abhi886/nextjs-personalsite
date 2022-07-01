@@ -9,14 +9,9 @@ import Work2 from "../src/components/work2";
 import ContactMe from "../src/components/ContactMe";
 import FooterSection from "../src/components/FooterSection/index";
 import ScrollToTop from "../src/components/ScrollToTop";
-import { createClient } from "contentful";
+import client from "../common/contentfulCreateClient";
 
 export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-  });
-
   const res = await client.getEntries({ content_type: "works" });
 
   return {
