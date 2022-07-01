@@ -4,6 +4,7 @@ import { BiRightArrow } from "react-icons/bi";
 import Image from "next/image";
 import AnimateText from "./AnimateText";
 import { ref } from "yup";
+import { useOnScreen } from "../utils/use-onScreen";
 
 const AboutComponentAcumen = {
   AboutAcumen: function AboutAcumen({ heading, content }) {
@@ -18,11 +19,10 @@ const AboutComponentAcumen = {
     );
   },
 };
-function About({ useOnScreen, profile }) {
+function About({ profile }) {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   const { blogImage } = profile[0].fields;
   const data = profile[0].fields.workDescription.content;
-  console.log(profile[0].fields.workDescription.content);
   const result = data.map((d) => ({
     heading: d.nodeType,
     content: d.content[0].value,

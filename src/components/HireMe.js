@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import AnimateText from "./AnimateText";
+import { useOnScreen } from "../utils/use-onScreen";
 
-function HireMe({ useOnScreen }) {
+function HireMe() {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   return (
     <section ref={ref} className='pb-20 lg:mx-28 xl:mx-48' id='hireMe'>

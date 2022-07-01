@@ -13,7 +13,6 @@ import client from "../src/utils/contentfulCreateClient";
 
 export async function getStaticProps() {
   const res = await client.getEntries({ content_type: "works" });
-
   return {
     props: {
       works: res.items,
@@ -21,31 +20,13 @@ export async function getStaticProps() {
     revalidate: 1,
   };
 }
-function useOnScreen(options) {
-  const ref = useRef();
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setVisible(entry.isIntersecting);
-    }, options);
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
 
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, [ref, options]);
-  return [ref, visible];
-}
 export default function Home({ works }) {
   const lWorks = works.filter((work) => work.fields.type == "liveWorks");
   const oWorks = works.filter((work) => work.fields.type == "otherWorks");
   const profile = works.filter((work) => work.fields.type == "Profile");
   return (
-    <div>
+    <>
       <Head>
         <title>Abhishekh Maharjan</title>
         <meta
@@ -58,17 +39,16 @@ export default function Home({ works }) {
           content='width=device-width, initial-scale=1.0'
         ></meta>
       </Head>
-      {/* <Header /> */}
       <HeroSection />
       <main className='px-6 bg-personal_blue'>
-        <About profile={profile} useOnScreen={useOnScreen} />
-        <Works useOnScreen={useOnScreen} works={lWorks} />
-        <Work2 useOnScreen={useOnScreen} works={oWorks} />
-        <HireMe useOnScreen={useOnScreen} />
-        <ContactMe useOnScreen={useOnScreen} />
+        <About profile={profile} />
+        <Works works={lWorks} />
+        <Work2 works={oWorks} />
+        <HireMe />
+        <ContactMe />
         <ScrollToTop />
         <FooterSection />
       </main>
-    </div>
+    </>
   );
 }
