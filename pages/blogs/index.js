@@ -30,7 +30,11 @@ function index({ blogs }) {
       <div className='container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg'>
         <div className='grid gap-10 lg:gap-10 md:grid-cols-2 '>
           {blogs.map((blog, i) => (
-            <BlogCard key={i} {...blog.fields}></BlogCard>
+            <BlogCard
+              key={i}
+              {...blog.fields}
+              {...blog.sys}
+            ></BlogCard>
           ))}
         </div>
       </div>
