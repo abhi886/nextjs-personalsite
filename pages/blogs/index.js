@@ -21,7 +21,6 @@ export async function getStaticProps() {
 }
 
 function index({ blogs }) {
-  console.log(blogs);
   return (
     <>
       <div className='px-4 py-2 bg-personal_blue'>
@@ -30,11 +29,7 @@ function index({ blogs }) {
       <div className='container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg'>
         <div className='grid gap-10 lg:gap-10 md:grid-cols-2 '>
           {blogs.map((blog, i) => (
-            <BlogCard
-              key={i}
-              {...blog.fields}
-              {...blog.sys}
-            ></BlogCard>
+            <BlogCard key={i} {...blog.fields} {...blog.sys}></BlogCard>
           ))}
         </div>
       </div>
