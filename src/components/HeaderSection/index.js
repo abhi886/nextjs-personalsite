@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/images/logo.png";
 import { MenuIcon } from "@heroicons/react/outline";
+import Router from "next/router";
 
 const HeaderSection = () => {
   return (
@@ -23,6 +24,9 @@ const HeaderSection = () => {
         <div className='mt-6'>
           <span className='relative inline-flex rounded-md shadow-sm'>
             <button
+              onClick={() => {
+                Router.push("/blogs");
+              }}
               type='button'
               className='inline-flex items-center px-4 py-2 border border-green-200  text-base leading-6 font-medium rounded-md text-personal_blue-text  bg-transparent hover:text-personal_blue-text  hover:shadow-xl active:scale-90 transition duration-150'
             >
