@@ -73,7 +73,6 @@ export default function Home({ works }) {
         <HireMe useOnScreen={useOnScreen} />
         <ContactMe useOnScreen={useOnScreen} />
         <ScrollToTop />
-        <FooterSection />
       </main>
     </div>
   );

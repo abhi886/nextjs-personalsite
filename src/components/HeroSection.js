@@ -10,9 +10,6 @@ import { ChevronDownIcon } from "@heroicons/react/outline";
 function HeroSection() {
   return (
     <section className='relative h-screen bg-personal_blue'>
-      <div className='p-4'>
-        <HeaderSection />
-      </div>
       <div className='absolute top-1/3 w-full text-center'>
         <h1 className='text-personal_blue-textTitle font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up'>
           I'm Abhishekh Maharjan.
