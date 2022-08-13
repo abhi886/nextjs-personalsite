@@ -62,9 +62,7 @@ export default function blogSlug({ blogs }) {
             content='width=device-width, initial-scale=1.0'
           ></meta>
         </Head>
-        <div className='px-4 py-2 bg-personal_blue'>
-          <HeaderSection />
-        </div>
+      
       </div>
       <BlogSlugPage
         title={title}
@@ -74,9 +72,7 @@ export default function blogSlug({ blogs }) {
         updatedDate={updatedAt}
         goBackLink={"/blogs"}
       />
-      <div className='bg-personal_blue'>
-        <FooterSection />
-      </div>
+    
     </>
   );
 }
