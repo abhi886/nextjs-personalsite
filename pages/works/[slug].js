@@ -66,9 +66,7 @@ function aslug({ works }) {
             content='width=device-width, initial-scale=1.0'
           ></meta>
         </Head>
-        <div className='px-4 py-2 bg-personal_blue'>
-          <HeaderSection />
-        </div>
+      
       </div>
       <WorkSlugPage
         title={title}
@@ -79,9 +77,7 @@ function aslug({ works }) {
         language={language}
         goBackLink={"/"}
       />
-      <div className='bg-personal_blue'>
-        <FooterSection />
-      </div>
+   
     </>
   );
 }
