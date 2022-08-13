@@ -51,7 +51,7 @@ export default function Home({ works }) {
   const oWorks = works.filter((work) => work.fields.type == "otherWorks");
   const profile = works.filter((work) => work.fields.type == "Profile");
   return (
-    <div>
+    <>
       <Head>
         <title>Abhishekh Maharjan</title>
         <meta
@@ -64,9 +64,8 @@ export default function Home({ works }) {
           content='width=device-width, initial-scale=1.0'
         ></meta>
       </Head>
-      {/* <Header /> */}
-      <HeroSection />
       <main className='px-6 bg-personal_blue'>
+        <HeroSection />
         <About profile={profile} useOnScreen={useOnScreen} />
         <Works useOnScreen={useOnScreen} works={lWorks} />
         <Work2 useOnScreen={useOnScreen} works={oWorks} />
@@ -74,6 +73,6 @@ export default function Home({ works }) {
         <ContactMe useOnScreen={useOnScreen} />
         <ScrollToTop />
       </main>
-    </div>
+    </>
   );
 }

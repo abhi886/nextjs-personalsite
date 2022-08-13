@@ -10,7 +10,7 @@ import { ChevronDownIcon } from "@heroicons/react/outline";
 function HeroSection() {
   return (
     <section className='relative h-screen bg-personal_blue'>
-      <div className='absolute top-1/3 w-full text-center'>
+      <article className='absolute top-1/4 w-full text-center'>
         <h1 className='text-personal_blue-textTitle font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up'>
           I'm Abhishekh Maharjan.
         </h1>
@@ -24,8 +24,9 @@ function HeroSection() {
             <Typed
               className='font-medium pl-2 text-gray-300'
               strings={[
-                "Front-end Developer",
                 "Full Stack Developer",
+                "Front End Developer",
+                "Back End Developer",
                 "Software Engineer",
               ]}
               typeSpeed={100}
@@ -55,14 +56,14 @@ function HeroSection() {
         </div>
         {/* Social Icons */}
         <Social />
-      </div>
+      </article>
       {/* scrollDown Button */}
-      <div className='absolute -ml-4  bottom-6 left-2/4 h-10 bg-transparent text-white'>
+      <artivle className='absolute -ml-4  bottom-20 left-2/4 h-10 bg-transparent text-white'>
         <a href='#about'>
           {" "}
           <ChevronDownIcon className='h-10 animate-bounce cursor-pointer' />
         </a>
-      </div>
+      </artivle>
     </section>
   );
 }
