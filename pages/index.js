@@ -10,6 +10,7 @@ import ContactMe from "../src/components/ContactMe";
 import FooterSection from "../src/components/FooterSection/index";
 import Contact from "../src/components/Contact";
 import ScrollToTop from "../src/components/ScrollToTop";
+import Layout from "../src/components/LandingPageLayout";
 import { createClient } from "contentful";
 
 export async function getStaticProps() {
@@ -76,3 +77,7 @@ export default function Home({ works }) {
     </>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

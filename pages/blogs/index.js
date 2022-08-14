@@ -3,6 +3,7 @@ import HeaderSection from "../../src/components/HeaderSection";
 import FooterSection from "../../src/components/FooterSection";
 import { createClient } from "contentful";
 import BlogCard from "../../src/components/BlogCard/BlogCard";
+import Layout from "../../src/components/OtherPageLayout";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -34,4 +35,7 @@ function index({ blogs }) {
   );
 }
 
+index.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
 export default index;

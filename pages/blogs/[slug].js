@@ -4,6 +4,7 @@ import { createClient } from "contentful";
 import HeaderSection from "../../src/components/HeaderSection";
 import FooterSection from "../../src/components/FooterSection";
 import BlogSlugPage from "../../src/components/BlogSlugPageCard";
+import Layout from "../../src/components/OtherPageLayout";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -62,7 +63,6 @@ export default function blogSlug({ blogs }) {
             content='width=device-width, initial-scale=1.0'
           ></meta>
         </Head>
-      
       </div>
       <BlogSlugPage
         title={title}
@@ -72,7 +72,10 @@ export default function blogSlug({ blogs }) {
         updatedDate={updatedAt}
         goBackLink={"/blogs"}
       />
-    
     </>
   );
 }
+
+blogSlug.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
