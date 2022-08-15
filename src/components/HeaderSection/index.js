@@ -5,8 +5,8 @@ import { MenuIcon } from "@heroicons/react/outline";
 import Router from "next/router";
 
 const HeaderSection = ({ logo, layout }) => {
-  const logoWidth = (layout === "LandingPageLayout") ? "58" : "70";
-  const logoHeight = (layout === "LandingPageLayout") ? "58" : "70";
+  // const logoWidth = (layout === "LandingPageLayout") ? "58" : "70";
+  // const logoHeight = (layout === "LandingPageLayout") ? "58" : "70";
 
   return (
     <header className='sticky top-0 z-50 px-4 pt-2 flex justify-between h-18 bg-personal_blue lg:px-44 '>
@@ -16,8 +16,8 @@ const HeaderSection = ({ logo, layout }) => {
             <Image
               src={logo}
               alt='Abhishekh Maharjan Logo'
-              width={logoWidth}
-              height={logoHeight}
+              width={58}
+              height={58}
               objectFit='contain'
             />
           </a>
