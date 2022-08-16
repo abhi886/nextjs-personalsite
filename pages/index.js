@@ -12,7 +12,8 @@ import Contact from "../src/components/Contact";
 import ScrollToTop from "../src/components/ScrollToTop";
 import Layout from "../src/components/LandingPageLayout";
 import { createClient } from "contentful";
-import SEO from "../src/components/SEO";
+import logo from "../public/images/logo.png";
+import { NextSeo } from "next-seo";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -54,7 +55,27 @@ export default function Home({ works }) {
   const profile = works.filter((work) => work.fields.type == "Profile");
   return (
     <>
-      <SEO></SEO>
+      <NextSeo
+        title={"Abhishekh Maharjan"}
+        description={`
+        <Hello there />     
+        I am Abhishekh, I'm a Software Engineer with a passion for solving problems and learning new things. I build things to help people and community. I have a strong background that encompasses diverse aspects of Software Engineering.`}
+        openGraph={{
+          //     url: "https://www.url.ie/a",
+          title: "Abhishekh Maharjan",
+          description:
+            "I am Abhishekh, I'm a Software Engineer with a passion for solving problems and learning new things. I build things to help people and community. I have a strong background that encompasses diverse aspects of Software Engineering.",
+          images: [
+            {
+              url: logo,
+              width: 800,
+              height: 600,
+              alt: "Abhishekh Maharjan Logo",
+              type: "image/png",
+            },
+          ],
+        }}
+      />
       {/* <Head>
         <title>Abhishekh Maharjan</title>
         <meta

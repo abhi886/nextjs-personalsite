@@ -4,8 +4,8 @@ import { NextSeo } from "next-seo";
 const SEO = ({ title }) => {
   return (
     <NextSeo
-      title='test'
-      //   description='This example uses more of the available config options.'
+      title={title}
+      //   description='Abhishek Maharjan is my personal site'
       //   canonical='https://www.canonical.ie/'
       //   openGraph={{
       //     url: "https://www.url.ie/a",
