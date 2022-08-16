@@ -12,6 +12,7 @@ import Contact from "../src/components/Contact";
 import ScrollToTop from "../src/components/ScrollToTop";
 import Layout from "../src/components/LandingPageLayout";
 import { createClient } from "contentful";
+import SEO from "../src/components/SEO";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -53,7 +54,8 @@ export default function Home({ works }) {
   const profile = works.filter((work) => work.fields.type == "Profile");
   return (
     <>
-      <Head>
+      <SEO></SEO>
+      {/* <Head>
         <title>Abhishekh Maharjan</title>
         <meta
           property='og:title'
@@ -64,7 +66,7 @@ export default function Home({ works }) {
           name='viewport'
           content='width=device-width, initial-scale=1.0'
         ></meta>
-      </Head>
+      </Head> */}
       <main className='px-6 bg-personal_blue'>
         <HeroSection />
         <About profile={profile} useOnScreen={useOnScreen} />
