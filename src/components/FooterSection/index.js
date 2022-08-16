@@ -3,9 +3,8 @@ import Social from "../Social";
 
 const FooterSection = () => {
   return (
-    <footer className='p-5'>
+    <footer className='p-5 bg-personal_blue'>
       <Social />
-
       <p className='text-white text-xs text-center pt-4'>
         Site Built Using: Next.js, TailwindCSS, Contentful
       </p>

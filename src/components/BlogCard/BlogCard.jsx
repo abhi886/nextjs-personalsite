@@ -13,7 +13,7 @@ function BlogCard({
   updatedAt,
 }) {
   return (
-    <div className='cursor-pointer group'>
+    <article className='cursor-pointer group'>
       <div className=' relative overflow-hidden transition-all bg-white-100 rounded-md  hover:scale-105 aspect-video '>
         <a href={`/blogs/${slug}`}>
           <Image
@@ -51,7 +51,7 @@ function BlogCard({
         <span className='text-xs text-gray-300'>•</span>
         <time className='text-sm'>{convertDate(updatedAt)}</time>
       </div>
-    </div>
+    </article>
   );
 }
 

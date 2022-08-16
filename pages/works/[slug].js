@@ -5,6 +5,7 @@ import HeaderSection from "../../src/components/HeaderSection";
 import FooterSection from "../../src/components/FooterSection";
 import Skeleton from "../../src/components/Skeleton";
 import WorkSlugPage from "../../src/components/BlogSlugPageCard";
+import Layout from "../../src/components/OtherPageLayout";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -66,9 +67,6 @@ function aslug({ works }) {
             content='width=device-width, initial-scale=1.0'
           ></meta>
         </Head>
-        <div className='px-4 py-2 bg-personal_blue'>
-          <HeaderSection />
-        </div>
       </div>
       <WorkSlugPage
         title={title}
@@ -79,11 +77,12 @@ function aslug({ works }) {
         language={language}
         goBackLink={"/"}
       />
-      <div className='bg-personal_blue'>
-        <FooterSection />
-      </div>
     </>
   );
 }
+
+aslug.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
 
 export default aslug;
