@@ -20,6 +20,7 @@
     "emailjs-com": "^3.2.0",
     "formik": "^2.2.9",
     "next": "^11.1.4",
+    "next-seo": "^5.5.0",
     "react": "17.0.2",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "17.0.2",
