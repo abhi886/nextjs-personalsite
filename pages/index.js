@@ -56,15 +56,25 @@ export default function Home({ works }) {
   return (
     <>
       <NextSeo
-        title={"Abhishekh Maharjan"}
+        title={"Abhishekh Maharjan Personal Website"}
         description={`
         <Hello there />     
-        I am Abhishekh, I'm a Software Engineer with a passion for solving problems and learning new things. I build things to help people and community. I have a strong background that encompasses diverse aspects of Software Engineering.`}
+        I am Abhishekh, I'm a Software Engineer with a passion for solving problems and learning new things. 
+        I build things to help people and community. 
+        I have a strong background that encompasses diverse aspects of Modern Full Stack Software Engineering.
+        I'm Seeking to heighten my experience towards becoming a Full Stack Software Engineer.
+        My current set of toolbox includes react.js, node.js, next.js, tailwindCSS, jest, react-testing-library. I Write blogs...
+
+`}
         openGraph={{
           //     url: "https://www.url.ie/a",
           title: "Abhishekh Maharjan",
-          description:
-            "I am Abhishekh, I'm a Software Engineer with a passion for solving problems and learning new things. I build things to help people and community. I have a strong background that encompasses diverse aspects of Software Engineering.",
+          description: ` I am Abhishekh, I'm a Software Engineer with a passion for solving problems and learning new things. 
+            I build things to help people and community. 
+            I have a strong background that encompasses diverse aspects of Modern Full Stack Software Engineering.
+            I'm Seeking to heighten my experience towards becoming a Full Stack Software Engineer.
+            My current set of toolbox includes react.js, node.js, next.js, tailwindCSS, jest, react-testing-library...
+            `,
           images: [
             {
               url: logo,
