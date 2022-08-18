@@ -56,7 +56,7 @@ export default function Home({ works }) {
   return (
     <>
       <NextSeo
-        title={"Abhishekh Maharjan Personal Website"}
+        title={"Abhishekh Maharjan - Personal Website"}
         description={`
         <Hello there />     
         I am Abhishekh, I'm a Software Engineer with a passion for solving problems and learning new things. 
@@ -66,8 +66,9 @@ export default function Home({ works }) {
         My current set of toolbox includes react.js, node.js, next.js, tailwindCSS, jest, react-testing-library. I Write blogs...
 
 `}
+        canonical='abhishekhmaharjan.com'
         openGraph={{
-          //     url: "https://www.url.ie/a",
+          url: "abhishekhmaharjan.com",
           title: "Abhishekh Maharjan",
           description: ` I am Abhishekh, I'm a Software Engineer with a passion for solving problems and learning new things. 
             I build things to help people and community. 
@@ -77,9 +78,9 @@ export default function Home({ works }) {
             `,
           images: [
             {
-              url: logo,
-              width: 800,
-              height: 600,
+              url: "../public/images/logo.png",
+              width: 1200,
+              height: 630,
               alt: "Abhishekh Maharjan Logo",
               type: "image/png",
             },
