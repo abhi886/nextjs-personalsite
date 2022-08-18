@@ -64,26 +64,17 @@ export default function blogSlug({ blogs }) {
           description: title,
           images: [
             {
-              url: "../../public/images/logo.png",
+              url: `https:${blogImage.fields.file.url}`,
               width: 800,
               height: 600,
-              alt: "Abhishekh Maharjan Logo",
+              alt: "Blog Page Imange",
               type: "image/png",
             },
           ],
           type: "article",
         }}
       />
-      <div>
-        <Head>
-          <title>{title}</title>
-          <meta property='og:title' content={title} key={title} />
-          <meta
-            name='viewport'
-            content='width=device-width, initial-scale=1.0'
-          ></meta>
-        </Head>
-      </div>
+
       <BlogSlugPage
         title={title}
         readTime={readTime}

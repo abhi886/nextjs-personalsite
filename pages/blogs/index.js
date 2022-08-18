@@ -14,33 +14,46 @@ export async function getStaticProps() {
   });
 
   const res = await client.getEntries({ content_type: "blog" });
+  const resSEO = await client.getEntries({ content_type: "seo" });
 
   return {
     props: {
       blogs: res.items,
+      seoData: resSEO.items,
     },
     revalidate: 1,
   };
 }
 
-function index({ blogs }) {
+function index({ blogs, seoData }) {
+  const blogPageSEOData = seoData.filter(
+    (data) => data.fields.whichPage == "Blogs Page"
+  );
+  const {
+    title,
+    description,
+    url,
+    pageImage,
+    pageSeoImageType,
+    pageImageAltText,
+  } = blogPageSEOData[0].fields;
+
   return (
     <>
       <NextSeo
-        title='BLogs| Abhishekh Maharjan|Modern Full Stack Web Development| Javascript'
-        description='Abhishekh Maharjans Blogs. I write articles about Modern Full Stack Web Development. Subscribe to my newsletters to receive the latest blogs.'
+        title={title}
+        description={description}
         openGraph={{
-          url: "abhishekhmaharjan.com/blogs",
-          title: "Blogs| Abhishekh Maharjan",
-          description:
-            "Abhishekh Maharjans Blogs. I write articles about Modern Full Stack Web Development.",
+          url: url,
+          title: title,
+          description: description,
           images: [
             {
-              url: "../../public/images/logo.png",
+              url: `https:${pageImage.fields.file.url}`,
               width: 800,
               height: 600,
-              alt: "Abhishekh Maharjan Logo",
-              type: "image/png",
+              alt: pageImageAltText,
+              type: pageSeoImageType,
             },
           ],
           type: "article",

@@ -22,10 +22,12 @@ export async function getStaticProps() {
   });
 
   const res = await client.getEntries({ content_type: "works" });
+  const resSEO = await client.getEntries({ content_type: "seo" });
 
   return {
     props: {
       works: res.items,
+      seoData: resSEO.items,
     },
     revalidate: 1,
   };
@@ -49,55 +51,44 @@ function useOnScreen(options) {
   }, [ref, options]);
   return [ref, visible];
 }
-export default function Home({ works }) {
+export default function Home({ works, seoData }) {
   const lWorks = works.filter((work) => work.fields.type == "liveWorks");
   const oWorks = works.filter((work) => work.fields.type == "otherWorks");
   const profile = works.filter((work) => work.fields.type == "Profile");
+  const { thumbnail } = profile[0].fields;
+  const landingPageSEOData = seoData.filter(
+    (data) => data.fields.whichPage == "Landing Page"
+  );
+  const {
+    title,
+    description,
+    url,
+    pageImage,
+    pageSeoImageType,
+    pageImageAltText,
+  } = landingPageSEOData[0].fields;
   return (
     <>
       <NextSeo
-        title={"Abhishekh Maharjan Personal Website"}
-        description={`
-        <Hello there />     
-        I am Abhishekh, I'm a Software Engineer with a passion for solving problems and learning new things. 
-        I build things to help people and community. 
-        I have a strong background that encompasses diverse aspects of Modern Full Stack Software Engineering.
-        I'm Seeking to heighten my experience towards becoming a Full Stack Software Engineer.
-        My current set of toolbox includes react.js, node.js, next.js, tailwindCSS, jest, react-testing-library. I Write blogs...
-
-`}
+        title={title}
+        description={description}
         openGraph={{
-          //     url: "https://www.url.ie/a",
-          title: "Abhishekh Maharjan",
-          description: ` I am Abhishekh, I'm a Software Engineer with a passion for solving problems and learning new things. 
-            I build things to help people and community. 
-            I have a strong background that encompasses diverse aspects of Modern Full Stack Software Engineering.
-            I'm Seeking to heighten my experience towards becoming a Full Stack Software Engineer.
-            My current set of toolbox includes react.js, node.js, next.js, tailwindCSS, jest, react-testing-library...
-            `,
+          url: url,
+          title: title,
+          description: description,
           images: [
             {
-              url: logo,
+              url: `https:${pageImage.fields.file.url}`,
               width: 800,
               height: 600,
-              alt: "Abhishekh Maharjan Logo",
-              type: "image/png",
+              alt: pageImageAltText,
+              type: pageSeoImageType,
             },
           ],
+          type: "website",
         }}
       />
-      {/* <Head>
-        <title>Abhishekh Maharjan</title>
-        <meta
-          property='og:title'
-          content={profile[0].fields.shortDescription}
-          key='title'
-        />
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1.0'
-        ></meta>
-      </Head> */}
+
       <main className='px-6 bg-personal_blue'>
         <HeroSection />
         <About profile={profile} useOnScreen={useOnScreen} />

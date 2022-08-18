@@ -9,12 +9,12 @@ function MyApp({ Component, pageProps }) {
     <>
       {" "}
       <DefaultSeo
-        openGraph={{
-          type: "website",
-          locale: "en_IE",
-          url: "abhishekhmaharjan.com",
-          site_name: "Abhishekh Maharjans Personal Website",
-        }}
+        // openGraph={{
+        //   type: "website",
+        //   locale: "en_IE",
+        //   url: "abhishekhmaharjan.com",
+        //   site_name: "Abhishekh Maharjans Personal Website",
+        // }}
         twitter={{
           handle: "@Abhishe19658428",
           site: "abhishekhmaharjan.com",
