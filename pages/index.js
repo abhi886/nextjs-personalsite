@@ -53,7 +53,7 @@ export default function Home({ works }) {
   const lWorks = works.filter((work) => work.fields.type == "liveWorks");
   const oWorks = works.filter((work) => work.fields.type == "otherWorks");
   const profile = works.filter((work) => work.fields.type == "Profile");
-  const { blogImage } = profile[0].fields;
+  const { thumbnail } = profile[0].fields;
 
   return (
     <>
@@ -79,7 +79,7 @@ export default function Home({ works }) {
             `,
           images: [
             {
-              url: `https:${blogImage.fields.file.url}`,
+              url: `https:${thumbnail.fields.file.url}`,
               width: 1200,
               height: 630,
               alt: "Abhishekh Maharjan Logo",
