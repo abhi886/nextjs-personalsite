@@ -53,6 +53,8 @@ export default function Home({ works }) {
   const lWorks = works.filter((work) => work.fields.type == "liveWorks");
   const oWorks = works.filter((work) => work.fields.type == "otherWorks");
   const profile = works.filter((work) => work.fields.type == "Profile");
+  const { blogImage } = profile[0].fields;
+
   return (
     <>
       <NextSeo
@@ -66,7 +68,6 @@ export default function Home({ works }) {
         My current set of toolbox includes react.js, node.js, next.js, tailwindCSS, jest, react-testing-library. I Write blogs...
 
 `}
-        canonical='abhishekhmaharjan.com'
         openGraph={{
           url: "abhishekhmaharjan.com",
           title: "Abhishekh Maharjan",
@@ -78,7 +79,7 @@ export default function Home({ works }) {
             `,
           images: [
             {
-              url: "../public/images/logo.png",
+              url: `https:${blogImage.fields.file.url}`,
               width: 1200,
               height: 630,
               alt: "Abhishekh Maharjan Logo",
