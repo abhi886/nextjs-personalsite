@@ -26,11 +26,9 @@ export async function getStaticProps() {
 }
 
 function index({ blogs, seoData }) {
-  console.log(seoData);
   const blogPageSEOData = seoData.filter(
     (data) => data.fields.whichPage == "Blogs Page"
   );
-  console.log(blogPageSEOData);
   const {
     title,
     description,
@@ -54,7 +52,7 @@ function index({ blogs, seoData }) {
               url: `https:${pageImage.fields.file.url}`,
               width: 800,
               height: 600,
-              alt:pageImageAltText,
+              alt: pageImageAltText,
               type: pageSeoImageType,
             },
           ],

@@ -56,8 +56,6 @@ export default function Home({ works, seoData }) {
   const oWorks = works.filter((work) => work.fields.type == "otherWorks");
   const profile = works.filter((work) => work.fields.type == "Profile");
   const { thumbnail } = profile[0].fields;
-  console.log(seoData);
-
   const landingPageSEOData = seoData.filter(
     (data) => data.fields.whichPage == "Landing Page"
   );
