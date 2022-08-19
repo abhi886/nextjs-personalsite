@@ -89,7 +89,7 @@ export default function Home({ works, seoData }) {
         }}
       />
 
-      <main className='px-6 bg-personal_blue'>
+      <main>
         <HeroSection />
         <About profile={profile} useOnScreen={useOnScreen} />
         <Works useOnScreen={useOnScreen} works={lWorks} />

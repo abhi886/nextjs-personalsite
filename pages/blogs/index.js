@@ -59,8 +59,19 @@ function index({ blogs, seoData }) {
           type: "article",
         }}
       />
-      <section className='container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg'>
-        <div className='grid gap-10 lg:gap-10 md:grid-cols-2 '>
+      <section className='px-4 lg:px-44 py-5 lg:py-8 '>
+        <div class='py-6 md:py-12 '>
+          <h2 class='text-2xl md:text-4xl font-bold font-sans text-personal_blue md:leading-tight'>
+            <strong>Blog</strong> Posts
+          </h2>
+
+          <h2 class='text-xl text-gray-600 mt-2'>
+            I write about modern{" "}
+            <strong>FULL Stack Web and Software Development.</strong> Subscribe
+            to my newsletter to make sure you dont miss anything
+          </h2>
+        </div>
+        <div className='grid gap-10 lg:gap-10 md:grid-cols-2 lg:grid-cols-3 '>
           {blogs.map((blog, i) => (
             <BlogCard key={i} {...blog.fields} {...blog.sys}></BlogCard>
           ))}

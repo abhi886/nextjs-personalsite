@@ -58,12 +58,15 @@ function BlogSlugPage({
                   className='mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800'
                 />
                 <div className='ml-4'>
-                  <div className=''>Abhishekh Maharjan</div>
+                  <div className=''>
+                    <strong>Abhishekh Maharjan</strong>
+                  </div>
+                  <div className=''>Full Stack Software Developer</div>
                   <a
                     href='/'
                     className='text-blue-500 hover:text-sky-600 dark:text-sky-400'
                   >
-                    @abhishekhmhrzn
+                    abhishekmhrzn.14@gmail.com
                   </a>
                 </div>
               </dd>
@@ -81,16 +84,14 @@ function BlogSlugPage({
               </p>
             </div>
 
-            <div className='relative not-prose first:mt-0 last:mb-0 rounded-lg overflow-hidden text-center'>
+            <div className=''>
               <Image
                 src={`https:${imageUrl.fields.file.url}`}
                 alt='Main picture of the blog'
                 objectFit='fill'
                 width={imageUrl.fields.file.details.image.width}
                 height={imageUrl.fields.file.details.image.height}
-                className=' w-10 h-10'
               ></Image>
-              <div className='absolute inset-0 rounded-lg ring-1 ring-inset ring-slate-900/10'></div>
             </div>
           </div>
           {language && (

@@ -28,7 +28,11 @@ function About({ useOnScreen, profile }) {
     content: d.content[0].value,
   }));
   return (
-    <section ref={ref} id='about' className=' pb-20 lg:mx-48'>
+    <section
+      ref={ref}
+      id='about'
+      className='px-4 pb-20 lg:px-48 bg-personal_blue'
+    >
       {visible && (
         <AnimateText headingCount={1} mainHeading={"Abhishekh Maharjan"} />
       )}

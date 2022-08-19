@@ -6,7 +6,10 @@ function ContactMe() {
   const contactSection = useRef(null);
 
   return (
-    <section id='contact' className='flex flex-col pb-20 lg:mx-48'>
+    <section
+      id='contact'
+      className='flex flex-col pb-20 lg:px-48 bg-personal_blue px-4'
+    >
       <h1 className='font-bold text-2xl text-personal_blue-textTitle animate-appear-text after:empty-line text-center'>
         {" "}
         Get In Touch <br />

@@ -19,9 +19,10 @@ function BlogCard({
           <Image
             src={`https:${blogImage.fields.file.url}`}
             alt='Main picture of the blog'
-            objectFit='fill'
-            width={blogImage.fields.file.details.image.width}
-            height={blogImage.fields.file.details.image.height}
+            objectFit='contain'
+            // width={blogImage.fields.file.details.image.width}
+            // height={blogImage.fields.file.details.image.height}
+            layout="fill"
           ></Image>
         </a>
       </div>
