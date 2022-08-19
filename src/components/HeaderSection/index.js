@@ -47,13 +47,13 @@ const HeaderSection = ({ logo, layout }) => {
                 Router.push("/blogs");
               }}
               type='button'
-              className='inline-flex items-center px-4 py-2 border border-white-200  text-base leading-6 font-medium rounded-md text-white  bg-transparent hover:text-white  hover:shadow-xl active:scale-90 transition duration-150'
+              className='inline-flex items-center px-4 py-2 border border-personal_blue-textParagraph  text-base leading-6 font-medium rounded-md text-white bg-transparent hover:text-personal_blue-textParagraph hover:shadow-xl active:scale-90 transition duration-150'
             >
               <p className='font-bold'>Blogs</p>
             </button>
             <span className='flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1'>
-              <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75'></span>
-              <span className='relative inline-flex rounded-full h-3 w-3 bg-white'></span>
+              <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-personal_blue-textParagraph opacity-75'></span>
+              <span className='relative inline-flex rounded-full h-3 w-3 bg-personal_blue-textParagraph'></span>
             </span>
           </span>
         )}

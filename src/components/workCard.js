@@ -19,14 +19,15 @@ function workCard({ work }) {
     <div className='relative  bg-personal_blue-text-900 mr-1 mb-1'>
       {/* First Div */}
       <div className='flex relative h-80 justify-center text-personal_blue-text opacity-20'>
-        {thumbnail.fields.file.url && (
+        {/* {thumbnail.fields.file.url && (
           <Image
             className=''
             src={`https:${thumbnail.fields.file.url}`}
             alt='Companys image'
             layout='fill'
+            objectFit="contain"
           />
-        )}
+        )} */}
       </div>
 
       {/* Second Div */}

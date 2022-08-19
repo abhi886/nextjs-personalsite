@@ -9,7 +9,7 @@ import Work2Card from "./Work2Card";
 function work2({ works, useOnScreen }) {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   return (
-    <section ref={ref} className='pb-20 lg:px-48'>
+    <section ref={ref} className='pb-20 lg:px-48 bg-personal_blue px-4'>
       {visible && (
         <AnimateText
           headingCount={3}
