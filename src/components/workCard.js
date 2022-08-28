@@ -17,21 +17,7 @@ function workCard({ work }) {
   } = work.fields;
   return (
     <div className='relative  bg-personal_blue-text-900 mr-1 mb-1'>
-      {/* First Div */}
-      <div className='flex relative h-80 justify-center text-personal_blue-text opacity-20'>
-        {/* {thumbnail.fields.file.url && (
-          <Image
-            className=''
-            src={`https:${thumbnail.fields.file.url}`}
-            alt='Companys image'
-            layout='fill'
-            objectFit="contain"
-          />
-        )} */}
-      </div>
-
-      {/* Second Div */}
-      <div className='flex flex-col absolute top-0  bg-personal_blue-lightBlue bg-opacity-75  h-80 '>
+      <div className='h-64 justify-center text-personal_blue-text  bg-personal_blue-lightBlue bg-opacity-75'>
         <h1 className='font-bold p-2 text-personal_blue-textParagraph '>
           {title} <br />
           <span className='text-sm text-personal_blue-text'>{jobPosition}</span>

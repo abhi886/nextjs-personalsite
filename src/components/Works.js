@@ -13,7 +13,7 @@ function Works({ works, useOnScreen }) {
       className='flex flex-col px-4 pb-20 lg:px-48 bg-personal_blue'
     >
       {visible ? <AnimateText headingCount={2} mainHeading={"My Works"} /> : ""}
-      <div className='pt-16  grid grid-cols-1 space-y-2 md:space-y-0  md:grid-cols-2 lg:grid-cols-3'>
+      <div className='pt-16 grid grid-cols-1  md:space-y-0  sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3'>
         {works.map((work) => (
           <WorkCard key={work.sys.id} work={work}></WorkCard>
         ))}
