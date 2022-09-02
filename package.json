@@ -34,6 +34,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.1",
     "@tailwindcss/typography": "^0.5.1",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.6",
