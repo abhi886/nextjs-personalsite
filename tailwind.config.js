@@ -103,6 +103,7 @@ module.exports = {
   },
 
   plugins: [
+    require("@tailwindcss/line-clamp"),
     require("@tailwindcss/typography"),
     require("tailwindcss-pseudo-elements"),
     plugin(({ addUtilities }) => {
