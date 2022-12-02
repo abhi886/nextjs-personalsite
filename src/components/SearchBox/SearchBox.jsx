@@ -18,7 +18,9 @@ function SearchBox({ value, onChange, totalCount }) {
         </div>
       </div>
       <div className='flex justify-end  text-gray-500 my-1'>
-        <p>Showing {totalCount} blog posts.</p>
+        <p className='text-sm text-gray-600 underline'>
+          Showing {totalCount} blog posts
+        </p>
       </div>
     </>
   );

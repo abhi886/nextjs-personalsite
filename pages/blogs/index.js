@@ -83,7 +83,7 @@ function index({ blogs, seoData }) {
       />
       <section className='px-4 py-5 min-h-screen lg:px-44 lg:py-8'>
         <div>
-          <p className='text-xl text-personal_blue md:text-4xl md:leading-tight'>
+          <p className='text-2xl text-personal_blue md:text-4xl md:leading-tight'>
             <strong>Blog</strong> Posts
           </p>
           <p class='text-base text-gray-600 my-2 md:text-xl'>
