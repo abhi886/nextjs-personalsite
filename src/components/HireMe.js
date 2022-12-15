@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import AnimateText from "./AnimateText";
+import useOnScreen from "../customHooks/useOnScreen";
 
-function HireMe({ useOnScreen }) {
+function HireMe() {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   return (
     <section

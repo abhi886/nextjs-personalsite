@@ -4,6 +4,7 @@ import { HiArrowCircleRight } from "react-icons/hi";
 import Image from "next/image";
 import AnimateText from "./AnimateText";
 import { ref } from "yup";
+import useOnScreen from "../customHooks/useOnScreen";
 
 const AboutComponentAcumen = {
   AboutAcumen: function AboutAcumen({ heading, content }) {
@@ -18,7 +19,7 @@ const AboutComponentAcumen = {
     );
   },
 };
-function About({ useOnScreen, profile }) {
+function About({ profile }) {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   const { blogImage } = profile[0].fields;
   const data = profile[0].fields.workDescription.content;

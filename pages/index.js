@@ -32,25 +32,25 @@ export async function getStaticProps() {
     revalidate: 1,
   };
 }
-function useOnScreen(options) {
-  const ref = useRef();
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setVisible(entry.isIntersecting);
-    }, options);
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+// function useOnScreen(options) {
+//   const ref = useRef();
+//   const [visible, setVisible] = useState(false);
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(([entry]) => {
+//       setVisible(entry.isIntersecting);
+//     }, options);
+//     if (ref.current) {
+//       observer.observe(ref.current);
+//     }
 
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, [ref, options]);
-  return [ref, visible];
-}
+//     return () => {
+//       if (ref.current) {
+//         observer.unobserve(ref.current);
+//       }
+//     };
+//   }, [ref, options]);
+//   return [ref, visible];
+// }
 export default function Home({ works, seoData }) {
   const lWorks = works.filter((work) => work.fields.type == "liveWorks");
   const oWorks = works.filter((work) => work.fields.type == "otherWorks");
@@ -91,11 +91,11 @@ export default function Home({ works, seoData }) {
 
       <main>
         <HeroSection />
-        <About profile={profile} useOnScreen={useOnScreen} />
-        <Works useOnScreen={useOnScreen} works={lWorks} />
-        <Work2 useOnScreen={useOnScreen} works={oWorks} />
-        <HireMe useOnScreen={useOnScreen} />
-        <ContactMe useOnScreen={useOnScreen} />
+        <About profile={profile} />
+        <Works works={lWorks} />
+        <Work2 works={oWorks} />
+        <HireMe />
+        <ContactMe />
         <ScrollToTop />
       </main>
     </>
