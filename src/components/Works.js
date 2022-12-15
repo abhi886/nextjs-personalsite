@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import WorkCard from "./workCard";
-
+import useOnScreen from "../customHooks/useOnScreen";
 import AnimateText from "./AnimateText";
 
-function Works({ works, useOnScreen }) {
+function Works({ works }) {
   const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
 
   return (
