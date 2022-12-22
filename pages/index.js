@@ -14,51 +14,26 @@ import Layout from "../src/components/LandingPageLayout";
 import { createClient } from "contentful";
 import logo from "../public/images/logo.png";
 import { NextSeo } from "next-seo";
-
+import useContentful from "../src/customHooks/use-contentful";
+import query from "../src/utils/queries/index-page-query";
 export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-  });
-
-  const res = await client.getEntries({ content_type: "works" });
-  const resSEO = await client.getEntries({ content_type: "seo" });
-
+  const data = await useContentful(query);
   return {
     props: {
-      works: res.items,
-      seoData: resSEO.items,
+      data,
     },
     revalidate: 1,
   };
 }
-// function useOnScreen(options) {
-//   const ref = useRef();
-//   const [visible, setVisible] = useState(false);
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(([entry]) => {
-//       setVisible(entry.isIntersecting);
-//     }, options);
-//     if (ref.current) {
-//       observer.observe(ref.current);
-//     }
-
-//     return () => {
-//       if (ref.current) {
-//         observer.unobserve(ref.current);
-//       }
-//     };
-//   }, [ref, options]);
-//   return [ref, visible];
-// }
-export default function Home({ works, seoData }) {
-  const lWorks = works.filter((work) => work.fields.type == "liveWorks");
-  const oWorks = works.filter((work) => work.fields.type == "otherWorks");
-  const profile = works.filter((work) => work.fields.type == "Profile");
-  const { thumbnail } = profile[0].fields;
-  const landingPageSEOData = seoData.filter(
-    (data) => data.fields.whichPage == "Landing Page"
-  );
+export default function Home({ data }) {
+  const {
+    fullName,
+    position,
+    facebookLink,
+    githubLink,
+    linkedinLink,
+    location,
+  } = data.profileCollection.items[0];
   const {
     title,
     description,
@@ -66,7 +41,8 @@ export default function Home({ works, seoData }) {
     pageImage,
     pageSeoImageType,
     pageImageAltText,
-  } = landingPageSEOData[0].fields;
+  } = data.seoCollection.items[0];
+
   return (
     <>
       <NextSeo
@@ -78,7 +54,7 @@ export default function Home({ works, seoData }) {
           description: description,
           images: [
             {
-              url: `https:${pageImage.fields.file.url}`,
+              url: `https:${pageImage.url}`,
               width: 800,
               height: 600,
               alt: pageImageAltText,
@@ -90,13 +66,20 @@ export default function Home({ works, seoData }) {
       />
 
       <main>
-        <HeroSection />
-        <About profile={profile} />
-        <Works works={lWorks} />
-        <Work2 works={oWorks} />
-        <HireMe />
-        <ContactMe />
-        <ScrollToTop />
+        <HeroSection
+          fullName={fullName}
+          position={position}
+          facebookLink={facebookLink}
+          githubLink={githubLink}
+          linkedinLink={linkedinLink}
+          location={location}
+        />
+        {/* <About profile={profile} /> */}
+        {/*  <Works works={lWorks} />
+        <Work2 works={oWorks} />*/}
+        {/* <HireMe /> */}
+        {/* <ContactMe /> */}
+        {/* <ScrollToTop /> */}
       </main>
     </>
   );
