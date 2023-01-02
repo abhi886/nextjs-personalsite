@@ -86,7 +86,7 @@ export default function Home({ data }) {
         <Work2 works={oWorks} />*/}
         {/* <HireMe /> */}
         {/* <ContactMe /> */}
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
       </main>
     </>
   );

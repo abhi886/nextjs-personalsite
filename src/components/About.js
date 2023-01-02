@@ -62,10 +62,10 @@ function About({ profile, profileImage }) {
     <section
       // ref={ref}
       id='about'
-      className='px-8 h-screen  bg-personal_blue border border-white lg:px-44'
+      className='px-8 h-screen  bg-personal_blue  lg:px-44'
     >
       {/* {visible && <AnimateText headingCount={""} mainHeading={"About Me"} />} */}
-      <div className='grid grid-cols-1 h-full content-center gap-4 lg:grid-cols-2 mt-4 '>
+      <div className='grid grid-cols-1 h-full content-center gap-4 lg:grid-cols-2  '>
         <div className='w-60 h-60 lg:w-96 lg:h-96 border-2 border-dashed rounded-full m-auto lg:order-last'>
           <div className='relative w-56 h-56 lg:h-80 lg:w-80 m-auto border-2 border-dashed rounded-full lg:mt-8 mt-1.5'>
             <Image
