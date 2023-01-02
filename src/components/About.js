@@ -1,68 +1,93 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { HiArrowCircleRight } from "react-icons/hi";
+import { HiArrowRight } from "react-icons/hi";
 import Image from "next/image";
 import AnimateText from "./AnimateText";
 import { ref } from "yup";
 import useOnScreen from "../customHooks/useOnScreen";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
-const AboutComponentAcumen = {
-  AboutAcumen: function AboutAcumen({ heading, content }) {
-    if (heading == "paragraph") {
-      return <p>{content}</p>;
-    }
-    return (
-      <div className='flex items-center text-personal_blue-text my-2'>
-        <HiArrowCircleRight />
-        <p>&nbsp;{content}</p>
-      </div>
-    );
+const RICHTEXT_OPTIONS = {
+  renderNode: {
+    [BLOCKS.HEADING_5]: (node, children) => {
+      return (
+        <p className='text-base text-personal_blue-text leading-10'>
+          {children}
+        </p>
+      );
+    },
+    [BLOCKS.HEADING_3]: (node, children) => {
+      return (
+        <p className='text-2xl text-personal_blue-textParagraph leading-10 tracking-wider'>
+          {children}
+        </p>
+      );
+    },
+    [BLOCKS.HEADING_2]: (node, children) => {
+      return (
+        <p className='text-xl font-bold text-personal_blue-blue '>{children}</p>
+      );
+    },
+    [BLOCKS.HEADING_1]: (node, children) => {
+      return (
+        <p className='text-2xl font-extrabold  text-personal_blue-blue mb-4'>
+          {children}
+        </p>
+      );
+    },
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      return (
+        <p className='text-base font-normal text-personal_blue-workBackground'>
+          {" "}
+          {children}
+        </p>
+      );
+    },
+    [INLINES.HYPERLINK]: (node, children) => {
+      return (
+        <a
+          href={node.data.uri}
+          className='border-dotted border-b-2 border-personal_blue-text'
+        >
+          {children}
+        </a>
+      );
+    },
   },
 };
-function About({ profile }) {
-  const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
-  const { blogImage } = profile[0].fields;
-  const data = profile[0].fields.workDescription.content;
-  console.log(profile[0].fields.workDescription.content);
-  const result = data.map((d) => ({
-    heading: d.nodeType,
-    content: d.content[0].value,
-  }));
+function About({ profile, profileImage }) {
+  // const [ref, visible] = useOnScreen({ rootMargin: "-10px" });
   return (
     <section
-      ref={ref}
+      // ref={ref}
       id='about'
-      className='px-4 pb-20 lg:px-48 bg-personal_blue'
+      className='p-8 h-screen  bg-personal_blue border border-white lg:px-44'
     >
-      {visible && (
-        <AnimateText headingCount={1} mainHeading={"Abhishekh Maharjan"} />
-      )}
-      <div className='grid grid-cols-1 xl:grid-cols-3'>
-        <div className='pt-16 h-72 '>
-          <div className='relative h-44 w-44  md:w-60 md:h-60 xl:w-72 xl:h-72 m-auto lg:m-0'>
-            <div className='absolute top-4 left-4 w-44 h-44 rounded-2xl md:left-2 md:top-2 md:w-60 md:h-60 xl:w-72 xl:h-72 border border-personal_blue-text'></div>
-            <div className='absolute w-44 h-44 rounded-2xl md:w-60 md:h-60 xl:w-72 xl:h-72 bg-personal_blue-text bg-opacity-25 z-50 '></div>
-            <div className='absolute w-44 h-44 md:w-60 md:h-60 xl:w-72 xl:h-72 '>
-              <Image
-                className='rounded-2xl object-cover'
-                src={`https:${blogImage.fields.file.url}`}
-                alt='Abhishekh Maharjans Photo'
-                layout='fill'
-              />
-            </div>
+      {/* bg-personal_blue */}
+      {/* {visible && <AnimateText headingCount={""} mainHeading={"About Me"} />} */}
+      <div className='grid grid-cols-1 h-full content-center gap-4 lg:grid-cols-2 mt-4 '>
+        <div className='w-full'>
+          {documentToReactComponents(profile.json, RICHTEXT_OPTIONS)}
+
+          <div>
+            <a href='#contact'>
+              <button className='text-personal_blue-text bg-transparent px-3 py-3 rounded-lg border border-personal_blue-text my-3 hover:shadow-lg active:scale-90 transition duration-150 mt-12'>
+                MORE ABOUT ME <HiArrowRight className='inline'></HiArrowRight>
+              </button>
+            </a>
           </div>
         </div>
-        <div className='md:pt-14 text-personal_blue-textParagraph lg:col-span-2'>
-          <p className='font-extrabold text-personal_blue-text '>{`<Hello there />`}</p>
-          {result.map((r, i) => {
-            return (
-              <AboutComponentAcumen.AboutAcumen
-                key={i}
-                heading={r.heading}
-                content={r.content}
-              />
-            );
-          })}
+
+        <div className='w-96 h-96 border-2 border-dashed rounded-full m-auto'>
+          <div className='relative h-80 w-80 m-auto border-2 border-dashed rounded-full mt-8'>
+            <Image
+              className='rounded-full object-cover'
+              src={`${profileImage.url}`}
+              alt='Abhishekh Maharjans Photo'
+              layout='fill'
+            />
+          </div>
         </div>
       </div>
     </section>

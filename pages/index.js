@@ -16,6 +16,7 @@ import logo from "../public/images/logo.png";
 import { NextSeo } from "next-seo";
 import useContentful from "../src/customHooks/use-contentful";
 import query from "../src/utils/queries/index-page-query";
+import HeroTest from "../src/components/HeroTest";
 export async function getStaticProps() {
   const data = await useContentful(query);
   return {
@@ -33,6 +34,8 @@ export default function Home({ data }) {
     githubLink,
     linkedinLink,
     location,
+    profileDescription,
+    profileImage,
   } = data.profileCollection.items[0];
   const {
     title,
@@ -74,7 +77,11 @@ export default function Home({ data }) {
           linkedinLink={linkedinLink}
           location={location}
         />
-        {/* <About profile={profile} /> */}
+        <About profile={profileDescription} profileImage={profileImage} />
+        {/* <HeroTest
+          profile={profileDescription}
+          profileImage={profileImage}
+        ></HeroTest> */}
         {/*  <Works works={lWorks} />
         <Work2 works={oWorks} />*/}
         {/* <HireMe /> */}
