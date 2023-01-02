@@ -64,7 +64,6 @@ function About({ profile, profileImage }) {
       id='about'
       className='p-8 h-screen  bg-personal_blue border border-white lg:px-44'
     >
-      {/* bg-personal_blue */}
       {/* {visible && <AnimateText headingCount={""} mainHeading={"About Me"} />} */}
       <div className='grid grid-cols-1 h-full content-center gap-4 lg:grid-cols-2 mt-4 '>
         <div className='w-full'>
