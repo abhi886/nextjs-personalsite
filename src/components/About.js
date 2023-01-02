@@ -19,7 +19,7 @@ const RICHTEXT_OPTIONS = {
     },
     [BLOCKS.HEADING_3]: (node, children) => {
       return (
-        <p className='text-2xl text-personal_blue-textParagraph leading-10 tracking-wider'>
+        <p className='text-personal_blue-textParagraph leading-7 tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider'>
           {children}
         </p>
       );
@@ -62,30 +62,29 @@ function About({ profile, profileImage }) {
     <section
       // ref={ref}
       id='about'
-      className='p-8 h-screen  bg-personal_blue border border-white lg:px-44'
+      className='px-8 h-full  bg-personal_blue border border-white lg:px-44'
     >
       {/* {visible && <AnimateText headingCount={""} mainHeading={"About Me"} />} */}
       <div className='grid grid-cols-1 h-full content-center gap-4 lg:grid-cols-2 mt-4 '>
-        <div className='w-full'>
-          {documentToReactComponents(profile.json, RICHTEXT_OPTIONS)}
-
-          <div>
-            <a href='#contact'>
-              <button className='text-personal_blue-text bg-transparent px-3 py-3 rounded-lg border border-personal_blue-text my-3 hover:shadow-lg active:scale-90 transition duration-150 mt-12'>
-                MORE ABOUT ME <HiArrowRight className='inline'></HiArrowRight>
-              </button>
-            </a>
-          </div>
-        </div>
-
-        <div className='w-96 h-96 border-2 border-dashed rounded-full m-auto'>
-          <div className='relative h-80 w-80 m-auto border-2 border-dashed rounded-full mt-8'>
+        <div className='w-60 h-60 lg:w-96 lg:h-96 border-2 border-dashed rounded-full m-auto lg:order-last'>
+          <div className='relative w-56 h-56 lg:h-80 lg:w-80 m-auto border-2 border-dashed rounded-full lg:mt-8 mt-1.5'>
             <Image
               className='rounded-full object-cover'
               src={`${profileImage.url}`}
               alt='Abhishekh Maharjans Photo'
               layout='fill'
             />
+          </div>
+        </div>
+        <div className='w-full'>
+          {documentToReactComponents(profile.json, RICHTEXT_OPTIONS)}
+
+          <div>
+            <a href='#contact'>
+              <button className='text-personal_blue-text bg-transparent px-2 py-2 text-xs lg:text-base lg:px-3 lg:py-3 rounded-lg border border-personal_blue-text my-3 hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12'>
+                MORE ABOUT ME <HiArrowRight className='inline'></HiArrowRight>
+              </button>
+            </a>
           </div>
         </div>
       </div>
