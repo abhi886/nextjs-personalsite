@@ -3,7 +3,7 @@ import Image from "next/dist/client/image";
 
 function FeaturedBlog({ blogData }) {
   return (
-    <section className='px-4 h-screen bg-personal_blue  lg:px-44'>
+    <section className='px-4 h-screen bg-personal_blue md:px-20  lg:px-44'>
       <div className='flex pt-28 space-x-4'>
         <div>
           {" "}
@@ -20,15 +20,15 @@ function FeaturedBlog({ blogData }) {
         View my recent articles
       </p>
 
-      <div className='pt-6 lg:p-16'>
+      <div className='pt-6 lg:py-16'>
         <div className='grid grid-cols-1 gap-6'>
           {blogData.map((d, i) => (
             <article
               key={i}
-              className='bg-personal_blue-lightBlue h-full lg:h-36'
+              className='bg-personal_blue-lightBlue h-full lg:h-40 border-r-2 border-personal_blue-text'
             >
-              <div className='flex  lg:space-x-7'>
-                <div className='relative w-16 h-16 mt-2 ml-2 lg:w-32 lg:h-32 lg:ml-6 lg:mt-2'>
+              <div className='flex md:space-x-4 lg:space-x-5'>
+                <div className='relative w-16 h-16 mt-2 ml-2 md:w-32 md:h-24 lg:w-40 lg:h-32 lg:ml-6 lg:mt-2'>
                   <Image
                     className='rounded-full object-cover'
                     src={`${d.blogImage.url}`}
@@ -36,7 +36,7 @@ function FeaturedBlog({ blogData }) {
                     layout='fill'
                   />
                 </div>
-                <div className='w-64 pl-4 md:full lg:w-full'>
+                <div className='w-64 pl-4 md:w-full lg:w-full'>
                   <p className='mt-2 font-bold text-personal_blue-textParagraph text-base lg:text-xl lg:mt-4'>
                     {d.title}
                   </p>
@@ -45,12 +45,14 @@ function FeaturedBlog({ blogData }) {
                       {d.sys.firstPublishedAt} / {d.readTime} mins read
                     </p>
                   </div>
-                  {d.languages &&
-                    d.languages.map((l, i) => (
-                      <span className='text-xs py-3 pr-2 lg:pt-7 text-personal_blue-text'>
-                        {i < d.languages.length - 1 ? `${l} |` : `${l}`}
-                      </span>
-                    ))}
+                  <div className='lg:pt-7'>
+                    {d.languages &&
+                      d.languages.map((l, i) => (
+                        <span className='text-xs py-3 pr-2 text-personal_blue-text'>
+                          {i < d.languages.length - 1 ? `${l} |` : `${l}`}
+                        </span>
+                      ))}
+                  </div>
                 </div>
               </div>
             </article>
