@@ -19,6 +19,7 @@ import query from "../src/utils/queries/index-page-query";
 import HeroTest from "../src/components/HeroTest";
 import FeaturedBlog from "../src/components/FeaturedBlog";
 import Image from "next/dist/client/image";
+import Newsletter from "../src/components/Newsletter";
 export async function getStaticProps() {
   const data = await useContentful(query);
   return {
@@ -69,6 +70,7 @@ export default function Home({ data }) {
           profileImage={aboutData.profileImage}
         />
         <FeaturedBlog blogData={blogData}></FeaturedBlog>
+        <Newsletter></Newsletter>
         {/* <HeroTest
           profile={profileDescription}
           profileImage={profileImage}
