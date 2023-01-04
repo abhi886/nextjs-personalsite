@@ -29,16 +29,7 @@ export async function getStaticProps() {
   };
 }
 export default function Home({ data }) {
-  const {
-    fullName,
-    position,
-    facebookLink,
-    githubLink,
-    linkedinLink,
-    location,
-    profileDescription,
-    profileImage,
-  } = data.profileCollection.items[0];
+  const aboutData = data.profileCollection.items[0];
   const {
     title,
     description,
@@ -72,15 +63,11 @@ export default function Home({ data }) {
       />
 
       <main>
-        <HeroSection
-          fullName={fullName}
-          position={position}
-          facebookLink={facebookLink}
-          githubLink={githubLink}
-          linkedinLink={linkedinLink}
-          location={location}
+        <HeroSection aboutData={aboutData} />
+        <About
+          profile={aboutData.profileDescription}
+          profileImage={aboutData.profileImage}
         />
-        <About profile={profileDescription} profileImage={profileImage} />
         <FeaturedBlog blogData={blogData}></FeaturedBlog>
         {/* <HeroTest
           profile={profileDescription}

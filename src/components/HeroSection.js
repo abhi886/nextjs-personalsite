@@ -7,15 +7,15 @@ import HeaderSection from "./HeaderSection";
 import Social from "./Social";
 import { ChevronDownIcon } from "@heroicons/react/outline";
 
-function HeroSection({
-  fullName,
-  location,
-  position,
-  githubLink,
-  linkedinLink,
-  facebookLink,
-}) {
-  // console.log(githubLink);
+function HeroSection({ aboutData }) {
+  const {
+    fullName,
+    location,
+    position,
+    facebookLink,
+    githubLink,
+    linkedinLink,
+  } = aboutData;
   return (
     <section className='relative h-screen bg-personal_blue'>
       <article className='absolute top-1/4 w-full text-center'>
