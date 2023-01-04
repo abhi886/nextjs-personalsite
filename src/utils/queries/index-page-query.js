@@ -29,8 +29,21 @@ query {
        
      }
    }
+   blogCollection(where:{displayFrontPage:true}){
+    items{
+      displayFrontPage
+      title
+      slug
+      readTime
+      languages
+      blogImage{
+        url
+      }
+      sys{
+        firstPublishedAt
+      }
+    }
+  }
    }
- 
- 
    `;
 export default query;

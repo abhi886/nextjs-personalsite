@@ -17,6 +17,8 @@ import { NextSeo } from "next-seo";
 import useContentful from "../src/customHooks/use-contentful";
 import query from "../src/utils/queries/index-page-query";
 import HeroTest from "../src/components/HeroTest";
+import FeaturedBlog from "../src/components/FeaturedBlog";
+import Image from "next/dist/client/image";
 export async function getStaticProps() {
   const data = await useContentful(query);
   return {
@@ -46,6 +48,7 @@ export default function Home({ data }) {
     pageImageAltText,
   } = data.seoCollection.items[0];
 
+  const blogData = data.blogCollection.items;
   return (
     <>
       <NextSeo
@@ -78,6 +81,7 @@ export default function Home({ data }) {
           location={location}
         />
         <About profile={profileDescription} profileImage={profileImage} />
+        <FeaturedBlog blogData={blogData}></FeaturedBlog>
         {/* <HeroTest
           profile={profileDescription}
           profileImage={profileImage}
