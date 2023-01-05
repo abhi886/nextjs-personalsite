@@ -21,6 +21,7 @@ import FeaturedBlog from "../src/components/FeaturedBlog";
 import Image from "next/dist/client/image";
 import Newsletter from "../src/components/Newsletter";
 import FeaturedWorkCard from "../src/components/FeaturedWorkCard";
+import GetHired from "../src/components/GetHired";
 export async function getStaticProps() {
   const data = await useContentful(query);
   return {
@@ -74,6 +75,7 @@ export default function Home({ data }) {
         <FeaturedBlog blogData={blogData}></FeaturedBlog>
         <Newsletter></Newsletter>
         <FeaturedWorkCard workData={workData}></FeaturedWorkCard>
+        <GetHired></GetHired>
         {/* <HeroTest
           profile={profileDescription}
           profileImage={profileImage}
@@ -81,7 +83,7 @@ export default function Home({ data }) {
         {/*  <Works works={lWorks} />
         <Work2 works={oWorks} />*/}
         {/* <HireMe /> */}
-        {/* <ContactMe /> */}
+        <ContactMe />
         <ScrollToTop />
       </main>
     </>

@@ -46,6 +46,9 @@ query {
   }
   worksCollection(where:{featuredWork:true}) {
     items{
+      thumbnail{
+        url
+      }
       title
       shortDescription
       language

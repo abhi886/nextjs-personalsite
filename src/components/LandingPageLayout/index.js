@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <>
       {/* <HeaderSection logo={logo} layout={"LandingPageLayout"} /> */}
       {children}
-      {/* <FooterSection /> */}
+      <FooterSection />
     </>
   );
 }

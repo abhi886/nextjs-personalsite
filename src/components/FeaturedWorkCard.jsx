@@ -5,7 +5,15 @@ import { FaBlog, FaBriefcase, FaTools, FaTv } from "react-icons/fa";
 import WorkSocial from "./WorkSocial";
 
 function FeaturedWorkCard({ workData }) {
-  const { title, shortDescription, language, gitUrl, siteUrl, slug } = workData;
+  const {
+    title,
+    shortDescription,
+    language,
+    gitUrl,
+    siteUrl,
+    slug,
+    thumbnail,
+  } = workData;
   return (
     <section className='bg-personal_blue'>
       <div className='container m-auto pb-10  px-4 h-full  bg-personal_blue md:px-20  '>
@@ -29,19 +37,21 @@ function FeaturedWorkCard({ workData }) {
               key={i}
               className='w-full m-auto max-w-xs lg:max-w-sm overflow-hidden dark:bg-white rounded-lg shadow-lg bg-gray-800'
             >
-              <img
-                className='object-cover object-center w-full h-56 '
-                src='https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'
-                alt='avatar'
-              />
-
-              <div className='flex items-center px-6 py-3 bg-gray-900'>
-                <FaTv className='text-white text-2xl'></FaTv>
-                <h1 className='mx-3 text-lg font-semibold text-white'>
-                  {w.title}
-                </h1>
-              </div>
-
+              <a target='_blank' href={`/works/${w.slug}`}>
+                <img
+                  className='object-cover object-center w-full h-56 '
+                  src={`${w.thumbnail.url}`}
+                  alt='avatar'
+                />
+              </a>
+              <a target='_blank' href={`/works/${w.slug}`}>
+                <div className='flex items-center px-6 py-3 bg-gray-900'>
+                  <FaTv className='text-white text-2xl'></FaTv>
+                  <h1 className='mx-3 text-lg font-semibold text-white'>
+                    {w.title}
+                  </h1>
+                </div>
+              </a>
               <div className='px-6 py-4'>
                 <p className='py-2 dark:text-gray-700 text-gray-400'>
                   {w.shortDescription}
@@ -64,6 +74,13 @@ function FeaturedWorkCard({ workData }) {
               </div>
             </div>
           ))}
+        </div>
+        <div className='flex justify-end'>
+          <a href='/works' target='_blank'>
+            <button className='text-personal_blue-text bg-transparent px-2 py-2 text-xs lg:text-base lg:px-3 lg:py-3 rounded-lg border border-personal_blue-text my-3 hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12'>
+              View More Works
+            </button>
+          </a>
         </div>
       </div>
     </section>

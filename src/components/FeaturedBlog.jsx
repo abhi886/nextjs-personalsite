@@ -33,17 +33,21 @@ function FeaturedBlog({ blogData }) {
               >
                 <div className='flex md:space-x-4 lg:space-x-5'>
                   <div className='relative w-16 h-16 mt-2 ml-2 md:w-32 md:h-24 lg:w-40 lg:h-32 lg:ml-6 lg:mt-2'>
-                    <Image
-                      className='rounded-full object-cover'
-                      src={`${d.blogImage.url}`}
-                      alt='Abhishekh Maharjans Photo'
-                      layout='fill'
-                    />
+                    <a target='_blank' href={`/blogs/${d.slug}`}>
+                      <Image
+                        className='rounded-full object-cover'
+                        src={`${d.blogImage.url}`}
+                        alt='Abhishekh Maharjans Photo'
+                        layout='fill'
+                      />
+                    </a>
                   </div>
                   <div className='w-64 pl-4 md:w-full lg:w-full'>
-                    <p className='mt-2 font-bold text-personal_blue-textParagraph text-base lg:text-xl lg:mt-4'>
-                      {d.title}
-                    </p>
+                    <a target='_blank' href={`/blogs/${d.slug}`}>
+                      <p className='mt-2 font-bold text-personal_blue-textParagraph text-base lg:text-xl lg:mt-4'>
+                        {d.title}
+                      </p>
+                    </a>
                     <div className='text-sm mt-2 text-personal_blue-textParagraph'>
                       <p>
                         {d.sys.firstPublishedAt} / {d.readTime} mins read
@@ -65,7 +69,7 @@ function FeaturedBlog({ blogData }) {
               </article>
             ))}
             <div className='flex justify-end'>
-              <a href='#contact'>
+              <a href='/blogs' target='_blank'>
                 <button className='text-personal_blue-text bg-transparent px-2 py-2 text-xs lg:text-base lg:px-3 lg:py-3 rounded-lg border border-personal_blue-text my-3 hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12'>
                   View More Articles
                 </button>
