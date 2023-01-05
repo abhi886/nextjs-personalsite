@@ -5,7 +5,7 @@ function Newsletter() {
     <section className='bg-personal_blue'>
       <div className='container flex flex-col items-center px-4 py-12 mx-auto text-center'>
         <h2 className='text-3xl font-bold tracking-tight text-personal_blue-textTitle xl:text-4xl'>
-          Sign up for my Newsletter now
+          Sign up for my Newsletter
         </h2>
 
         <p className='block max-w-4xl mt-4 text-personal_blue-textParagraph'>
@@ -17,8 +17,7 @@ function Newsletter() {
           <div className=' border-2 rounded-full py-2 md:shadow-sm'>
             <input
               type='text'
-              value=''
-              class='flex-grow pl-5 bg-transparent outline-none text-gray-600 placeholder-gray-400'
+              className='flex-grow pl-5 bg-transparent outline-none text-gray-600 placeholder-gray-400'
               placeholder='Enter Your Email'
             />
           </div>
