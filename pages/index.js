@@ -20,6 +20,7 @@ import HeroTest from "../src/components/HeroTest";
 import FeaturedBlog from "../src/components/FeaturedBlog";
 import Image from "next/dist/client/image";
 import Newsletter from "../src/components/Newsletter";
+import FeaturedWorkCard from "../src/components/FeaturedWorkCard";
 export async function getStaticProps() {
   const data = await useContentful(query);
   return {
@@ -41,6 +42,7 @@ export default function Home({ data }) {
   } = data.seoCollection.items[0];
 
   const blogData = data.blogCollection.items;
+  const workData = data.worksCollection.items;
   return (
     <>
       <NextSeo
@@ -71,6 +73,7 @@ export default function Home({ data }) {
         />
         <FeaturedBlog blogData={blogData}></FeaturedBlog>
         <Newsletter></Newsletter>
+        <FeaturedWorkCard workData={workData}></FeaturedWorkCard>
         {/* <HeroTest
           profile={profileDescription}
           profileImage={profileImage}

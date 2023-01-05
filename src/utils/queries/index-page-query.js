@@ -44,6 +44,16 @@ query {
       }
     }
   }
+  worksCollection(where:{featuredWork:true}) {
+    items{
+      title
+      shortDescription
+      language
+      gitUrl
+      siteUrl
+      slug
+    }
+  }
    }
    `;
 export default query;

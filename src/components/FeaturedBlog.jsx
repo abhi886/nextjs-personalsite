@@ -4,7 +4,10 @@ import Image from "next/dist/client/image";
 function FeaturedBlog({ blogData }) {
   return (
     <section className='bg-personal_blue'>
-      <div className='container  px-4 h-screen  bg-personal_blue md:px-20  lg:px-44'>
+      <div
+        className='container m-auto  px-4 h-screen  bg-personal_blue md:px-20 
+      '
+      >
         <div className='flex pt-28 space-x-4'>
           <div>
             {" "}
@@ -49,7 +52,10 @@ function FeaturedBlog({ blogData }) {
                     <div className='lg:pt-7'>
                       {d.languages &&
                         d.languages.map((l, i) => (
-                          <span className='text-xs py-3 pr-2 text-personal_blue-text'>
+                          <span
+                            key={i}
+                            className='text-xs py-3 pr-2 text-personal_blue-text'
+                          >
                             {i < d.languages.length - 1 ? `${l} |` : `${l}`}
                           </span>
                         ))}
