@@ -46,7 +46,6 @@ function FeaturedWorkCard({ workData }) {
               </a>
               <a target='_blank' href={`/works/${w.slug}`}>
                 <div className='flex items-center px-4 py-3 bg-persobal_blue-lightBlue'>
-                  {/* <FaTv className='text-white text-2xl'></FaTv> */}
                   <h1 className='mx-3 text-lg font-semibold text-white'>
                     {w.title}
                   </h1>
