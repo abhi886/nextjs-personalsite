@@ -5,7 +5,7 @@ import logo from "../../../public/images/logo.png";
 export default function Layout({ children }) {
   return (
     <>
-      <HeaderSection logo={logo} layout={"LandingPageLayout"} />
+      {/* <HeaderSection logo={logo} layout={"LandingPageLayout"} /> */}
       {children}
       <FooterSection />
     </>

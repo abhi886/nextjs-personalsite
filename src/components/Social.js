@@ -7,41 +7,44 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 
-function Social() {
+function Social({ facebookLink, githubLink, linkedinLink }) {
   return (
-    <div className=' text-center space-x-6 pt-4'>
-      <Link href='https://www.facebook.com/abhishek.mhrzn/'>
-        <a target='_blank' aria-label='Facebook'>
-          <FontAwesomeIcon
-            icon={("fab", faFacebookSquare)}
-            size='2x'
-            // color='#3b5998'
-            color='#ccd6f6'
-          />
-        </a>
-      </Link>
+    <div className='text-center space-x-6 pt-4'>
+      <a
+        target='_blank'
+        aria-label='Facebook'
+        href={`${facebookLink}`}
+        rel='noopener noreferrer'
+      >
+        <FontAwesomeIcon
+          icon={("fab", faFacebookSquare)}
+          size='2x'
+          color='#ccd6f6'
+        />
+      </a>
 
-      <Link href='https://github.com/abhi886'>
-        <a target='_blank' aria-label='Github'>
-          <FontAwesomeIcon
-            icon={("fab", faGithub)}
-            size='2x'
-            // color='#4078c0'
-            color='#ccd6f6'
-          />
-        </a>
-      </Link>
+      <a
+        target='_blank'
+        aria-label='Github'
+        href={`${githubLink}`}
+        rel='noopener noreferrer'
+      >
+        <FontAwesomeIcon icon={("fab", faGithub)} size='2x' color='#ccd6f6' />
+      </a>
 
-      <Link href='https://www.linkedin.com/in/abhishekh-maharjan-139581b3/'>
-        <a target='_blank' aria-label='LinkedIn'>
-          <FontAwesomeIcon
-            icon={("fab", faLinkedin)}
-            size='2x'
-            // color='#0e76a8'
-            color='#ccd6f6'
-          />
-        </a>
-      </Link>
+      <a
+        target='_blank'
+        aria-label='LinkedIn'
+        href={`${linkedinLink}`}
+        rel='noopener noreferrer'
+      >
+        <FontAwesomeIcon
+          icon={("fab", faLinkedin)}
+          size='2x'
+          // color='#0e76a8'
+          color='#ccd6f6'
+        />
+      </a>
     </div>
   );
 }

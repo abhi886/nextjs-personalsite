@@ -7,28 +7,31 @@ import HeaderSection from "./HeaderSection";
 import Social from "./Social";
 import { ChevronDownIcon } from "@heroicons/react/outline";
 
-function HeroSection() {
+function HeroSection({ aboutData }) {
+  const {
+    fullName,
+    location,
+    position,
+    facebookLink,
+    githubLink,
+    linkedinLink,
+  } = aboutData;
   return (
     <section className='relative h-screen bg-personal_blue'>
       <article className='absolute top-1/4 w-full text-center'>
         <h1 className='text-personal_blue-textTitle font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up'>
-          I'm Abhishekh Maharjan.
+          I'm {fullName}.
         </h1>
         <div className='grid grid-cols-2 p-3'>
           <div className='text-right'>
             <h2 className='font-medium text-personal_blue-textTitle'>
-              Based in Canberra.
+              Based in {location}.
             </h2>
           </div>
           <div className='text-left'>
             <Typed
               className='font-medium pl-2 text-gray-300'
-              strings={[
-                "Full Stack Developer",
-                "Front End Developer",
-                "Back End Developer",
-                "Software Engineer",
-              ]}
+              strings={position}
               typeSpeed={100}
               backSpeed={50}
               loop
@@ -55,15 +58,19 @@ function HeroSection() {
           </a>
         </div>
         {/* Social Icons */}
-        <Social />
+        <Social
+          facebookLink={facebookLink}
+          githubLink={githubLink}
+          linkedinLink={linkedinLink}
+        />
       </article>
       {/* scrollDown Button */}
-      <artivle className='absolute -ml-4  bottom-20 left-2/4 h-10 bg-transparent text-white'>
+      <article className='absolute -ml-4  bottom-20 left-2/4 h-10 bg-transparent text-white'>
         <a href='#about'>
           {" "}
           <ChevronDownIcon className='h-10 animate-bounce cursor-pointer' />
         </a>
-      </artivle>
+      </article>
     </section>
   );
 }

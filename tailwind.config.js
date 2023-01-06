@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        72.5: "72.5rem",
+      },
       colors: {
         personal_blue: {
           light: "#232F3E",
@@ -97,7 +100,7 @@ module.exports = {
         "appear-text": "appear-text 7s ease-out",
       },
       fontFamily: {
-        body: ["Nunito"],
+        nunito: ["Nunito", "sans-serif"],
       },
     },
   },
