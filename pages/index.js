@@ -83,7 +83,7 @@ export default function Home({ data }) {
         {/*  <Works works={lWorks} />
         <Work2 works={oWorks} />*/}
         {/* <HireMe /> */}
-        <ContactMe />
+        {/* <ContactMe /> */}
         <ScrollToTop />
       </main>
     </>

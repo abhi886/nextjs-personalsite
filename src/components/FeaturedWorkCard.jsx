@@ -31,11 +31,11 @@ function FeaturedWorkCard({ workData }) {
         <p className='font-regular text-personal_blue-textParagraph pt-2 lg:pl-12 lg:pt-4'>
           View my noteworthy projects
         </p>
-        <div className='pt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  lg:gap-16'>
+        <div className='pt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8  lg:gap-16'>
           {workData.map((w, i) => (
             <div
               key={i}
-              className='w-full m-auto max-w-xs lg:max-w-sm overflow-hidden dark:bg-white rounded-lg shadow-lg bg-gray-800'
+              className='w-full m-auto max-w-xs lg:max-w-sm overflow-hidden dark:bg-white rounded-lg shadow-lg bg-personal_blue-lightBlue'
             >
               <a target='_blank' href={`/works/${w.slug}`}>
                 <img
@@ -45,14 +45,14 @@ function FeaturedWorkCard({ workData }) {
                 />
               </a>
               <a target='_blank' href={`/works/${w.slug}`}>
-                <div className='flex items-center px-6 py-3 bg-gray-900'>
-                  <FaTv className='text-white text-2xl'></FaTv>
+                <div className='flex items-center px-4 py-3 bg-persobal_blue-lightBlue'>
+                  {/* <FaTv className='text-white text-2xl'></FaTv> */}
                   <h1 className='mx-3 text-lg font-semibold text-white'>
                     {w.title}
                   </h1>
                 </div>
               </a>
-              <div className='px-6 py-4'>
+              <div className='px-6'>
                 <p className='py-2 dark:text-gray-700 text-gray-400'>
                   {w.shortDescription}
                 </p>

@@ -25,7 +25,7 @@ function FeaturedBlog({ blogData }) {
         </p>
 
         <div className='pt-6 lg:py-16'>
-          <div className='grid grid-cols-1 gap-6'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-2'>
             {blogData.map((d, i) => (
               <article
                 key={i}
@@ -68,13 +68,13 @@ function FeaturedBlog({ blogData }) {
                 </div>
               </article>
             ))}
-            <div className='flex justify-end'>
-              <a href='/blogs' target='_blank'>
-                <button className='text-personal_blue-text bg-transparent px-2 py-2 text-xs lg:text-base lg:px-3 lg:py-3 rounded-lg border border-personal_blue-text my-3 hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12'>
-                  View More Articles
-                </button>
-              </a>
-            </div>
+          </div>
+          <div className='flex justify-end'>
+            <a href='/blogs' target='_blank'>
+              <button className='text-personal_blue-text bg-transparent px-2 py-2 text-xs lg:text-base lg:px-3 lg:py-3 rounded-lg border border-personal_blue-text my-3 hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12'>
+                View More Articles
+              </button>
+            </a>
           </div>
         </div>
       </div>

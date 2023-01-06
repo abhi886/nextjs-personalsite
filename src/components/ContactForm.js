@@ -18,11 +18,14 @@ const MyTextInput = ({ label, ...props }) => {
     <>
       <div className='grid gird-cols-1'>
         <div className='pb-3'>
-          <label className='text-white' htmlFor={props.id || props.name}>
+          <label
+            className='text-personal_blue-textParagraph font-semibold'
+            htmlFor={props.id || props.name}
+          >
             {label}
           </label>
         </div>
-        <div className='tems-center border-2 py-2 md:shadow-sm'>
+        <div className='tems-center border py-2 border-personal_blue-textParagraph rounded-md md:shadow-sm'>
           <input
             className='text-input w-full flex-grow pl-5 bg-transparent outline-none text-white placeholder-gray-400'
             {...field}
@@ -46,11 +49,14 @@ const MyTextAreaInput = ({ label, ...props }) => {
     <>
       <div className='grid grid-cols-1'>
         <div className='pb-3'>
-          <label className='text-white ' htmlFor={props.id || props.name}>
+          <label
+            className='text-personal_blue-textParagraph font-semibold '
+            htmlFor={props.id || props.name}
+          >
             {label}
           </label>
         </div>{" "}
-        <div className='items-center border-2 py-2 md:shadow-sm'>
+        <div className='items-center border  border-personal_blue-textParagraph rounded-md py-2 md:shadow-sm'>
           <textarea
             className='text-input flex-grow pl-5 bg-transparent outline-none text-white placeholder-gray-400 w-full h-20'
             {...field}
@@ -186,7 +192,7 @@ const ContactForm = () => {
           </div>
 
           <button
-            className='w-32 text-personal_blue-text bg-transparent px-3 py-3 shadow-md border-2 rounded-full border-personal_blue-text font-bold my-3 hover:text-white hover:bg-personal_blue-text active:scale-90 transition duration-150'
+            className='w-24 text-personal_blue-text bg-transparent px-2 py-2 shadow-md border rounded-md border-personal_blue-text font-bold my-3 hover:text-white hover:bg-personal_blue-text active:scale-90 transition duration-150'
             type='submit'
           >
             Submit
