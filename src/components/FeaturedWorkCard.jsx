@@ -35,7 +35,7 @@ function FeaturedWorkCard({ workData }) {
           {workData.map((w, i) => (
             <div
               key={i}
-              className='w-full m-auto max-w-xs lg:max-w-sm overflow-hidden dark:bg-white rounded-lg shadow-lg bg-personal_blue-lightBlue'
+              className='w-full m-auto max-w-xs lg:max-w-sm overflow-hidden rounded-lg shadow-lg bg-personal_blue-lightBlue'
             >
               <a target='_blank' href={`/works/${w.slug}`}>
                 <img
@@ -52,11 +52,9 @@ function FeaturedWorkCard({ workData }) {
                 </div>
               </a>
               <div className='px-6'>
-                <p className='py-2 dark:text-gray-700 text-gray-400'>
-                  {w.shortDescription}
-                </p>
+                <p className='py-2 text-gray-400'>{w.shortDescription}</p>
 
-                <div className='mt-4 dark:text-gray-700 text-personal_blue-text'>
+                <div className='mt-4 text-personal_blue-text'>
                   {w.language &&
                     w.language.map((l, i) => (
                       <span key={i} className='text-xs'>
