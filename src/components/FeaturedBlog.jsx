@@ -72,7 +72,7 @@ function FeaturedBlog({ blogData }) {
               </article>
             ))}
           </div>
-          <div className='flex justify-end'>
+          <div className='flex justify-center'>
             <a href='/blogs' target='_blank'>
               <button className='text-personal_blue-text bg-transparent px-2 py-2 text-xs lg:text-base lg:px-3 lg:py-3 rounded-lg border border-personal_blue-text my-3 hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12'>
                 View More Articles
