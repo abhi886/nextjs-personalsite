@@ -2,7 +2,7 @@ import React from "react";
 
 function Newsletter() {
   return (
-    <section className='bg-personal_blue border-1 b0rder-y-1'>
+    <section className='bg-personal_blue border-1 border-y-1'>
       <div className='container flex flex-col items-center px-4 py-12 mx-auto text-center'>
         <h2 className='text-3xl font-bold tracking-tight text-personal_blue-textTitle xl:text-4xl'>
           Sign up for my Newsletter
