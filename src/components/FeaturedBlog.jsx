@@ -56,7 +56,7 @@ function FeaturedBlog({ blogData }) {
                         {d.sys.firstPublishedAt} / {d.readTime} mins read
                       </p>
                     </div>
-                    <div className='lg:pt-7'>
+                    <div className='py-3 lg:pt-7'>
                       {d.languages &&
                         d.languages.map((l, i) => (
                           <span

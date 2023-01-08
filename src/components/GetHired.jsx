@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 export default function GetHired() {
   return (
     <section className='bg-personal_blue'>
-      <div className='container flex flex-col items-center px-4 py-12 mx-auto text-center pb-24'>
+      <div className='container flex flex-col items-center px-4 py-36 mx-auto text-center pb-24'>
         <h2 className='text-3xl font-bold tracking-tight text-personal_blue-textTitle xl:text-4xl'>
           Need A Developer for your next project ?
         </h2>
