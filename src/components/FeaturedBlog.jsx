@@ -5,31 +5,34 @@ function FeaturedBlog({ blogData }) {
   return (
     <section className='bg-personal_blue'>
       <div
-        className='container m-auto  px-4 h-screen  bg-personal_blue md:px-20 
+        className='container flex flex-col items-center m-auto  px-4 h-full  bg-personal_blue md:px-20 
       '
       >
-        <div className='flex pt-28 space-x-4'>
+        <div className='flex pt-28 space-x-4 items-center'>
           <div>
             {" "}
-            <FaBlog className='text-personal_blue-textParagraph text-3xl' />
+            <FaBlog className='text-personal_blue-textTitle text-3xl' />
           </div>
           <div>
             <h1 className='font-bold text-2xl text-personal_blue-textParagraph '>
-              <span className='pt-4'>From my Blogs</span>
+              <span className='pt-4'></span>
             </h1>
+            <h2 className='text-3xl font-bold tracking-tight text-personal_blue-textTitle xl:text-4xl'>
+              From my Blogs
+            </h2>
           </div>
         </div>
 
-        <p className='font-regular text-personal_blue-textParagraph pt-2 lg:pl-12 lg:pt-4'>
+        <p className='font-regular text-personal_blue-textParagraph pt-2 lg:pl-6 lg:pt-4'>
           View my recent articles
         </p>
 
         <div className='pt-6 lg:py-16'>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-2'>
+          <div className='grid grid-cols-1 lg:grid-cols-1 gap-10'>
             {blogData.map((d, i) => (
               <article
                 key={i}
-                className='bg-personal_blue-lightBlue h-full lg:h-40 border-r-2 border-personal_blue-text'
+                className='bg-personal_blue-lightBlue h-full w-full lg:h-40 border-r-2 border-personal_blue-text rounded-lg'
               >
                 <div className='flex md:space-x-4 lg:space-x-5'>
                   <div className='relative w-16 h-16 mt-2 ml-2 md:w-32 md:h-24 lg:w-40 lg:h-32 lg:ml-6 lg:mt-2'>
@@ -53,7 +56,7 @@ function FeaturedBlog({ blogData }) {
                         {d.sys.firstPublishedAt} / {d.readTime} mins read
                       </p>
                     </div>
-                    <div className='lg:pt-7'>
+                    <div className='py-3 lg:pt-7'>
                       {d.languages &&
                         d.languages.map((l, i) => (
                           <span
@@ -69,7 +72,7 @@ function FeaturedBlog({ blogData }) {
               </article>
             ))}
           </div>
-          <div className='flex justify-end'>
+          <div className='flex justify-center'>
             <a href='/blogs' target='_blank'>
               <button className='text-personal_blue-text bg-transparent px-2 py-2 text-xs lg:text-base lg:px-3 lg:py-3 rounded-lg border border-personal_blue-text my-3 hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12'>
                 View More Articles
