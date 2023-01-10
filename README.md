@@ -132,7 +132,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@Abhishe19658428](https://twitter.com/Abhishe19658428) - abhishekmhrzn.14@gmail.com
+Abhishek Maharjan - [@Abhishe19658428](https://twitter.com/Abhishe19658428) - abhishekmhrzn.14@gmail.com
 Project Link: [https://github.com/abhi886/nextjs-personalsite](https://github.com/abhi886/nextjs-personalsite)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
