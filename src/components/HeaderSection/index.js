@@ -23,8 +23,9 @@ const HeaderSection = ({ logo, layout }) => {
                   src={logo}
                   alt='Abhishekh Maharjan Logo'
                   width={40}
-                  height={40}
+                  height={31}
                   objectFit='contain'
+                  className='m-0 p-0'
                 />
               </a>
             </div>
@@ -108,7 +109,7 @@ const HeaderSection = ({ logo, layout }) => {
                 }`}
                 href='/blogs'
               >
-                Blog
+                Blogs
               </a>
               <a
                 className={`my-2  transition-colors duration-300 transform hover:text-personal_blue-text md:mx-4 md:my-0 ${
