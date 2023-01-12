@@ -9,7 +9,6 @@ const HeaderSection = ({ logo, layout }) => {
 
   const router = useRouter();
   const currentRoute = router.pathname;
-  console.log(currentRoute);
   return (
     <header className='sticky top-0 z-50 '>
       <nav className='relative bg-personal_blue shadow'>
@@ -18,7 +17,7 @@ const HeaderSection = ({ logo, layout }) => {
             <div>
               <a
                 className='text-2xl font-bold text-personal_blue-text transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300'
-                href='#'
+                href='/'
               >
                 <Image
                   src={logo}
