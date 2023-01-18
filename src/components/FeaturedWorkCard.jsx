@@ -40,37 +40,44 @@ function FeaturedWorkCard({ workData }) {
               key={i}
               className='w-full m-auto max-w-xs lg:max-w-sm overflow-hidden rounded-lg shadow-lg bg-personal_blue-lightBlue'
             >
-              <a target='_blank' href={`/works/${w.slug}`}>
-                <img
-                  className='object-cover object-center w-full h-56 '
-                  src={`${w.thumbnail.url}`}
-                  alt='avatar'
-                />
-              </a>
-              <a target='_blank' href={`/works/${w.slug}`}>
-                <div className='flex justify-center px-4 py-3 bg-persobal_blue-lightBlue'>
-                  <h1 className='text-lg font-semibold text-white'>
-                    {w.title}
-                  </h1>
-                </div>
-              </a>
-              <div className='px-6'>
-                <p className='py-2 text-gray-400'>{w.shortDescription}</p>
+              <div className='relative group'>
+                <div className='group-:hidden'>
+                  <a target='_blank' href={`/works/${w.slug}`}>
+                    <img
+                      className='object-cover object-center w-full h-56 '
+                      src={`${w.thumbnail.url}`}
+                      alt='avatar'
+                    />
+                  </a>
 
-                <div className='mt-4 text-personal_blue-text'>
-                  {w.language &&
-                    w.language.map((l, i) => (
-                      <span key={i} className='text-xs'>
-                        {i < w.language.length - 1 ? `${l} | ` : `${l}`}
-                      </span>
-                    ))}
+                  <a target='_blank' href={`/works/${w.slug}`}>
+                    <div className='flex justify-center px-4 py-3 bg-persobal_blue-lightBlue'>
+                      <h1 className='text-lg font-semibold text-white'>
+                        {w.title}
+                      </h1>
+                    </div>
+                  </a>
                 </div>
+                <div className='absolute animate-fade-in-down top-0 left-0 hidden group-hover:flex bg-personal_blue-lightBlue h-56'>
+                  <div className='px-8'>
+                    <p className='py-4 text-gray-400'>{w.shortDescription}</p>
 
-                <WorkSocial
-                  siteUrl={w.siteUrl}
-                  gitUrl={w.gitUrl}
-                  slug={w.slug}
-                ></WorkSocial>
+                    <div className='mt-4 text-personal_blue-text'>
+                      {w.language &&
+                        w.language.map((l, i) => (
+                          <span key={i} className='text-xs'>
+                            {i < w.language.length - 1 ? `${l} | ` : `${l}`}
+                          </span>
+                        ))}
+                    </div>
+
+                    <WorkSocial
+                      siteUrl={w.siteUrl}
+                      gitUrl={w.gitUrl}
+                      slug={w.slug}
+                    ></WorkSocial>
+                  </div>
+                </div>
               </div>
             </article>
           ))}
