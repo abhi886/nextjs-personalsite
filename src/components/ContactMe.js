@@ -14,20 +14,20 @@ function ContactMe() {
       <div className='flex space-x-4 w-full justify-center'>
         <div className=''>
           {" "}
-          <FaPhoneVolume className='text-personal_blue-textParagraph text-3xl' />
+          <FaPhoneVolume className='text-personal_blue-textTitle text-3xl' />
         </div>
         <div>
-          <h1 className='font-bold text-3xl text-personal_blue-textParagraph text-center'>
+          <h2 className='text-3xl font-bold tracking-tight text-personal_blue-textTitle xl:text-4xl'>
             <span className='pt-4'> Get In Touch</span>
-          </h1>
+          </h2>
         </div>
       </div>
-      <h1 className='font-bold  text-personal_blue-textParagraph text-center'>
-        <p className='text-base leading-6 text-center'>
-          Please fill out the form and describe your project needs and I'll
-          contact you as soon as possible. Thank you.{" "}
-        </p>
-      </h1>
+
+      <p className='font-regular text-center text-personal_blue-textParagraph pt-2 lg:pl-12 lg:pt-4'>
+        Please fill out the form and describe your project needs and I'll
+        contact you as soon as possible. Thank you.
+      </p>
+
       <div className='grid-cols-1 md:grid-cols-2 pt-12'>
         <ContactForm />
       </div>

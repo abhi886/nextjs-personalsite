@@ -77,7 +77,7 @@ function About({ profile, profileImage }) {
           {documentToReactComponents(profile.json, RICHTEXT_OPTIONS)}
 
           <div>
-            <a href='/about' target='_blank'>
+            <a href='/about'>
               <button className='text-personal_blue-text bg-transparent px-2 py-2 text-xs lg:text-base lg:px-3 lg:py-3 rounded-lg border border-personal_blue-text my-3 hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12'>
                 MORE ABOUT ME <HiArrowRight className='inline'></HiArrowRight>
               </button>

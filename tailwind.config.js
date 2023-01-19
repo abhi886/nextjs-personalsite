@@ -23,6 +23,7 @@ module.exports = {
           workBackground: "#334d6a",
           lightBlue: "#102340",
           blogsLightBlue: "#242b4c",
+          paragraph: "#cfd4da",
         },
       },
       keyframes: {
