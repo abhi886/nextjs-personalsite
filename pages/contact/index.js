@@ -1,12 +1,9 @@
 import React from "react";
 import Layout from "../../src/components/OtherPageLayout";
+import ContactMe from "../../src/components/ContactMe";
 
 function index() {
-  return (
-    <div className='h-screen'>
-      Contact page is currently under construction. Sorry For the Inconvinience.
-    </div>
-  );
+  return <ContactMe></ContactMe>;
 }
 
 index.getLayout = function getLayout(page) {
