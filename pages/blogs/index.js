@@ -1,10 +1,8 @@
 import React, { useMemo, useState } from "react";
-import HeaderSection from "../../src/components/HeaderSection";
-import FooterSection from "../../src/components/FooterSection";
 import { createClient } from "contentful";
-import BlogCard from "../../src/components/BlogCard/BlogCard";
-import Layout from "../../src/components/OtherPageLayout";
 import { NextSeo } from "next-seo";
+import BlogCard from "../../src/components/BlogCard/BlogCard";
+import Layout from "../../src/components/LandingPageLayout";
 import logo from "../../public/images/logo.png";
 import { SearchIcon } from "@heroicons/react/outline";
 import SearchBox from "../../src/components/SearchBox/SearchBox";
@@ -14,7 +12,6 @@ export async function getStaticProps() {
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   });
-
   const res = await client.getEntries({ content_type: "blog" });
   const resSEO = await client.getEntries({ content_type: "seo" });
 
@@ -56,8 +53,6 @@ function index({ blogs, seoData }) {
     if (searchQuery) {
       filtered = getFilteredBlogs;
     }
-    // const sorted = _.orderBy(filtered, [sortColumn.path], [sortColumn.order]);
-    // const finalData = paginate(sorted, currentPage, PAGESIZE);
     return { totalCount: filtered.length, data: filtered };
   }, [filteredBlogs, searchQuery]);
   return (
