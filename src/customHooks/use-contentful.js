@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 // const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_KEY } = process.env;
-const CONTENTFUL_SPACE_ID = process.env.CONTENTFUL_SPACE_ID;
-const CONTENTFUL_ACCESS_KEY = process.env.CONTENTFUL_ACCESS_KEY;
+const { CONTENTFUL_SPACE_ID } = process.env;
+const { CONTENTFUL_ACCESS_KEY } = process.env;
 const useContentful = async (query) => {
   try {
     const res = await fetch(
       `https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/?access_token=${CONTENTFUL_ACCESS_KEY}`,
       {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-type": "application/json",
+          'Content-type': 'application/json',
         },
         body: JSON.stringify({ query }),
       }
@@ -19,7 +19,7 @@ const useContentful = async (query) => {
     return data;
   } catch (e) {
     console.error(e.message);
-    throw new Error("Cant fetch");
+    throw new Error('Cant fetch');
   }
 };
 export default useContentful;

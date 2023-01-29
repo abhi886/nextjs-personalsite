@@ -1,18 +1,16 @@
-import { useEffect, useState, useRef } from "react";
-import Head from "next/head";
-import Image from "next/dist/client/image";
-import Header from "../src/components/HeaderSection/index";
-import HeroSection from "../src/components/HeroSection";
-import About from "../src/components/About";
-import ScrollToTop from "../src/components/ScrollToTop";
-import Layout from "../src/components/LandingPageLayout";
-import { NextSeo } from "next-seo";
-import useContentful from "../src/customHooks/use-contentful";
-import query from "../src/utils/queries/index-page-query";
-import FeaturedBlog from "../src/components/FeaturedBlog";
-import Newsletter from "../src/components/Newsletter";
-import FeaturedWorkCard from "../src/components/FeaturedWorkCard";
-import GetHired from "../src/components/GetHired";
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { NextSeo } from 'next-seo';
+import HeroSection from '../src/components/HeroSection';
+import About from '../src/components/About';
+import ScrollToTop from '../src/components/ScrollToTop';
+import Layout from '../src/components/LandingPageLayout';
+import useContentful from '../src/customHooks/use-contentful';
+import query from '../src/utils/queries/index-page-query';
+import FeaturedBlog from '../src/components/FeaturedBlog';
+import Newsletter from '../src/components/Newsletter';
+import FeaturedWorkCard from '../src/components/FeaturedWorkCard';
+import GetHired from '../src/components/GetHired';
 
 export async function getStaticProps() {
   const data = await useContentful(query);
@@ -42,9 +40,9 @@ export default function Home({ data }) {
         title={title}
         description={description}
         openGraph={{
-          url: url,
-          title: title,
-          description: description,
+          url,
+          title,
+          description,
           images: [
             {
               url: `https:${pageImage.url}`,
@@ -54,7 +52,7 @@ export default function Home({ data }) {
               type: pageSeoImageType,
             },
           ],
-          type: "website",
+          type: 'website',
         }}
       />
 
@@ -64,10 +62,10 @@ export default function Home({ data }) {
           profile={aboutData.profileDescription}
           profileImage={aboutData.profileImage}
         />
-        <FeaturedBlog blogData={blogData}></FeaturedBlog>
-        <Newsletter></Newsletter>
-        <FeaturedWorkCard workData={workData}></FeaturedWorkCard>
-        <GetHired></GetHired>
+        <FeaturedBlog blogData={blogData} />
+        <Newsletter />
+        <FeaturedWorkCard workData={workData} />
+        <GetHired />
         <ScrollToTop />
       </main>
     </>

@@ -3,7 +3,7 @@ import Layout from '../../src/components/LandingPageLayout';
 import ContactMe from '../../src/components/ContactMe';
 
 function index() {
-  return <ContactMe></ContactMe>;
+  return <ContactMe />;
 }
 
 index.getLayout = function getLayout(page) {

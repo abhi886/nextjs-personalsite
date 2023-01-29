@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import emailjs from "emailjs-com";
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import { useForm } from 'react-hook-form';
 
-const Contacts = () => {
+function Contacts() {
   // hook for message
 
-  const [successMessage, setSuccessMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState('');
 
   // variables for validation
 
@@ -16,15 +16,16 @@ const Contacts = () => {
     formState: { errors },
   } = useForm();
 
-  //variables for sending email
+  // variables for sending email
 
-  const serviceID = "service_ID";
-  const templateID = "template_ID";
-  const userID = "user_5EWcC0NChoVOGMUlk0edf";
+  const serviceID = 'service_ID';
+  const templateID = 'template_ID';
+  const userID = 'user_5EWcC0NChoVOGMUlk0edf';
 
-  //methods
+  // methods
 
   const onSubmit = (data, r) => {
+    // eslint-disable-next-line no-use-before-define
     sendEmail(
       serviceID,
       templateID,
@@ -54,126 +55,126 @@ const Contacts = () => {
   };
 
   return (
-    <section id='contacts' className='flex flex-col pb-20 lg:mx-48'>
-      <div className='text-center'>
+    <section id="contacts" className="flex flex-col pb-20 lg:mx-48">
+      <div className="text-center">
         <h1>Contact Me</h1>
         <p>
           sPlease fill out the form and describe your project needs and I'll
           contact you as soon as possible. Thank you.
         </p>
         {/* hook  */}
-        <span className='success-message'>{successMessage}</span>
+        <span className="success-message">{successMessage}</span>
       </div>
-      <div className='container'>
+      <div className="container">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='row'>
-            <div className='col-md-6 cold-xs-12'>
+          <div className="row">
+            <div className="col-md-6 cold-xs-12">
               {/* Name input */}
-              <div className='text-center'>
+              <div className="text-center">
                 <input
-                  id='name'
-                  type='text'
-                  className='form-control'
-                  placeholder='Name'
-                  name='name'
-                  //validation
-                  aria-invalid={errors.name ? "true" : "false"}
-                  {...register("name", {
-                    required: "Please enter your name",
+                  id="name"
+                  type="text"
+                  className="form-control"
+                  placeholder="Name"
+                  name="name"
+                  // validation
+                  aria-invalid={errors.name ? 'true' : 'false'}
+                  {...register('name', {
+                    required: 'Please enter your name',
                     maxLength: {
                       value: 20,
                       message:
-                        "Please enter a name with fewer than 20 character",
+                        'Please enter a name with fewer than 20 character',
                     },
                   })}
                 />
-                <div className='line'></div>
+                <div className="line" />
               </div>
-              <span className='error-message'>
+              <span className="error-message">
                 {errors.name && errors.name.message}
               </span>
               {/* Phone input */}
-              <div className='text-center'>
+              <div className="text-center">
                 <input
-                  id='phone'
-                  type='number'
-                  className='form-control'
-                  placeholder='Phone'
-                  name='phone'
-                  //validation
-                  aria-invalid={errors.phone ? "true" : "false"}
-                  {...register("phone", {
-                    required: "Please enter your phone number",
+                  id="phone"
+                  type="number"
+                  className="form-control"
+                  placeholder="Phone"
+                  name="phone"
+                  // validation
+                  aria-invalid={errors.phone ? 'true' : 'false'}
+                  {...register('phone', {
+                    required: 'Please enter your phone number',
                   })}
                 />
-                <div className='line'></div>
+                <div className="line" />
               </div>
-              <span className='error-message'>
+              <span className="error-message">
                 {errors.phone && errors.phone.message}
               </span>
               {/* Email input */}
-              <div className='text-center'>
+              <div className="text-center">
                 <input
-                  id='email'
-                  type='email'
-                  className='form-control'
-                  placeholder='Email'
-                  name='email'
-                  //validation
-                  aria-invalid={errors.email ? "true" : "false"}
-                  {...register("email", {
-                    required: "Please enter your email",
+                  id="email"
+                  type="email"
+                  className="form-control"
+                  placeholder="Email"
+                  name="email"
+                  // validation
+                  aria-invalid={errors.email ? 'true' : 'false'}
+                  {...register('email', {
+                    required: 'Please enter your email',
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9]+\.[A-Z]{2,}$/i,
-                      message: "Invalid email",
+                      message: 'Invalid email',
                     },
                   })}
                 />
-                <div className='line'></div>
+                <div className="line" />
               </div>
-              <span className='error-message'>
+              <span className="error-message">
                 {errors.email && errors.email.message}
               </span>
               {/* Subject input */}
-              <div className='text-center'>
+              <div className="text-center">
                 <input
-                  id='subject'
-                  type='text'
-                  className='form-control'
-                  placeholder='Subject'
-                  name='subject'
-                  aria-invalid={errors.subject ? "true" : "false"}
-                  {...register("subject", {
-                    required: "OOPs, you forgot to add the subject",
+                  id="subject"
+                  type="text"
+                  className="form-control"
+                  placeholder="Subject"
+                  name="subject"
+                  aria-invalid={errors.subject ? 'true' : 'false'}
+                  {...register('subject', {
+                    required: 'OOPs, you forgot to add the subject',
                   })}
                 />
-                <div className='line'></div>
+                <div className="line" />
               </div>
-              <span className='error-message'>
+              <span className="error-message">
                 {errors.subject && errors.subject.message}
               </span>
             </div>
-            <div className='col-md-6 col-xs-12'>
+            <div className="col-md-6 col-xs-12">
               {/* Description input */}
-              <div className='text-center'>
+              <div className="text-center">
                 <textarea
-                  id='description'
-                  type='text'
-                  className='form-control'
-                  placeholder='Description'
-                  name='description'
+                  id="description"
+                  type="text"
+                  className="form-control"
+                  placeholder="Description"
+                  name="description"
                   // rows="6"
-                  aria-invalid={errors.description ? "true" : "false"}
-                  {...register("description", {
-                    required: "Please describe shortly your project needs",
+                  aria-invalid={errors.description ? 'true' : 'false'}
+                  {...register('description', {
+                    required: 'Please describe shortly your project needs',
                   })}
                 />
-                <div className='line'></div>
+                <div className="line" />
               </div>
-              <span className='error-message'>
+              <span className="error-message">
                 {errors.description && errors.description.message}
               </span>
-              <button className='btn-main-offer contact-btn' type='submit'>
+              <button className="btn-main-offer contact-btn" type="submit">
                 Contact Me
               </button>
             </div>
@@ -182,6 +183,6 @@ const Contacts = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Contacts;

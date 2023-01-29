@@ -1,4 +1,5 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from 'react';
+
 const useOnScreen = (options) => {
   const ref = useRef();
   const [visible, setVisible] = useState(false);

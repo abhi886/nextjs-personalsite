@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useWindowScroll } from "react-use";
+import React, { useState, useEffect } from 'react';
+import { useWindowScroll } from 'react-use';
 
-import { ChevronUpIcon } from "@heroicons/react/outline";
+import { ChevronUpIcon } from '@heroicons/react/outline';
 
 function ScrollToTop() {
   const { y: pageYOffset } = useWindowScroll();
@@ -14,7 +14,7 @@ function ScrollToTop() {
     }
   }, [pageYOffset]);
 
-  const ScrollTop = () => window.scrollTo({ top: 0, behaviour: "smooth" });
+  const ScrollTop = () => window.scrollTo({ top: 0, behaviour: 'smooth' });
   if (!visible) {
     return false;
   }
@@ -22,10 +22,10 @@ function ScrollToTop() {
   return (
     <div
       onClick={ScrollTop}
-      className='fixed bottom-10 right-4 h-10 bg-transparent text-white z-20'
+      className="fixed bottom-10 right-4 h-10 bg-transparent text-white z-20"
     >
-      {" "}
-      <ChevronUpIcon className='h-10 animate-bounce cursor-pointer' />
+      {' '}
+      <ChevronUpIcon className="h-10 animate-bounce cursor-pointer" />
     </div>
   );
 }

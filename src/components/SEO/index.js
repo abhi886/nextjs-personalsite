@@ -1,7 +1,7 @@
-import React from "react";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import { NextSeo } from 'next-seo';
 
-const SEO = ({ title }) => {
+function SEO({ title }) {
   return (
     <NextSeo
       title={title}
@@ -38,5 +38,5 @@ const SEO = ({ title }) => {
       //   }}
     />
   );
-};
+}
 export default SEO;
