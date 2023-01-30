@@ -21,7 +21,10 @@ function ScrollToTop() {
 
   return (
     <div
+      onKeyPress={() => {}}
       onClick={ScrollTop}
+      role="button"
+      tabIndex="0"
       className="fixed bottom-10 right-4 h-10 bg-transparent text-white z-20"
     >
       {' '}

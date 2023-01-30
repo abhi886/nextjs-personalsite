@@ -1,11 +1,8 @@
-import React from "react";
-import Head from "next/dist/shared/lib/head";
-import { createClient } from "contentful";
-import HeaderSection from "../../src/components/HeaderSection";
-import FooterSection from "../../src/components/FooterSection";
-import BlogSlugPage from "../../src/components/BlogSlugPageCard";
-import Layout from "../../src/components/OtherPageLayout";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import { createClient } from 'contentful';
+import { NextSeo } from 'next-seo';
+import BlogSlugPage from '../../src/components/BlogSlugPageCard';
+import Layout from '../../src/components/OtherPageLayout';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -14,7 +11,7 @@ const client = createClient({
 
 export async function getStaticPaths() {
   const res = await client.getEntries({
-    content_type: "blog",
+    content_type: 'blog',
   });
   const paths = res.items.map((item) => {
     return {
@@ -29,15 +26,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const { items, thumbnail } = await client.getEntries({
-    content_type: "blog",
-    "fields.slug": params.slug,
+  const { items } = await client.getEntries({
+    content_type: 'blog',
+    'fields.slug': params.slug,
   });
 
   if (!items.length) {
     return {
       redirect: {
-        destination: "/",
+        destination: '/',
         permanent: false,
       },
     };
@@ -67,11 +64,11 @@ export default function blogSlug({ blogs }) {
               url: `https:${blogImage.fields.file.url}`,
               width: 800,
               height: 600,
-              alt: "Blog Page Imange",
-              type: "image/png",
+              alt: 'Blog Page Imange',
+              type: 'image/png',
             },
           ],
-          type: "article",
+          type: 'article',
         }}
       />
 
@@ -81,7 +78,7 @@ export default function blogSlug({ blogs }) {
         imageUrl={blogImage}
         description={blogDescription}
         updatedDate={updatedAt}
-        goBackLink={"/blogs"}
+        goBackLink="/blogs"
       />
     </>
   );

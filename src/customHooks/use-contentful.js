@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable no-console */
 // const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_KEY } = process.env;
 const { CONTENTFUL_SPACE_ID } = process.env;
 const { CONTENTFUL_ACCESS_KEY } = process.env;
@@ -15,7 +15,6 @@ const useContentful = async (query) => {
       }
     );
     const { data } = await res.json();
-    console.log(data);
     return data;
   } catch (e) {
     console.error(e.message);

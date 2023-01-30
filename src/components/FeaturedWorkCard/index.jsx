@@ -57,7 +57,7 @@ function FeaturedWorkCard({ workData }) {
                     <div className="mt-4 text-personal_blue-text">
                       {w.language &&
                         w.language.map((l, i) => (
-                          <span key={l.slug} className="text-xs">
+                          <span key={l + Math.random()} className="text-xs">
                             {i < w.language.length - 1 ? `${l} | ` : `${l}`}
                           </span>
                         ))}

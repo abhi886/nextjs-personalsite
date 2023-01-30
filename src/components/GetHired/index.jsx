@@ -1,5 +1,4 @@
 import React from 'react';
-import ContactForm from './ContactForm';
 
 export default function GetHired() {
   return (
@@ -12,8 +11,8 @@ export default function GetHired() {
         <p className="block max-w-4xl mt-4 text-personal_blue-textParagraph">
           I do full stack web application development using MERN stack and JAM
           Stack. Feel free to say a friendly hello to me via
-          abhishekmhrzn.14@gmail.com or by clicking the "Contact Me" button
-          available below.
+          abhishekmhrzn.14@gmail.com or by clicking the &quot;Contact Me
+          &quot;button available below.
         </p>
 
         <div className="mt-6 flex flex-col items-center space-x-2">

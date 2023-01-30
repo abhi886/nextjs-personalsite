@@ -18,13 +18,25 @@ function Contacts() {
 
   // variables for sending email
 
-  const serviceID = 'service_ID';
-  const templateID = 'template_ID';
-  const userID = 'user_5EWcC0NChoVOGMUlk0edf';
+  // emailjs for sending email from the contact form
+
+  const sendEmail = (serviceID, templateID, variables, userID) => {
+    emailjs
+      .send(serviceID, templateID, variables, userID)
+      .then(() => {
+        setSuccessMessage(
+          "Form sent successfully! I'll contact you as soon as possible."
+        );
+      })
+      .catch((err) => console.error(`Something went wrong ${err}`));
+  };
 
   // methods
 
   const onSubmit = (data, r) => {
+    const serviceID = 'service_ID';
+    const templateID = 'template_ID';
+    const userID = 'user_5EWcC0NChoVOGMUlk0edf';
     // eslint-disable-next-line no-use-before-define
     sendEmail(
       serviceID,
@@ -39,19 +51,6 @@ function Contacts() {
       userID
     );
     r.target.reset();
-  };
-
-  // emailjs for sending email from the contact form
-
-  const sendEmail = (serviceID, templateID, variables, userID) => {
-    emailjs
-      .send(serviceID, templateID, variables, userID)
-      .then(() => {
-        setSuccessMessage(
-          "Form sent successfully! I'll contact you as soon as possible."
-        );
-      })
-      .catch((err) => console.error(`Something went wrong ${err}`));
   };
 
   return (

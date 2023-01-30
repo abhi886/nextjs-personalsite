@@ -3,7 +3,7 @@
 import React from 'react';
 import Typed from 'react-typed';
 import { ChevronDownIcon } from '@heroicons/react/outline';
-import Social from './Social';
+import Social from '../Social';
 
 function HeroSection({ aboutData }) {
   const {

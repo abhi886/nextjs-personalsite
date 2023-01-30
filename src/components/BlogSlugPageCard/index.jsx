@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { RewindIcon, ClockIcon } from '@heroicons/react/solid';
 import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import myPhoto from '../../../public/images/me.jpg';
 import convertDate from '../../utils/convertDate';
-import { renderOptions } from '../../utils/contentfulUtils';
+import renderOptions from '../../utils/contentfulUtils';
 
 function BlogSlugPage({
   title,
@@ -42,9 +43,7 @@ function BlogSlugPage({
             <dt className="sr-only">Date</dt>
             <dd className="absolute top-0 inset-x-0 text-slate-700 sm:text-center">
               <time dateTime={updatedDate}>
-                Last Updated At:
-                {' '}
-                {convertDate(updatedDate)}
+                Last Updated At: {convertDate(updatedDate)}
               </time>
             </dd>
             <div className="sm:flex sm:flex-wrap sm:justify-center xl:block">
@@ -82,11 +81,7 @@ function BlogSlugPage({
                 <ClockIcon className="h-6" />
               </div>
               <p className="md:inline-flex cursor-pointer text-sm">
-                Read Time :
-                {' '}
-                {readTime}
-                {' '}
-                mins
+                Read Time : {readTime} mins
               </p>
             </div>
 
@@ -103,16 +98,8 @@ function BlogSlugPage({
           {language && (
             <p className="p-2 text-xs text-personal_blue-workBackground font-mono text-right">
               {' '}
-              {language
-                && language.map((lang) => (
-                  <span key={lang}>
-                    {' '}
-                    {lang}
-                    {' '}
-                    |
-                    {' '}
-                  </span>
-                ))}
+              {language &&
+                language.map((lang) => <span key={lang}> {lang} | </span>)}
             </p>
           )}
           <div className="prose max-w-none  prose-a:text-blue-600">

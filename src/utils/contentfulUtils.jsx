@@ -1,8 +1,11 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable consistent-return */
+import React from 'react';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
-export const renderOptions = {
+const renderOptions = {
   renderNode: {
-    [INLINES.EMBEDDED_ENTRY]: (node, children) => {
+    [INLINES.EMBEDDED_ENTRY]: (node) => {
       // target the contentType of the EMBEDDED_ENTRY to display as you need
       if (node.data.target.sys.contentType.sys.id === 'blogPost') {
         return (
@@ -13,7 +16,7 @@ export const renderOptions = {
         );
       }
     },
-    [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
+    [BLOCKS.EMBEDDED_ENTRY]: (node) => {
       // target the contentType of the EMBEDDED_ENTRY to display as you need
       if (node.data.target.sys.contentType.sys.id === 'codeBlock') {
         return (
@@ -38,7 +41,7 @@ export const renderOptions = {
       }
     },
 
-    [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
+    [BLOCKS.EMBEDDED_ASSET]: (node) => (
       // render the EMBEDDED_ASSET as you need
       <img
         src={`https://${node.data.target.fields.file.url}`}
@@ -49,3 +52,4 @@ export const renderOptions = {
     ),
   },
 };
+export default renderOptions;
