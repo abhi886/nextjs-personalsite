@@ -12,8 +12,8 @@ function BlogCard({
   updatedAt,
 }) {
   return (
-    <article className="group shadow-md hover:scale-105 transition duration-700 ease-in-out hover:shadow-md ">
-      <div className=" relative overflow-hidden transition-all bg-white-100 rounded-md  aspect-video ">
+    <article className="group dark:bg-personal_blue-lightBlue rounded-lg shadow-md hover:scale-105 transition duration-700 ease-in-out hover:shadow-md ">
+      <div className="relative overflow-hidden transition-all bg-white-100  aspect-video rounded-lg">
         <a href={`/blogs/${slug}`}>
           <Image
             src={`https:${blogImage.fields.file.url}`}
@@ -25,18 +25,18 @@ function BlogCard({
           />
         </a>
       </div>
-      <div className="px-2 group-hover:px-2 hover:transition duration-700 ease-in-out group-hover:mb-6">
-        <span className=" text-blue-600 inline-block mt-5 text-xs font-medium tracking-wider uppercase">
+      <div className="px-6 pb-6  hover:transition duration-700 ease-in-out group-hover:px-4 group-hover:pb-4">
+        <span className=" text-personal_blue-textParagraph inline-block mt-5 text-xs font-medium tracking-wider uppercase">
           Javascript
         </span>
         <a href={`/blogs/${slug}`}>
           <h2 className="cursor-pointer mt-2 text-lg font-semibold tracking-normal text-brand-primary">
-            <span className="bg-gradient-to-r from-green-200 to-green-100   bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
+            <span className="bg-gradient-to-r from-green-500 to-green-500   bg-[length:0px_2px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_1px] group-hover:bg-[length:100%_1px]">
               {title}
             </span>
           </h2>
         </a>
-        <div className="flex items-center mt-4 space-x-4 text-gray-500 my-2">
+        <div className="flex items-center mt-4 space-x-4 text-gray-500 my-2 ">
           <Image
             src={myPhoto}
             alt="Abhishekh Maharjan Photo"

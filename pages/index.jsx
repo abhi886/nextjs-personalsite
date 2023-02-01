@@ -35,7 +35,7 @@ export default function Home({ data }) {
   const blogData = data.blogCollection.items;
   const workData = data.worksCollection.items;
   return (
-    <>
+    <Layout>
       <NextSeo
         title={title}
         description={description}
@@ -68,10 +68,10 @@ export default function Home({ data }) {
         <GetHired />
         <ScrollToTop />
       </main>
-    </>
+    </Layout>
   );
 }
 
-Home.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
-};
+// Home.getLayout = function getLayout(page) {
+//   return <Layout>{page}</Layout>;
+// };
