@@ -4,11 +4,11 @@ import React from 'react';
 function SearchBox({ value, onChange, totalCount }) {
   return (
     <>
-      <div className="flex mt-2">
-        <div className="mb-3 w-full ">
+      <div className="flex mt-6 justify-end">
+        <div className="mb-3 w-full lg:w-1/3">
           <input
             type="search"
-            className="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding
+            className="block w-full px-3 py-1 text-base font-normal text-gray-700 dark:text-white bg-white dark:bg-personal_blue-lightBlue bg-clip-padding
   border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
 "
             id="searchPosts"
@@ -18,8 +18,8 @@ function SearchBox({ value, onChange, totalCount }) {
           />
         </div>
       </div>
-      <div className="flex justify-end  text-gray-500 my-1">
-        <p className="text-sm text-gray-600 underline">
+      <div className="flex justify-end  text-gray-500 pt-2 pb-3">
+        <p className="text-sm text-black dark:text-white underline">
           Showing {totalCount} blog posts
         </p>
       </div>

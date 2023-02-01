@@ -1,27 +1,29 @@
+/* eslint-disable react/jsx-props-no-spreading */
 // pages/_app.js
-import "../src/styles/globalStyles.css";
-import Layout from "../src/components/LandingPageLayout";
-import { DefaultSeo } from "next-seo";
+import React from 'react';
+import '../src/styles/globalStyles.css';
+import { DefaultSeo } from 'next-seo';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { ThemeProvider } from 'next-themes';
 
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);
   return getLayout(
     <>
-      {" "}
+      {' '}
       <DefaultSeo
-        // openGraph={{
-        //   type: "website",
-        //   locale: "en_IE",
-        //   url: "abhishekhmaharjan.com",
-        //   site_name: "Abhishekh Maharjans Personal Website",
-        // }}
         twitter={{
-          handle: "@Abhishe19658428",
-          site: "abhishekhmaharjan.com",
-          cardType: "summary_large_image",
+          handle: '@Abhishe19658428',
+          site: 'abhishekhmaharjan.com',
+          cardType: 'summary_large_image',
         }}
       />
-      <Component {...pageProps} />
+      <ThemeProvider
+        forcedTheme={Component.theme || undefined}
+        attribute="class"
+      >
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
