@@ -146,7 +146,7 @@ function index({ logo }) {
                 : 'opacity-0 -translate-x-full absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-personal_blue md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center'
             }'`}
           >
-            <div className="flex flex-row gap-10 justify-center md:flex-row md:mx-6">
+            <div className="flex flex-row gap-4 md:gap-10 justify-center md:flex-row md:mx-6">
               <a
                 className={`my-2  transition-colors duration-300 transform hover:text-personal_blue-text md:mx-4 md:my-0 ${
                   currentRoute === '/'

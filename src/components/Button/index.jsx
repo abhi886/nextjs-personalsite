@@ -5,7 +5,7 @@ export const index = ({ children, className, onClick }) => {
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-md hover:ring-2 hover:ring-gray-300 ${className} flex m-auto`}
+      className={`rounded-md hover:ring-1 hover:ring-personal_blue-text ${className} flex m-auto`}
     >
       {children}
     </button>
