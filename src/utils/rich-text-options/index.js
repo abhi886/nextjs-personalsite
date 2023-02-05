@@ -1,19 +1,17 @@
+/* eslint-disable react/destructuring-assignment */
+import React from 'react';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
 const RICHTEXT_OPTIONS = {
   renderNode: {
-    [BLOCKS.HEADING_5]: (node, children) => (
-      <h5 className="text-lg lg:text-xl text-personal_blue-text py-4">
-        {children}
-      </h5>
+    [BLOCKS.UL_LIST]: (node, children) => (
+      <ul className="list-disc pl-4 text-personal_blue-text"> {children}</ul>
     ),
+    [BLOCKS.LIST_ITEM]: (node, children) => <li> {children}</li>,
     [BLOCKS.TABLE]: (node, children) => (
-      <table className="w-full lg:w-2/3 my-6">
+      <table className="table-auto m-0 w-full">
         {' '}
-        <tbody>
-          {children}
-          {' '}
-        </tbody>
+        <tbody>{children} </tbody>
       </table>
     ),
 
@@ -22,25 +20,29 @@ const RICHTEXT_OPTIONS = {
         {children}
       </th>
     ),
-    [BLOCKS.TABLE_ROW]: (node, children) => <tr>{children}</tr>,
-    [BLOCKS.TABLE_CELL]: (node, children) => <td className="w-1/2">{children}</td>,
+    [BLOCKS.TABLE_ROW]: (node, children) => (
+      <tr className="border-0 w-1/2">{children}</tr>
+    ),
+    [BLOCKS.TABLE_CELL]: (node, children) => (
+      <td className="p-0">{children}</td>
+    ),
+    [BLOCKS.HEADING_5]: (node, children) => (
+      <h5 className="text-personal_blue-text py-2">{children}</h5>
+    ),
+    [BLOCKS.HEADING_4]: (node, children) => (
+      <h5 className="text-personal_blue-text">{children}</h5>
+    ),
     [BLOCKS.HEADING_3]: (node, children) => (
-      <h3 className="text-personal_blue-textParagraph leading-7 tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider">
-        {children}
-      </h3>
+      <h3 className="text-personal_blue-textParagraph">{children}</h3>
     ),
     [BLOCKS.HEADING_2]: (node, children) => (
-      <h2 className="text-xl font-bold text-personal_blue-blue ">
-        {children}
-      </h2>
+      <h2 className="text-personal_blue-blue ">{children}</h2>
     ),
     [BLOCKS.HEADING_1]: (node, children) => (
-      <h1 className="text-2xl font-extrabold  text-personal_blue-blue mb-4">
-        {children}
-      </h1>
+      <h1 className="text-personal_blue-blue mb-4">{children}</h1>
     ),
     [BLOCKS.PARAGRAPH]: (node, children) => (
-      <p className="text-base lg:text-lg font-normal text-personal_blue-textParagraph">
+      <p className="text-personal_blue-textParagraph prose max-w-none prose-gray dark:prose-invert">
         {' '}
         {children}
       </p>

@@ -24,18 +24,21 @@ function about({ data }) {
         id="about"
         className="px-4 py-12 bg-personal_blue md:px-20 lg:px-44"
       >
-        <div className="container grid grid-cols-1 h-full content-center gap-4">
-          <div className="w-60 h-60 lg:w-60 lg:h-60 border-2 border-dashed rounded-full m-auto ">
-            <div className="relative w-56 h-56 lg:h-56 lg:w-56 m-auto border-2 border-dashed rounded-full mt-1.5">
-              <Image
-                className="rounded-full object-cover"
-                src={`${profileImage.url}`}
-                alt="Abhishekh Maharjans Photo"
-                layout="fill"
-              />
+        <div className="container grid grid-cols-12 h-full content-center gap-4">
+          <div className="col-start-2 col-end-11 text-center">
+            <div className="w-60 h-60 lg:w-60 lg:h-60 border-2 border-dashed rounded-full m-auto ">
+              <div className="relative w-56 h-56 lg:h-56 lg:w-56 m-auto border-2 border-dashed rounded-full mt-1.5">
+                <Image
+                  className="rounded-full object-cover"
+                  src={`${profileImage.url}`}
+                  alt="Abhishekh Maharjans Photo"
+                  layout="fill"
+                />
+              </div>
             </div>
           </div>
-          <div>
+
+          <div className="col-start-2 col-end-11 text-center">
             {documentToReactComponents(
               fullProfileDescription.json,
               RICHTEXT_OPTIONS

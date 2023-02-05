@@ -19,7 +19,9 @@ const RICHTEXT_OPTIONS = {
       <p className="text-xl font-bold text-personal_blue-blue ">{children}</p>
     ),
     [BLOCKS.HEADING_1]: (node, children) => (
-      <p className="text-2xl font-extrabold  text-personal_blue-blue mb-4">{children}</p>
+      <p className="text-2xl font-extrabold  text-personal_blue-blue mb-4">
+        {children}
+      </p>
     ),
     [BLOCKS.PARAGRAPH]: (node, children) => (
       <p className="text-base font-normal text-personal_blue-workBackground">
@@ -29,7 +31,10 @@ const RICHTEXT_OPTIONS = {
     ),
     [INLINES.HYPERLINK]: (node, children) => (
       // eslint-disable-next-line react/destructuring-assignment
-      <a href={node.data.uri} className="border-dotted border-b-2 border-personal_blue-text">
+      <a
+        href={node.data.uri}
+        className="border-dotted border-b-2 border-personal_blue-text"
+      >
         {children}
       </a>
     ),

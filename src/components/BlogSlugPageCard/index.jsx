@@ -102,9 +102,7 @@ function BlogSlugPage({
                 language.map((lang) => <span key={lang}> {lang} | </span>)}
             </p>
           )}
-          <div className="prose max-w-none  prose-a:text-blue-600">
-            {documentToReactComponents(description, renderOptions)}
-          </div>
+          <div>{documentToReactComponents(description, renderOptions)}</div>
         </div>
       </section>
     </main>
