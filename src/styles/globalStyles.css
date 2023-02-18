@@ -12,5 +12,6 @@ html {
   ul,
   ol {
     list-style: revert;
+    padding: revert;
   }
 }
