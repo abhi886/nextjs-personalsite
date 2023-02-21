@@ -15,3 +15,9 @@ html {
     padding: revert;
   }
 }
+
+@layer base {
+  body {
+    @apply h-full bg-gray-50 text-gray-600 dark:bg-personal_blue dark:text-gray-300;
+  }
+}
