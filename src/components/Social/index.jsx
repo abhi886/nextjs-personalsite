@@ -9,7 +9,7 @@ import {
 
 function Social({ facebookLink, githubLink, linkedinLink }) {
   return (
-    <div className="text-center space-x-6 pt-4">
+    <div className="text-center space-x-6 pt-4 dark:text-red">
       <a
         target="_blank"
         aria-label="Facebook"
