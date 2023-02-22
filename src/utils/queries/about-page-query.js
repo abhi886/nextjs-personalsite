@@ -1,6 +1,6 @@
 const query = `
 query {
-  profileCollection{
+  profileCollection(limit: 2){
    items{
      fullName
      position
@@ -13,12 +13,48 @@ query {
      }
      profileDescription{
        json
+       
      }
      fullProfileDescription{
       json
+      
+      links{
+        
+        entries{
+          inline{
+            sys{
+              id
+            }
+             __typename
+                ... on BasicDiv {
+                  heading
+                  description {
+                    json
+                  }
+                }
+          }
+           block {
+                sys {
+                  id
+                }
+                __typename
+                ... on BasicDiv {
+                 heading
+                  description {
+                    json
+                  }
+                  
+                              }
+
+              }
+        }
+      }
     }
    }
  }
      }
+
+
+
    `;
 export default query;
