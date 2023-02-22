@@ -18,6 +18,17 @@ html {
 
 @layer base {
   body {
-    @apply h-full bg-gray-50 text-gray-600 dark:bg-personal_blue dark:text-gray-300;
+    @apply h-full bg-gray-50  dark:bg-personal_blue;
+  }
+}
+@layer base {
+  h3 {
+    @apply dark:text-personal_blue-text;
+  }
+  li {
+    @apply dark:text-personal_blue-text;
+  }
+  svg {
+    @apply dark:text-personal_blue-text;
   }
 }
