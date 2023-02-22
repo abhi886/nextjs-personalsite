@@ -53,7 +53,7 @@ const RICHTEXT_OPTIONS = {
       <h5 className="text-personal_blue-text py-2">{children}</h5>
     ),
     [BLOCKS.HEADING_4]: (node, children) => (
-      <h4 className="leading-7 tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider">
+      <h4 className=" tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider">
         {children}
       </h4>
     ),
@@ -61,9 +61,7 @@ const RICHTEXT_OPTIONS = {
       <h3 className="pt-10 sm:pt-0 text-lg font-semibold">{children}</h3>
     ),
     [BLOCKS.HEADING_2]: (node, children) => (
-      <h2 className="leading-7 tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider">
-        {children}
-      </h2>
+      <h2 className="tracking-wider lg:text-xl">{children}</h2>
     ),
     [BLOCKS.HEADING_1]: (node, children) => (
       <h1 className="text-personal_blue-blue  text-3xl font-semibold pb-10 text-center mx-auto dark:text-gray-300">

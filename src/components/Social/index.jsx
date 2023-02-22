@@ -19,7 +19,7 @@ function Social({ facebookLink, githubLink, linkedinLink }) {
         <FontAwesomeIcon
           icon={('fab', faFacebookSquare)}
           size="2x"
-          color="#ccd6f6"
+          className="dark:text-personal_blue-social"
         />
       </a>
 
@@ -29,7 +29,11 @@ function Social({ facebookLink, githubLink, linkedinLink }) {
         href={`${githubLink}`}
         rel="noopener noreferrer"
       >
-        <FontAwesomeIcon icon={('fab', faGithub)} size="2x" color="#ccd6f6" />
+        <FontAwesomeIcon
+          icon={('fab', faGithub)}
+          size="2x"
+          className="dark:text-personal_blue-social"
+        />
       </a>
 
       <a
@@ -38,7 +42,11 @@ function Social({ facebookLink, githubLink, linkedinLink }) {
         href={`${linkedinLink}`}
         rel="noopener noreferrer"
       >
-        <FontAwesomeIcon icon={('fab', faLinkedin)} size="2x" color="#ccd6f6" />
+        <FontAwesomeIcon
+          icon={('fab', faLinkedin)}
+          size="2x"
+          className="dark:text-personal_blue-social"
+        />
       </a>
     </div>
   );

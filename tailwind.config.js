@@ -25,6 +25,7 @@ module.exports = {
           lightBlue: '#102340',
           blogsLightBlue: '#242b4c',
           paragraph: '#cfd4da',
+          social: '#ccd6f6',
         },
       },
       keyframes: {
