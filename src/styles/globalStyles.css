@@ -25,6 +25,13 @@ html {
   h3 {
     @apply dark:text-personal_blue-text;
   }
+  h4 {
+    @apply dark:text-personal_blue-textParagraph;
+  }
+  h2 {
+    @apply dark:text-personal_blue-textParagraph;
+  }
+
   li {
     @apply dark:text-personal_blue-text;
   }
