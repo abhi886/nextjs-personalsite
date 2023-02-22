@@ -70,7 +70,7 @@ function HeroSection({ aboutData }) {
         />
       </article>
       {/* scrollDown Button */}
-      <article className="absolute -ml-4  bottom-20 left-2/4 h-10 bg-transparent text-white">
+      <article className="absolute -ml-4  bottom-20 left-2/4 h-10 bg-transparent dark:text-white">
         <a href="#about">
           {' '}
           <ChevronDownIcon className="h-10 animate-bounce cursor-pointer" />
