@@ -72,7 +72,9 @@ function MyTextAreaInput({ label, ...props }) {
       <div>
         {' '}
         {meta.touched && meta.error ? (
-          <div className="error dark:text-personal_blue-text pt-2">{meta.error}</div>
+          <div className="error dark:text-personal_blue-text pt-2">
+            {meta.error}
+          </div>
         ) : null}{' '}
         <br />
       </div>

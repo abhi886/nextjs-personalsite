@@ -76,10 +76,10 @@ function index({ blogs, seoData }) {
       />
       <section className="px-4 py-5 min-h-screen lg:px-44 lg:py-8 dark:bg-personal_blue">
         <div>
-          <p className="text-2xl text-personal_blue dark:text-personal_blue-textTitle md:text-4xl md:leading-tight">
+          <h1 className="text-3xl text-gray-800 font-semibold pb-8 text-center  mx-auto dark:text-gray-300">
             <strong>Blog</strong> Posts
-          </p>
-          <p className="text-base text-gray-600 dark:text-white my-2 md:text-xl">
+          </h1>
+          <p className="prose max-w-none prose-gray dark:prose-invert text-center">
             I write articles about modern Full Stack Web Development. View my
             recent articles and blog posts.
           </p>
