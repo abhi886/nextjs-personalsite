@@ -30,7 +30,7 @@ function FeaturedWorkCard({ workData }) {
           {workData.map((w) => (
             <article
               key={w.slug}
-              className="w-full m-auto max-w-xs lg:max-w-sm overflow-hidden rounded-lg shadow-lg bg-personal_blue-lightBlue"
+              className="w-full m-auto max-w-xs lg:max-w-sm overflow-hidden rounded-lg shadow-lg dark:bg-personal_blue-lightBlue"
             >
               <div className="relative group">
                 <div className="group-:hidden">
@@ -44,17 +44,17 @@ function FeaturedWorkCard({ workData }) {
 
                   <a target="_blank" href={`/works/${w.slug}`} rel="noreferrer">
                     <div className="flex justify-center px-4 py-3 bg-persobal_blue-lightBlue">
-                      <h1 className="text-lg font-semibold text-white">
+                      <h1 className="text-lg font-semibold dark:text-white">
                         {w.title}
                       </h1>
                     </div>
                   </a>
                 </div>
-                <div className="absolute animate-fade-in-down top-0 left-0 hidden group-hover:flex bg-personal_blue-lightBlue h-56">
+                <div className="absolute animate-fade-in-down top-0 left-0 hidden group-hover:flex bg-white dark:bg-personal_blue-lightBlue h-56">
                   <div className="px-8">
-                    <p className="py-4 text-gray-400">{w.shortDescription}</p>
+                    <p className="py-4 dark:text-gray-400">{w.shortDescription}</p>
 
-                    <div className="mt-4 text-personal_blue-text">
+                    <div className="mt-4 dark:text-personal_blue-text">
                       {w.language &&
                         w.language.map((l, i) => (
                           <span key={l + Math.random()} className="text-xs">
