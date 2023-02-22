@@ -28,7 +28,4 @@ html {
   li {
     @apply dark:text-personal_blue-text;
   }
-  svg {
-    @apply dark:text-personal_blue-text;
-  }
 }
