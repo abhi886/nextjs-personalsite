@@ -2,13 +2,13 @@ import React from 'react';
 
 export default function GetHired() {
   return (
-    <section className="bg-personal_blue">
+    <section className="dark:bg-personal_blue">
       <div className="container flex flex-col items-center px-4 py-36 mx-auto text-center pb-24">
-        <h2 className="text-3xl font-bold tracking-tight text-personal_blue-textTitle xl:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight dark:text-personal_blue-textTitle xl:text-4xl">
           Need A Developer for your next project ?
         </h2>
 
-        <p className="block max-w-4xl mt-4 text-personal_blue-textParagraph">
+        <p className="block max-w-4xl mt-4 dark:text-personal_blue-textParagraph">
           I do full stack web application development using MERN stack and JAM
           Stack. Feel free to say a friendly hello to me via
           abhishekmhrzn.14@gmail.com or by clicking the &quot;Contact Me
