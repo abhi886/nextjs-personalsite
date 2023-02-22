@@ -47,7 +47,7 @@ const RICHTEXT_OPTIONS = {
       <td className="p-0">{children}</td>
     ),
     [BLOCKS.HEADING_6]: (node, children) => (
-      <h6 className="text-gray-400 py-2">{children}</h6>
+      <h6 className="text-gray-100 py-2">{children}</h6>
     ),
     [BLOCKS.HEADING_5]: (node, children) => (
       <h5 className="text-personal_blue-text py-2">{children}</h5>
@@ -69,10 +69,7 @@ const RICHTEXT_OPTIONS = {
       </h1>
     ),
     [BLOCKS.PARAGRAPH]: (node, children) => (
-      <p className="text-personal_blue-textParagraph prose max-w-none prose-gray  ">
-        {' '}
-        {children}
-      </p>
+      <p className="text-gray-200 prose max-w-none prose-gray  "> {children}</p>
     ),
     [INLINES.HYPERLINK]: (node, children) => (
       <a
