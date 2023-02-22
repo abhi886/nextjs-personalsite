@@ -18,10 +18,7 @@ function MyApp({ Component, pageProps }) {
           cardType: 'summary_large_image',
         }}
       />
-      <ThemeProvider
-        forcedTheme={Component.theme || undefined}
-        attribute="class"
-      >
+      <ThemeProvider enableSystem="true" attribute="class">
         <Component {...pageProps} />
       </ThemeProvider>
     </>
