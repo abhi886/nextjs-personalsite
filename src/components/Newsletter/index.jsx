@@ -2,13 +2,13 @@ import React from 'react';
 
 function Newsletter() {
   return (
-    <section className="bg-personal_blue">
+    <section className="dark:bg-personal_blue">
       <div className="container flex flex-col items-center px-4 py-28 mx-auto text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-personal_blue-textTitle xl:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight dark:text-personal_blue-textTitle xl:text-4xl">
           Sign up for my Newsletter
         </h2>
 
-        <p className="block max-w-4xl mt-4 text-personal_blue-textParagraph">
+        <p className="block max-w-4xl mt-4 dark:text-personal_blue-textParagraph">
           I write about modern Full Stack Web Development. Subscribe to my
           newsletter to notify when I publish new components
         </p>
@@ -17,7 +17,7 @@ function Newsletter() {
           <div className=" border-2 rounded-full py-2 md:shadow-sm">
             <input
               type="text"
-              className="flex-grow pl-5 bg-transparent outline-none text-gray-600 placeholder-gray-400"
+              className="flex-grow pl-5 bg-transparent outline-none dark:text-gray-600 dark:placeholder-gray-400"
               placeholder="Enter Your Email"
             />
           </div>
