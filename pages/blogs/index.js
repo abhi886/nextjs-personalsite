@@ -76,7 +76,7 @@ function index({ blogs, seoData }) {
       />
       <section className="px-4 py-5 min-h-screen lg:px-44 lg:py-8 dark:bg-personal_blue">
         <div>
-          <h1 className="text-3xl text-gray-800 font-semibold pb-8 text-center  mx-auto dark:text-gray-300">
+          <h1 className="text-3xl dark:text-personal_blue-textTitle text-gray-800 font-semibold pb-4 text-center  mx-auto">
             <strong>Blog</strong> Posts
           </h1>
           <p className="prose max-w-none prose-gray dark:prose-invert text-center">
