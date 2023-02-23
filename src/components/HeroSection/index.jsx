@@ -15,21 +15,21 @@ function HeroSection({ aboutData }) {
     linkedinLink,
   } = aboutData;
   return (
-    <section className="relative h-screen bg-personal_blue">
+    <section className="relative h-screen dark:bg-personal_blue">
       <article className="absolute top-1/4 w-full text-center">
-        <h1 className="text-personal_blue-textTitle font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up">
-          I&apos;m
+        <h1 className="dark:text-personal_blue-textTitle font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up">
+          I&apos;m&nbsp;
           {fullName}.
         </h1>
         <div className="grid grid-cols-2 p-3">
           <div className="text-right">
-            <h2 className="font-medium text-personal_blue-textTitle">
+            <h2 className="font-medium dark:text-personal_blue-textTitle">
               Based in {location}.
             </h2>
           </div>
           <div className="text-left">
             <Typed
-              className="font-medium pl-2 text-gray-300"
+              className="font-medium pl-2 dark:text-gray-300"
               strings={position}
               typeSpeed={100}
               backSpeed={50}
@@ -42,7 +42,7 @@ function HeroSection({ aboutData }) {
           <a href="#contact">
             <button
               type="button"
-              className="w-32 text-personal_blue-text bg-transparent px-3 py-3 shadow-md rounded-full border-2 border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150"
+              className="w-32 dark:text-personal_blue-text bg-transparent px-3 py-3 shadow-md rounded-full border-2 dark:border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150"
             >
               Contact Me
             </button>
@@ -56,7 +56,7 @@ function HeroSection({ aboutData }) {
             {' '}
             <button
               type="button"
-              className="w-32 text-personal_blue-text bg-transparent px-4 py-3 shadow-md rounded-full border-2 border-personal_blue-text  font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150"
+              className="w-32 dark:text-personal_blue-text bg-transparent px-4 py-3 shadow-md rounded-full border-2 dark:border-personal_blue-text  font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150"
             >
               Resume
             </button>
@@ -70,7 +70,7 @@ function HeroSection({ aboutData }) {
         />
       </article>
       {/* scrollDown Button */}
-      <article className="absolute -ml-4  bottom-20 left-2/4 h-10 bg-transparent text-white">
+      <article className="absolute -ml-4  bottom-20 left-2/4 h-10 bg-transparent dark:text-white">
         <a href="#about">
           {' '}
           <ChevronDownIcon className="h-10 animate-bounce cursor-pointer" />

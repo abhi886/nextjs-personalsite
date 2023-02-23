@@ -47,19 +47,21 @@ const RICHTEXT_OPTIONS = {
       <td className="p-0">{children}</td>
     ),
     [BLOCKS.HEADING_6]: (node, children) => (
-      <h6 className="text-gray-400 py-2">{children}</h6>
+      <h6 className="text-gray-100 py-2">{children}</h6>
     ),
     [BLOCKS.HEADING_5]: (node, children) => (
       <h5 className="text-personal_blue-text py-2">{children}</h5>
     ),
     [BLOCKS.HEADING_4]: (node, children) => (
-      <h4 className="text-personal_blue-text">{children}</h4>
+      <h4 className=" tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider">
+        {children}
+      </h4>
     ),
     [BLOCKS.HEADING_3]: (node, children) => (
       <h3 className="pt-10 sm:pt-0 text-lg font-semibold">{children}</h3>
     ),
     [BLOCKS.HEADING_2]: (node, children) => (
-      <h2 className="text-lg font-medium mb-1 text-gray-700">{children}</h2>
+      <h2 className="tracking-wider lg:text-xl">{children}</h2>
     ),
     [BLOCKS.HEADING_1]: (node, children) => (
       <h1 className="text-personal_blue-blue  text-3xl font-semibold pb-10 text-center mx-auto dark:text-gray-300">
@@ -67,10 +69,7 @@ const RICHTEXT_OPTIONS = {
       </h1>
     ),
     [BLOCKS.PARAGRAPH]: (node, children) => (
-      <p className="text-personal_blue-textParagraph prose max-w-none prose-gray  ">
-        {' '}
-        {children}
-      </p>
+      <p className="text-gray-200 prose max-w-none prose-gray  "> {children}</p>
     ),
     [INLINES.HYPERLINK]: (node, children) => (
       <a

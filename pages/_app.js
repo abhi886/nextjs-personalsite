@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
           cardType: 'summary_large_image',
         }}
       />
-      <ThemeProvider enableSystem="true" attribute="class">
+      <ThemeProvider enableSystem="true" attribute="class" defaultTheme="dark">
         <Component {...pageProps} />
       </ThemeProvider>
     </>

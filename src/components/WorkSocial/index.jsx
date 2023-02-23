@@ -6,7 +6,7 @@ import { faEye, faBook } from '@fortawesome/free-solid-svg-icons';
 // eslint-disable-next-line react/prop-types
 function WorkSocial({ siteUrl, gitUrl, slug }) {
   return (
-    <div className="flex justify-end space-x-2 p-2">
+    <div className="flex justify-end space-x-2 p-2 pt-2">
       {siteUrl && (
         <a
           href={siteUrl}
@@ -14,16 +14,28 @@ function WorkSocial({ siteUrl, gitUrl, slug }) {
           target="_blank"
           title="Visit Website "
         >
-          <FontAwesomeIcon icon={('fas', faEye)} size="1x" color="#8892b0" />{' '}
+          <FontAwesomeIcon
+            icon={('fas', faEye)}
+            size="1x"
+            className="dark:text-personal_blue-social"
+          />{' '}
         </a>
       )}
       {gitUrl && (
         <a href={gitUrl} rel="noreferrer" target="_blank" title="View Github">
-          <FontAwesomeIcon icon={('fab', faGithub)} size="1x" color="#8892b0" />
+          <FontAwesomeIcon
+            icon={('fab', faGithub)}
+            size="1x"
+            className="dark:text-personal_blue-social"
+          />
         </a>
       )}
       <a href={`/works/${encodeURIComponent(slug)}`} title="View Case Study ">
-        <FontAwesomeIcon icon={('fab', faBook)} size="1x" color="#8892b0" />
+        <FontAwesomeIcon
+          icon={('fab', faBook)}
+          size="1x"
+          className="dark:text-personal_blue-social"
+        />
       </a>
     </div>
   );
