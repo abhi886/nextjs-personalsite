@@ -3,9 +3,9 @@ import Social from '../Social';
 
 function FooterSection() {
   return (
-    <footer className="p-5 bg-personal_blue">
+    <footer className="p-5 dark:bg-personal_blue border border-t-2 dark:border-none">
       <Social />
-      <p className="text-white text-xs text-center pt-4">
+      <p className="dark:text-white text-xs text-center pt-4">
         Site Built Using: Next.js, TailwindCSS, Contentful
       </p>
     </footer>
