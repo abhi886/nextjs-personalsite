@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import myPhoto from '../../../public/images/me.jpg';
 import convertDate from '../../utils/convertDate';
-import renderOptions from '../../utils/contentfulUtils';
+import RICHTEXT_OPTIONS from '../../utils/rich-text-general-options';
 
 function BlogSlugPage({
   title,
@@ -28,20 +28,22 @@ function BlogSlugPage({
         <div className="text-sm leading-6  xl:mb-0">
           <div className=" mt-4 pb-5 border-b border-slate-200 xl:block  dark:border-slate-200/5">
             <a
-              className="group flex font-semibold text-slate-700 hover:text-slate-900"
+              className="group flex font-semibold text-slate-700 dark:text-white hover:text-slate-900"
               href={goBackLink}
             >
-              <div className="flex items-center space-x-4 justify-end">
-                <div className="flex items-center space-x-2 border-2 p-2 rounded-full">
-                  <RewindIcon className="h-3 md:h-6" />
+              <div className="flex items-center space-x-4 justify-end hover:text-blue-500">
+                <div className="flex items-center space-x-2 border-2 p-2 rounded-full ">
+                  <RewindIcon className="h-3 md:h-6 " />
                 </div>
-                <p className=" inline-flex cursor-pointer">Go Back</p>
+                <p className="inline-flex cursor-pointer hover:text-blue-500 underline ">
+                  Go Back to blog's page
+                </p>
               </div>
             </a>
           </div>
           <dl>
             <dt className="sr-only">Date</dt>
-            <dd className="absolute top-0 inset-x-0 text-slate-700 sm:text-center">
+            <dd className="absolute top-0 inset-x-0 text-slate-700 dark:text-personal_blue-textParagraph sm:text-center">
               <time dateTime={updatedDate}>
                 Last Updated At: {convertDate(updatedDate)}
               </time>
@@ -76,7 +78,7 @@ function BlogSlugPage({
         </div>
         <div className="prose max-w-none prose-img:rounded-xl prose-slate dark:prose-dark col-span-2">
           <div className="">
-            <div className="flex items-center space-x-4 justify-end text-gray-500">
+            <div className="flex items-center space-x-4 justify-end dark:text-personal_blue-textParagraph">
               <div className="flex items-center space-x-1">
                 <ClockIcon className="h-6" />
               </div>
@@ -102,7 +104,7 @@ function BlogSlugPage({
                 language.map((lang) => <span key={lang}> {lang} | </span>)}
             </p>
           )}
-          <div>{documentToReactComponents(description, renderOptions)}</div>
+          <div>{documentToReactComponents(description, RICHTEXT_OPTIONS)}</div>
         </div>
       </section>
     </main>

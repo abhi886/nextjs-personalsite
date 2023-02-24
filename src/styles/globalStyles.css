@@ -22,17 +22,25 @@ html {
   }
 }
 @layer base {
-  h3 {
+  h5 {
     @apply dark:text-personal_blue-text;
   }
   h4 {
     @apply dark:text-personal_blue-textParagraph;
   }
+  h3 {
+    @apply dark:text-personal_blue-text;
+  }
   h2 {
     @apply dark:text-personal_blue-textParagraph;
   }
-
+  p {
+    @apply dark:text-personal_blue-textParagraph;
+  }
   li {
     @apply dark:text-personal_blue-text;
+  }
+  code {
+    @apply dark:text-personal_blue-textParagraph;
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { createClient } from 'contentful';
 import { NextSeo } from 'next-seo';
 import BlogSlugPage from '../../src/components/BlogSlugPageCard';
-import Layout from '../../src/components/OtherPageLayout';
+import Layout from '../../src/components/LandingPageLayout';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -51,7 +51,7 @@ export default function blogSlug({ blogs }) {
   const { title, readTime, blogImage, blogDescription } = blogs.fields;
   const { updatedAt } = blogs.sys;
   return (
-    <>
+    <Layout>
       <NextSeo
         title={`Blogs| ${title}`}
         description={title}
@@ -80,10 +80,10 @@ export default function blogSlug({ blogs }) {
         updatedDate={updatedAt}
         goBackLink="/blogs"
       />
-    </>
+    </Layout>
   );
 }
 
-blogSlug.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
-};
+// blogSlug.getLayout = function getLayout(page) {
+//   return <Layout>{page}</Layout>;
+// };
