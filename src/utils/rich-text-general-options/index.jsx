@@ -50,10 +50,10 @@ const RICHTEXT_OPTIONS = {
       <h6 className="text-gray-100 py-2">{children}</h6>
     ),
     [BLOCKS.HEADING_5]: (node, children) => (
-      <h5 className="text-personal_blue-text py-2">{children}</h5>
+      <h5 className="py-2">{children}</h5>
     ),
     [BLOCKS.HEADING_4]: (node, children) => (
-      <h4 className=" tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider">
+      <h4 className="tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider">
         {children}
       </h4>
     ),
