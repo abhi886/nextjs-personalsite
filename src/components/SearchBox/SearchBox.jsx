@@ -43,7 +43,9 @@ function SearchBox({ searchData, displayComponent }) {
         </p>
       </div>
       <div className="grid gap-10 lg:gap-10 md:grid-cols-2 lg:grid-cols-3 ">
-        {filteredData.map((fd) => displayComponent({ ...fd }))}
+        {filteredData.map((fd) => (
+          <div key={fd[Object.keys(fd)[0]]}>{displayComponent({ ...fd })}</div>
+        ))}
       </div>
     </>
   );
