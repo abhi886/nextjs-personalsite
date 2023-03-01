@@ -9,7 +9,7 @@ function BlogCard({
   title,
   blogImage,
   slug,
-  updatedAt,
+  sys: { publishedAt },
 }) {
   return (
     <article className="group dark:bg-personal_blue-lightBlue rounded-lg shadow-md hover:scale-105 transition duration-700 ease-in-out hover:shadow-md ">
@@ -44,7 +44,7 @@ function BlogCard({
             className="rounded-full"
           />
           <span className="text-sm flex-1">Abhishekh Maharjan</span>
-          <time className="text-sm ">{convertDate(updatedAt)}</time>
+          <time className="text-sm ">{convertDate(publishedAt)}</time>
         </div>
       </div>
     </article>

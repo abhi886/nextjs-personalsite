@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import { NextSeo } from 'next-seo';
 import query from '../../src/utils/queries/blog-pag-query';
 import BlogCard from '../../src/components/BlogCard/BlogCard';
@@ -18,8 +18,7 @@ export async function getStaticProps() {
 
 function blog({ data }) {
   const { blogCollection, seoCollection } = data;
-  const [searchQuery, SetSearchQuery] = useState('');
-  const [filteredBlogs] = useState(blogCollection.items);
+
   const {
     title,
     description,
@@ -29,23 +28,6 @@ function blog({ data }) {
     pageImageAltText,
   } = seoCollection.items[0];
 
-  const handleSearch = (inputQuery) => {
-    SetSearchQuery(inputQuery);
-  };
-
-  const getFilteredBlogs = useMemo(() => {
-    return filteredBlogs.filter((b) =>
-      b.title.toLowerCase().startsWith(searchQuery.toLowerCase())
-    );
-  }, [filteredBlogs, searchQuery]);
-  const { totalCount, filteredData } = useMemo(() => {
-    if (!filteredBlogs) return { totalCount: 0, data: {} };
-    let filtered = filteredBlogs;
-    if (searchQuery) {
-      filtered = getFilteredBlogs;
-    }
-    return { totalCount: filtered.length, filteredData: filtered };
-  }, [filteredBlogs, searchQuery]);
   return (
     <Layout>
       <NextSeo
@@ -76,21 +58,9 @@ function blog({ data }) {
           recent articles and blog posts.
         </p>
         <SearchBox
-          totalCount={totalCount}
-          value={searchQuery}
-          onChange={handleSearch}
+          searchData={blogCollection.items}
+          displayComponent={BlogCard}
         />
-        <div className="grid gap-10 lg:gap-10 md:grid-cols-2 lg:grid-cols-3 ">
-          {filteredData.map((fb, i) => (
-            <BlogCard
-              key={i}
-              title={fb.title}
-              blogImage={fb.blogImage}
-              slug={fb.slug}
-              updatedAt={fb.sys.publishedAt}
-            />
-          ))}
-        </div>
       </section>
     </Layout>
   );
