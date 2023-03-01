@@ -1,27 +1,30 @@
 const query = `query {
-    blogCollection{
-      items{
-        title
-        blogImage{
-          url
-        }
-        slug
-        sys{
-          publishedAt
-          
-        }
-      }
-    }
-    seoCollection{
-      items{
-        title
-        description
+  blogCollection{
+    items{
+      title
+      blogImage{
         url
-        pageImage{
-          url
-        }
-        pageSeoImageType
+      }
+      slug
+      sys{
+        publishedAt
+        
       }
     }
-       }`;
+  }
+  seoCollection(where:{whichPage:"Blogs Page"}){
+    items{
+      title
+      description
+      url
+      pageImage{
+        url
+      }
+      pageSeoImageType
+      whichPage
+      pageImageAltText
+    }
+  }
+     }
+`;
 export default query;

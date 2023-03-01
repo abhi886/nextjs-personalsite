@@ -16,11 +16,9 @@ function BlogCard({
       <div className="relative overflow-hidden transition-all bg-white-100  aspect-video rounded-lg">
         <a href={`/blogs/${slug}`}>
           <Image
-            src={`https:${blogImage.fields.file.url}`}
+            src={blogImage.url}
             alt="Main picture of the blog"
             objectFit="contain"
-            // width={blogImage.fields.file.details.image.width}
-            // height={blogImage.fields.file.details.image.height}
             layout="fill"
           />
         </a>

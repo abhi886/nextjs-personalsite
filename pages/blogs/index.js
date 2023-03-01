@@ -1,33 +1,25 @@
-import React, { useMemo, useState } from 'react';
-import { createClient } from 'contentful';
+import React, { useState, useMemo } from 'react';
 import { NextSeo } from 'next-seo';
+import query from '../../src/utils/queries/blog-pag-query';
 import BlogCard from '../../src/components/BlogCard/BlogCard';
+import useContentful from '../../src/customHooks/use-contentful';
 import Layout from '../../src/components/LandingPageLayout';
 import SearchBox from '../../src/components/SearchBox/SearchBox';
 
 export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-  });
-  const res = await client.getEntries({ content_type: 'blog' });
-  const resSEO = await client.getEntries({ content_type: 'seo' });
-
+  const data = await useContentful(query);
   return {
     props: {
-      blogs: res.items,
-      seoData: resSEO.items,
+      data,
     },
     revalidate: 1,
   };
 }
 
-function index({ blogs, seoData }) {
+function blog({ data }) {
+  const { blogCollection, seoCollection } = data;
   const [searchQuery, SetSearchQuery] = useState('');
-  const [filteredBlogs] = useState(blogs);
-  const blogPageSEOData = seoData.filter(
-    (data) => data.fields.whichPage === 'Blogs Page'
-  );
+  const [filteredBlogs] = useState(blogCollection.items);
   const {
     title,
     description,
@@ -35,23 +27,24 @@ function index({ blogs, seoData }) {
     pageImage,
     pageSeoImageType,
     pageImageAltText,
-  } = blogPageSEOData[0].fields;
-  const handleSearch = (query) => {
-    SetSearchQuery(query);
+  } = seoCollection.items[0];
+
+  const handleSearch = (inputQuery) => {
+    SetSearchQuery(inputQuery);
   };
 
   const getFilteredBlogs = useMemo(() => {
     return filteredBlogs.filter((b) =>
-      b.fields.title.toLowerCase().startsWith(searchQuery.toLowerCase())
+      b.title.toLowerCase().startsWith(searchQuery.toLowerCase())
     );
   }, [filteredBlogs, searchQuery]);
-  const { totalCount, data } = useMemo(() => {
+  const { totalCount, filteredData } = useMemo(() => {
     if (!filteredBlogs) return { totalCount: 0, data: {} };
     let filtered = filteredBlogs;
     if (searchQuery) {
       filtered = getFilteredBlogs;
     }
-    return { totalCount: filtered.length, data: filtered };
+    return { totalCount: filtered.length, filteredData: filtered };
   }, [filteredBlogs, searchQuery]);
   return (
     <Layout>
@@ -64,7 +57,7 @@ function index({ blogs, seoData }) {
           description,
           images: [
             {
-              url: `https:${pageImage.fields.file.url}`,
+              url: pageImage.url,
               width: 800,
               height: 600,
               alt: pageImageAltText,
@@ -75,23 +68,27 @@ function index({ blogs, seoData }) {
         }}
       />
       <section className="px-4 py-5 min-h-screen lg:px-44 lg:py-8 dark:bg-personal_blue">
-        <div>
-          <h1 className="text-3xl dark:text-personal_blue-textTitle text-gray-800 font-semibold pb-4 text-center  mx-auto">
-            <strong>Blog</strong> Posts
-          </h1>
-          <p className="prose max-w-none prose-gray dark:prose-invert text-center">
-            I write articles about modern Full Stack Web Development. View my
-            recent articles and blog posts.
-          </p>
-        </div>
+        <h1 className="text-3xl dark:text-personal_blue-textTitle text-gray-800 font-semibold pb-4 text-center  mx-auto">
+          <strong>Blog</strong> Posts
+        </h1>
+        <p className="prose max-w-none prose-gray dark:prose-invert text-center">
+          I write articles about modern Full Stack Web Development. View my
+          recent articles and blog posts.
+        </p>
         <SearchBox
           totalCount={totalCount}
           value={searchQuery}
           onChange={handleSearch}
         />
         <div className="grid gap-10 lg:gap-10 md:grid-cols-2 lg:grid-cols-3 ">
-          {data.map((fb, i) => (
-            <BlogCard key={i} {...fb.fields} {...fb.sys} />
+          {filteredData.map((fb, i) => (
+            <BlogCard
+              key={i}
+              title={fb.title}
+              blogImage={fb.blogImage}
+              slug={fb.slug}
+              updatedAt={fb.sys.publishedAt}
+            />
           ))}
         </div>
       </section>
@@ -99,7 +96,4 @@ function index({ blogs, seoData }) {
   );
 }
 
-// index.getLayout = function getLayout(page) {
-//   return <Layout>{page}</Layout>;
-// };
-export default index;
+export default blog;
