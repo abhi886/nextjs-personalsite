@@ -12,14 +12,15 @@ function BlogCard({
   sys: { publishedAt },
 }) {
   return (
-    <article className="group dark:bg-personal_blue-lightBlue rounded-lg shadow-md hover:scale-105 transition duration-700 ease-in-out hover:shadow-md ">
+    <article className="group dark:bg-personal_blue-lightBlue rounded-lg shadow-md hover:scale-100 transition duration-700 ease-in-out hover:shadow-md ">
       <div className="relative overflow-hidden transition-all bg-white-100  aspect-video rounded-lg">
         <a href={`/blogs/${slug}`}>
           <Image
             src={blogImage.url}
             alt="Main picture of the blog"
-            objectFit="contain"
-            layout="fill"
+            objectFit="fill"
+            width={1200}
+            height={620}
           />
         </a>
       </div>
