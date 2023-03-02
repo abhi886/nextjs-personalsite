@@ -24,7 +24,7 @@ function SearchBox({ searchData, displayComponent }) {
   }, [filteredBlogs, searchQuery]);
   return (
     <>
-      <div className="flex mt-6 justify-center">
+      <div className="flex pt-14  justify-center">
         <div className="mb-3 w-full lg:w-1/3">
           <input
             type="search"
@@ -37,7 +37,7 @@ function SearchBox({ searchData, displayComponent }) {
           />
         </div>
       </div>
-      <div className="flex justify-center text-gray-500 pt-1 pb-10">
+      <div className="flex pb-24 justify-center text-gray-500 pt-1">
         <p className="text-sm text-gray-500  dark:text-white underline">
           Showing {totalCount} blog posts
         </p>
