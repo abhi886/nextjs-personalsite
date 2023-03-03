@@ -17,7 +17,7 @@ const RICHTEXT_OPTIONS = {
             fill="currentColor"
           />
         </svg>
-        <p className="pl-4 pt-4">{children}</p>
+        <span className="pl-4">{children}</span>
       </blockquote>
     ),
     [BLOCKS.HR]: () => <br />,
