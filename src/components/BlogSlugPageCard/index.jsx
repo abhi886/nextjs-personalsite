@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import myPhoto from '../../../public/images/me.jpg';
 import convertDate from '../../utils/convertDate';
-import RICHTEXT_OPTIONS from '../../utils/rich-text-general-options';
+// import RICHTEXT_OPTIONS from '../../utils/rich-text-general-options';
+import RichTextOptions from '../../utils/rich-text-options-blogs';
 
 function BlogSlugPage({
   title,
@@ -17,6 +18,7 @@ function BlogSlugPage({
   goBackLink,
   imageWidth,
   imageHeight,
+  data,
 }) {
   return (
     <main className="mx-auto mt-10 px-4 pb-28 sm:mt-16 sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl">
@@ -107,7 +109,9 @@ function BlogSlugPage({
             </p>
           )}
           <div>
-            {documentToReactComponents(description.json, RICHTEXT_OPTIONS)}
+            {/* {documentToReactComponents(description.json, RICHTEXT_OPTIONS)}
+             */}
+            <RichTextOptions data={data} />
           </div>
         </div>
       </section>

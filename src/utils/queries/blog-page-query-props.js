@@ -12,8 +12,35 @@ const querySingleBlogPage = `query GetBlogPostBySlug($slug:String!) {
            height
          }
          blogDescription{
-           json
-         }
+          json
+          links{
+            entries{
+              inline{
+                 sys{
+            id
+          }
+              __typename
+              ... on CodeBlocks{
+                title
+                codeBlockContent
+              }
+              }
+              block {
+                sys {
+                  id
+                }
+                __typename
+                ... on CodeBlocks {
+                 title
+                 codeBlockContent
+                  
+                              }
+
+              
+              }
+            }
+          }
+        }
          sys{
            publishedAt
          }

@@ -73,6 +73,7 @@ export default function blogSlug({ blog: { blogData } }) {
           updatedDate={sys.publishedAt}
           languages={languages}
           goBackLink="/blogs"
+          data={blogDescription}
         />
       </Layout>
     </>
