@@ -44,18 +44,18 @@ export default function blogSlug({ blog: { blogData } }) {
   return (
     <>
       <NextSeo
-        title={`Blogs| ${title}`}
+        title={`Blogs | ${title}`}
         description={title}
         openGraph={{
           url: `abhishekhmaharjan.com/blogs/${title}`,
-          title: `Blogs| ${title}`,
+          title: `Blogs | ${title}`,
           description: title,
           images: [
             {
               url,
               width: 800,
               height: 600,
-              alt: 'Blog Page Imange',
+              alt: 'Blog Page Image',
               type: 'image/png',
             },
           ],
