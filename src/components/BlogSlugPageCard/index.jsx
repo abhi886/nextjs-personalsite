@@ -18,7 +18,6 @@ function BlogSlugPage({
   imageWidth,
   imageHeight,
 }) {
-  console.log(imageWidth);
   return (
     <main className="mx-auto mt-10 px-4 pb-28 sm:mt-16 sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl">
       <section className="relative pt-10 max-w-3xl mx-auto xl:max-w-none xl:grid xl:grid-cols-3 xl:gap-x-8">
@@ -39,7 +38,7 @@ function BlogSlugPage({
                   <RewindIcon className="h-3 md:h-6 " />
                 </div>
                 <p className="inline-flex cursor-pointer hover:text-blue-500 underline ">
-                  Go Back to blog's page
+                  {`Go Back to blog's page`}
                 </p>
               </div>
             </a>
