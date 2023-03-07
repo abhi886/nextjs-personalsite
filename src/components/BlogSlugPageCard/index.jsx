@@ -13,9 +13,12 @@ function BlogSlugPage({
   imageUrl,
   description,
   updatedDate,
-  language,
+  languages,
   goBackLink,
+  imageWidth,
+  imageHeight,
 }) {
+  console.log(imageWidth);
   return (
     <main className="mx-auto mt-10 px-4 pb-28 sm:mt-16 sm:px-6 md:px-8 xl:px-12 xl:max-w-6xl">
       <section className="relative pt-10 max-w-3xl mx-auto xl:max-w-none xl:grid xl:grid-cols-3 xl:gap-x-8">
@@ -89,22 +92,24 @@ function BlogSlugPage({
 
             <div className="">
               <Image
-                src={`https:${imageUrl.fields.file.url}`}
+                src={imageUrl}
                 alt="Main picture of the blog"
                 objectFit="fill"
-                width={imageUrl.fields.file.details.image.width}
-                height={imageUrl.fields.file.details.image.height}
+                width={imageWidth}
+                height={imageHeight}
               />
             </div>
           </div>
-          {language && (
+          {languages && (
             <p className="p-2 text-xs text-personal_blue-workBackground font-mono text-right">
               {' '}
-              {language &&
-                language.map((lang) => <span key={lang}> {lang} | </span>)}
+              {languages &&
+                languages.map((lang) => <span key={lang}> {lang} | </span>)}
             </p>
           )}
-          <div>{documentToReactComponents(description, RICHTEXT_OPTIONS)}</div>
+          <div>
+            {documentToReactComponents(description.json, RICHTEXT_OPTIONS)}
+          </div>
         </div>
       </section>
     </main>
