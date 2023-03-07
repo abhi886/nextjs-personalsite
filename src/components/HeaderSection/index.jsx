@@ -80,7 +80,7 @@ function index({ logo }) {
       <nav className="relative bg-personal_blue shadow">
         <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
           <div className="flex items-center justify-between">
-            {/* <div>
+            <div>
               <a
                 className="text-2xl font-bold text-personal_blue-text transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
                 href="/"
@@ -94,7 +94,7 @@ function index({ logo }) {
                   className="m-0 p-0"
                 />
               </a>
-            </div> */}
+            </div>
 
             <div className="flex md:hidden">
               <button
