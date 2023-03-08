@@ -58,7 +58,7 @@ const RICHTEXT_OPTIONS = {
       </h4>
     ),
     [BLOCKS.HEADING_3]: (node, children) => (
-      <h3 className="pt-10 sm:pt-0 text-lg font-semibold">{children}</h3>
+      <h3 className="pt-10 sm:pt-0 text-lg">{children}</h3>
     ),
     [BLOCKS.HEADING_2]: (node, children) => (
       <h2 className="tracking-wider lg:text-xl">{children}</h2>
@@ -72,10 +72,7 @@ const RICHTEXT_OPTIONS = {
       <p className="text-gray-200 prose max-w-none prose-gray  "> {children}</p>
     ),
     [INLINES.HYPERLINK]: (node, children) => (
-      <a
-        href={node.data.uri}
-        className="text-personal_blue-textParagraph  border-personal_blue-text"
-      >
+      <a href={node.data.uri} className="text-personal_blue-textParagraph">
         {children}
       </a>
     ),
