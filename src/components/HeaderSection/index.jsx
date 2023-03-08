@@ -74,7 +74,6 @@ function index({ logo }) {
   if (!mounted) {
     return null;
   }
-
   return (
     <header className="sticky top-0 z-50 ">
       <nav className="relative bg-personal_blue shadow">
@@ -169,7 +168,7 @@ function index({ logo }) {
               </a>
               <a
                 className={`my-2  transition-colors duration-300 transform hover:text-personal_blue-text md:mx-4 md:my-0 ${
-                  currentRoute === '/blogs'
+                  currentRoute === '/blogs' || currentRoute === '/blogs/[blog]'
                     ? 'text-personal_blue-text'
                     : 'text-white'
                 }`}

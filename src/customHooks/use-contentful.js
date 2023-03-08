@@ -2,7 +2,7 @@
 // const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_KEY } = process.env;
 const { CONTENTFUL_SPACE_ID } = process.env;
 const { CONTENTFUL_ACCESS_KEY } = process.env;
-const useContentful = async (query) => {
+const useContentful = async (query, variables) => {
   try {
     const res = await fetch(
       `https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/?access_token=${CONTENTFUL_ACCESS_KEY}`,
@@ -11,7 +11,7 @@ const useContentful = async (query) => {
         headers: {
           'Content-type': 'application/json',
         },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query, variables }),
       }
     );
     const { data } = await res.json();

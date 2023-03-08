@@ -1,11 +1,11 @@
-import React from "react";
-import Head from "next/dist/shared/lib/head";
-import { createClient } from "contentful";
-import HeaderSection from "../../src/components/HeaderSection";
-import FooterSection from "../../src/components/FooterSection";
-import Skeleton from "../../src/components/Skeleton";
-import WorkSlugPage from "../../src/components/BlogSlugPageCard";
-import Layout from "../../src/components/OtherPageLayout";
+import React from 'react';
+import Head from 'next/dist/shared/lib/head';
+import { createClient } from 'contentful';
+import HeaderSection from '../../src/components/HeaderSection';
+import FooterSection from '../../src/components/FooterSection';
+import Skeleton from '../../src/components/Skeleton';
+import WorkSlugPage from '../../src/components/BlogSlugPageCard';
+import Layout from '../../src/components/OtherPageLayout';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -14,7 +14,7 @@ const client = createClient({
 
 export async function getStaticPaths() {
   const res = await client.getEntries({
-    content_type: "works",
+    content_type: 'works',
   });
 
   const paths = res.items.map((item) => {
@@ -31,14 +31,14 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { items, thumbnail } = await client.getEntries({
-    content_type: "works",
-    "fields.slug": params.slug,
+    content_type: 'works',
+    'fields.slug': params.slug,
   });
 
   if (!items.length) {
     return {
       redirect: {
-        destination: "/",
+        destination: '/',
         permanent: false,
       },
     };
@@ -58,8 +58,9 @@ function aslug({ works }) {
 
   return (
     <>
-      <div>
-        <Head>
+      {/* <div> */}
+      <p>Under Construction</p>
+      {/* <Head>
           <title>{title}</title>
           <meta property='og:title' content={title} key={title} />
           <meta
@@ -67,8 +68,8 @@ function aslug({ works }) {
             content='width=device-width, initial-scale=1.0'
           ></meta>
         </Head>
-      </div>
-      <WorkSlugPage
+      </div> */}
+      {/* <WorkSlugPage
         title={title}
         readTime={readTime}
         imageUrl={blogImage}
@@ -76,7 +77,7 @@ function aslug({ works }) {
         updatedDate={updatedAt}
         language={language}
         goBackLink={"/"}
-      />
+      /> */}
     </>
   );
 }

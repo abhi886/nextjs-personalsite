@@ -22,16 +22,22 @@ html {
   }
 }
 @layer base {
+  h6 {
+    @apply dark:text-personal_blue-text;
+  }
   h5 {
     @apply dark:text-personal_blue-text;
   }
   h4 {
-    @apply dark:text-personal_blue-textParagraph;
+    @apply dark:text-personal_blue-text;
   }
   h3 {
     @apply dark:text-personal_blue-text;
   }
   h2 {
+    @apply dark:text-personal_blue-textParagraph;
+  }
+  h1 {
     @apply dark:text-personal_blue-textParagraph;
   }
   p {
@@ -41,6 +47,6 @@ html {
     @apply dark:text-personal_blue-text;
   }
   code {
-    @apply dark:text-personal_blue-textParagraph;
+    @apply dark:text-white;
   }
 }
