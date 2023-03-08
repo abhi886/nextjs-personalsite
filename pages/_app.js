@@ -5,6 +5,7 @@ import '../src/styles/globalStyles.css';
 import { DefaultSeo } from 'next-seo';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { ThemeProvider } from 'next-themes';
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }) {
       />
       <ThemeProvider enableSystem="true" attribute="class" defaultTheme="dark">
         <Component {...pageProps} />
+        <Analytics />
       </ThemeProvider>
     </>
   );
