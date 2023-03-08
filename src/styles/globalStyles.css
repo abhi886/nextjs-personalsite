@@ -35,7 +35,7 @@ html {
     @apply dark:text-personal_blue-text;
   }
   h2 {
-    @apply dark:text-personal_blue-text;
+    @apply dark:text-personal_blue-textParagraph;
   }
   h1 {
     @apply dark:text-personal_blue-textParagraph;
