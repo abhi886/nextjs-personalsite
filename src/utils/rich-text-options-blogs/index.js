@@ -4,6 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types';
 import RICHTEXT_OPTIONS from '../rich-text-general-options';
 import getEntryMap from '../getEntryMap';
+import Code from '../../components/code';
 
 function renderOptions(links) {
   const entryMap = getEntryMap(links);
@@ -14,9 +15,7 @@ function renderOptions(links) {
       if (entry.__typename === 'CodeBlocks') {
         return (
           <div className="sm:col-span-10 space-y-3">
-            <pre className="line-numbers language-css">
-              <code className="language-css">{entry.codeBlockContent}</code>
-            </pre>
+            <Code code={entry.codeBlockContent} language="javascript" />
           </div>
         );
       }
