@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Head from 'next/dist/shared/lib/head';
 import { useRouter } from 'next/router';
 import Layout from '../src/components/LandingPageLayout/index';
 
