@@ -39,6 +39,9 @@ query {
       blogImage{
         url
       }
+      blogDescription{
+        json 
+      }
       sys{
         firstPublishedAt
       }
