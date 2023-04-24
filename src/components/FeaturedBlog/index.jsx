@@ -74,7 +74,7 @@ function FeaturedBlog({ blogData }) {
                       {d.languages &&
                         d.languages.map((l, i) => (
                           <span
-                            key={i}
+                            key={d.id}
                             className="text-xs py-3 pr-2 text-blue-900 dark:text-personal_blue-text hover:underline"
                           >
                             {i < d.languages.length - 1 ? `${l} |` : `${l}`}

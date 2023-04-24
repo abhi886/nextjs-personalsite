@@ -2,7 +2,6 @@
 import React from 'react';
 import { RewindIcon, ClockIcon } from '@heroicons/react/solid';
 import Image from 'next/image';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import myPhoto from '../../../public/images/me.jpg';
 import convertDate from '../../utils/convertDate';
 // import RICHTEXT_OPTIONS from '../../utils/rich-text-general-options';
@@ -12,7 +11,6 @@ function BlogSlugPage({
   title,
   readTime,
   imageUrl,
-  description,
   updatedDate,
   languages,
   goBackLink,
