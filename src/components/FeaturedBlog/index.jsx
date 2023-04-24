@@ -3,6 +3,7 @@ import React from 'react';
 
 import { FaBlog } from 'react-icons/fa';
 import Image from 'next/dist/client/image';
+import convertDate from '../../utils/convertDate';
 
 function FeaturedBlog({ blogData }) {
   return (
@@ -64,7 +65,8 @@ function FeaturedBlog({ blogData }) {
                     </a>
                     <div className="text-sm mt-2 dark:text-personal_blue-textParagraph">
                       <p>
-                        {d.sys.firstPublishedAt} /{d.readTime} mins read
+                        {convertDate(d.sys.firstPublishedAt)} / {d.readTime}{' '}
+                        mins read
                       </p>
                     </div>
                     <div className="py-3 lg:pt-7">
