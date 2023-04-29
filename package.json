@@ -10,6 +10,7 @@
     "lint:fix": "eslint --fix src/**/*.{js,jsx}"
   },
   "dependencies": {
+    "@contentful/rich-text-plain-text-renderer": "^16.0.3",
     "@contentful/rich-text-react-renderer": "^15.16.2",
     "@contentful/rich-text-types": "^16.0.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
