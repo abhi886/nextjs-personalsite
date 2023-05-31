@@ -2,12 +2,15 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
+import Image from 'next/image';
 import RICHTEXT_OPTIONS from '../rich-text-general-options';
 import getEntryMap from '../getEntryMap';
 import Code from '../../components/code';
+import getAssetMap from '../getAssetMap';
 
 function renderOptions(links) {
   const entryMap = getEntryMap(links);
+  const assetMap = getAssetMap(links);
   const aboutRenderNode = {
     [BLOCKS.EMBEDDED_ENTRY]: (node) => {
       const entry = entryMap.get(node.data.target.sys.id);
@@ -20,6 +23,17 @@ function renderOptions(links) {
         );
       }
       return null;
+    },
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      const asset = assetMap.get(node.data.target.sys.id);
+      return (
+        <Image
+          src={asset.url}
+          alt={asset.description}
+          width={asset.width}
+          height={asset.height}
+        />
+      );
     },
   };
 

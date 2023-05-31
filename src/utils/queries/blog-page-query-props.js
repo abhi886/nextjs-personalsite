@@ -38,6 +38,19 @@ const querySingleBlogPage = `query GetBlogPostBySlug($slug:String!) {
 
               
               }
+              
+            }
+            assets {
+              block {
+                sys {
+                  id
+                }
+                url
+                title
+                width
+                height
+                description
+              }
             }
           }
         }
