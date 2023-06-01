@@ -5,7 +5,7 @@ import Image from 'next/image';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
-import Button from '../Button';
+import Button from '../ThemeButton';
 
 function index({ logo }) {
   const [mounted, setMounted] = useState(false);
