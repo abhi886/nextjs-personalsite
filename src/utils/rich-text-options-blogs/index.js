@@ -4,13 +4,12 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types';
 import Image from 'next/image';
 import RICHTEXT_OPTIONS from '../rich-text-general-options';
-import getEntryMap from '../getEntryMap';
 import Code from '../../components/code';
-import getAssetMap from '../getAssetMap';
+import getEntryMap from '../getEntryMap';
 
 function renderOptions(links) {
-  const entryMap = getEntryMap(links);
-  const assetMap = getAssetMap(links);
+  const entryMap = getEntryMap(links.entries.block);
+  const assetMap = getEntryMap(links.assets.block);
   const aboutRenderNode = {
     [BLOCKS.EMBEDDED_ENTRY]: (node) => {
       const entry = entryMap.get(node.data.target.sys.id);
