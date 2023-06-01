@@ -5,6 +5,7 @@ import Image from 'next/image';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Button from '../ThemeButton';
 
 function index({ logo }) {
@@ -80,7 +81,7 @@ function index({ logo }) {
         <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
           <div className="flex items-center justify-between">
             <div>
-              <a
+              <Link
                 className="text-2xl font-bold text-personal_blue-text transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
                 href="/"
               >
@@ -92,7 +93,7 @@ function index({ logo }) {
                   objectFit="contain"
                   className="m-0 p-0"
                 />
-              </a>
+              </Link>
             </div>
 
             <div className="flex md:hidden">
@@ -146,7 +147,7 @@ function index({ logo }) {
             }'`}
           >
             <div className="flex flex-row gap-4 md:gap-10 justify-center md:flex-row md:mx-6">
-              <a
+              <Link
                 className={`my-2  transition-colors duration-300 transform hover:text-personal_blue-text md:mx-4 md:my-0 ${
                   currentRoute === '/'
                     ? 'text-personal_blue-text'
@@ -155,8 +156,8 @@ function index({ logo }) {
                 href="/"
               >
                 Home
-              </a>
-              <a
+              </Link>
+              <Link
                 className={`my-2  transition-colors duration-300 transform hover:text-personal_blue-text md:mx-4 md:my-0 ${
                   currentRoute === '/about'
                     ? 'text-personal_blue-text'
@@ -165,8 +166,8 @@ function index({ logo }) {
                 href="/about"
               >
                 About
-              </a>
-              <a
+              </Link>
+              <Link
                 className={`my-2  transition-colors duration-300 transform hover:text-personal_blue-text md:mx-4 md:my-0 ${
                   currentRoute === '/blogs' || currentRoute === '/blogs/[blog]'
                     ? 'text-personal_blue-text'
@@ -175,8 +176,8 @@ function index({ logo }) {
                 href="/blogs"
               >
                 Blogs
-              </a>
-              <a
+              </Link>
+              <Link
                 className={`my-2  transition-colors duration-300 transform hover:text-personal_blue-text md:mx-4 md:my-0 ${
                   currentRoute === '/contact'
                     ? 'text-personal_blue-text'
@@ -185,7 +186,7 @@ function index({ logo }) {
                 href="/contact"
               >
                 Contact
-              </a>
+              </Link>
               {renderThemeChanger()}
             </div>
           </div>
