@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { HiArrowRight } from 'react-icons/hi';
 import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import RICHTEXT_OPTIONS from '../../utils/rich-text-options/general-rich-text-options';
+import Button from '../Button';
 
 function About({ profile, profileImage }) {
   return (
@@ -24,18 +24,7 @@ function About({ profile, profileImage }) {
         </div>
         <div className="w-full">
           {documentToReactComponents(profile.json, RICHTEXT_OPTIONS)}
-
-          <div>
-            <a href="/about">
-              <button
-                className="dark:text-personal_blue-text bg-transparent px-2 py-2 text-xs lg:text-base lg:px-3 lg:py-3 rounded-lg border dark:border-personal_blue-text my-3 shadow-md hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12"
-                type="button"
-              >
-                MORE ABOUT ME&nbsp;
-                <HiArrowRight className="inline" />
-              </button>
-            </a>
-          </div>
+          <Button value="MORE ABOUT ME" />
         </div>
       </div>
     </section>
