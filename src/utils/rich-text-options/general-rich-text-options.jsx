@@ -72,6 +72,7 @@ const RICHTEXT_OPTIONS = {
       <p className="text-gray-200 prose max-w-none prose-gray  "> {children}</p>
     ),
     [INLINES.HYPERLINK]: (node, children) => (
+      // eslint-disable-next-line react/destructuring-assignment
       <a href={node.data.uri} className="text-personal_blue-textParagraph">
         {children}
       </a>

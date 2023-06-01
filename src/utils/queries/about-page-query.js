@@ -17,9 +17,19 @@ query {
      }
      fullProfileDescription{
       json
-      
       links{
-        
+         assets {
+              block {
+                sys {
+                  id
+                }
+                url
+                title
+                width
+                height
+                description
+              }
+            }
         entries{
           inline{
             sys{
@@ -53,6 +63,10 @@ query {
    }
  }
      }
+
+
+
+
 
 
 

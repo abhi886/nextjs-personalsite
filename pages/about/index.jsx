@@ -3,7 +3,7 @@ import Image from 'next/dist/client/image';
 import Layout from '../../src/components/LandingPageLayout';
 import useContentful from '../../src/customHooks/use-contentful';
 import query from '../../src/utils/queries/about-page-query';
-import RichTextOptions from '../../src/utils/rich-text-options-about';
+import RichTextOptions from '../../src/utils/rich-text-options';
 
 export async function getStaticProps() {
   const data = await useContentful(query);

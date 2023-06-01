@@ -3,7 +3,7 @@ import React from 'react';
 import { HiArrowRight } from 'react-icons/hi';
 import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import RICHTEXT_OPTIONS from '../../utils/rich-text-general-options';
+import RICHTEXT_OPTIONS from '../../utils/rich-text-options/general-rich-text-options';
 
 function About({ profile, profileImage }) {
   return (
