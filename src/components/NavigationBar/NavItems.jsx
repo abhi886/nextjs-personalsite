@@ -68,7 +68,7 @@ function NavItems() {
   return (
     <>
       {navOptions.map(({ pathname, value }) => (
-        <Link href={pathname}>
+        <Link href={pathname} key={value}>
           <span
             className={`my-2 text-white cursor-pointer transition-colors duration-300 transform hover:text-personal_blue-text md:mx-4 md:my-0 ${
               currentRoute === pathname ? 'text-personal_blue-text' : 'text-red'
