@@ -5,7 +5,7 @@ import Image from 'next/image';
 import myPhoto from '../../../public/images/me.jpg';
 import convertDate from '../../utils/convertDate';
 // import RICHTEXT_OPTIONS from '../../utils/rich-text-general-options';
-import RichTextOptions from '../../utils/rich-text-options-blogs';
+import RichTextOptions from '../../utils/rich-text-options';
 
 function BlogSlugPage({
   title,

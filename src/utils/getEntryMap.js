@@ -3,7 +3,7 @@ function getEntryMap(links) {
   const entryMap = new Map();
   // loop through the block linked entries and add them to the map
   // eslint-disable-next-line no-restricted-syntax
-  for (const entry of links.entries.block) {
+  for (const entry of links) {
     entryMap.set(entry.sys.id, entry);
   }
   return entryMap;

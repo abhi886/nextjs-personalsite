@@ -3,6 +3,7 @@
 import React from 'react';
 import { FaBriefcase } from 'react-icons/fa';
 import WorkSocial from '../WorkSocial';
+import Button from '../Button';
 
 // eslint-disable-next-line react/prop-types
 function FeaturedWorkCard({ workData }) {
@@ -52,7 +53,9 @@ function FeaturedWorkCard({ workData }) {
                 </div>
                 <div className="absolute animate-fade-in-down top-0 left-0 hidden group-hover:flex bg-white dark:bg-personal_blue-lightBlue h-56">
                   <div className="px-8">
-                    <p className="py-4 dark:text-gray-400">{w.shortDescription}</p>
+                    <p className="py-4 dark:text-gray-400">
+                      {w.shortDescription}
+                    </p>
 
                     <div className="mt-4 dark:text-personal_blue-text">
                       {w.language &&
@@ -75,14 +78,7 @@ function FeaturedWorkCard({ workData }) {
           ))}
         </div>
         <div className="flex justify-end">
-          <a href="/works" target="_blank">
-            <button
-              type="button"
-              className="dark:text-personal_blue-text bg-transparent px-2 py-2 text-xs lg:text-base lg:px-3 lg:py-3 rounded-lg border dark:border-personal_blue-text my-3 shadow-md hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12"
-            >
-              View More Works
-            </button>
-          </a>
+          <Button value="View More Works" />
         </div>
       </div>
     </section>

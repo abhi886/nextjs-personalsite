@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-
 import { FaBlog } from 'react-icons/fa';
 import Image from 'next/dist/client/image';
 import convertDate from '../../utils/convertDate';
 import readingTime from '../../utils/readtime';
+import Button from '../Button';
 
 function FeaturedBlog({ blogData }) {
   return (
@@ -74,7 +74,7 @@ function FeaturedBlog({ blogData }) {
                       {d.languages &&
                         d.languages.map((l, i) => (
                           <span
-                            key={d.id}
+                            key={d.languages[i]}
                             className="text-xs py-3 pr-2 text-blue-900 dark:text-personal_blue-text hover:underline"
                           >
                             {i < d.languages.length - 1 ? `${l} |` : `${l}`}
@@ -87,14 +87,7 @@ function FeaturedBlog({ blogData }) {
             ))}
           </div>
           <div className="flex justify-center">
-            <a href="/blogs" target="_blank">
-              <button
-                type="button"
-                className="dark:text-personal_blue-text bg-transparent px-2 py-2 text-xs lg:text-base lg:px-3 lg:py-3 rounded-lg border dark:border-personal_blue-text my-3 shadow-md hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12"
-              >
-                View More Articles
-              </button>
-            </a>
+            <Button value="View More Articles" />
           </div>
         </div>
       </div>

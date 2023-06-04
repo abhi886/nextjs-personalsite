@@ -1,24 +1,33 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable react/destructuring-assignment */
-import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
 import Image from 'next/image';
-import RICHTEXT_OPTIONS from '../rich-text-general-options';
+import React from 'react';
 import getEntryMap from '../getEntryMap';
+import RICHTEXT_OPTIONS from './general-rich-text-options';
 import Code from '../../components/code';
-import getAssetMap from '../getAssetMap';
 
-function renderOptions(links) {
-  const entryMap = getEntryMap(links);
-  const assetMap = getAssetMap(links);
-  const aboutRenderNode = {
+const EMBEDDED_RICHTEXT_OPTIONS = (links) => {
+  const entryMap = getEntryMap(links.entries.block);
+  const assetMap = links.assets && getEntryMap(links.assets.block);
+  return {
     [BLOCKS.EMBEDDED_ENTRY]: (node) => {
       const entry = entryMap.get(node.data.target.sys.id);
-      // eslint-disable-next-line no-underscore-dangle
       if (entry.__typename === 'CodeBlocks') {
         return (
           <div className="sm:col-span-10 space-y-3">
             <Code code={entry.codeBlockContent} language="javascript" />
+          </div>
+        );
+      }
+      if (entry.__typename === 'BasicDiv') {
+        return (
+          <div className="sm:col-span-10 space-y-3">
+            {documentToReactComponents(
+              entry.description.json,
+              RICHTEXT_OPTIONS
+            )}
           </div>
         );
       }
@@ -36,17 +45,5 @@ function renderOptions(links) {
       );
     },
   };
-
-  return {
-    renderNode: {
-      ...RICHTEXT_OPTIONS.renderNode,
-      ...aboutRenderNode,
-    },
-  };
-}
-
-function richTextOptions({ data: { json, links } }) {
-  return <>{documentToReactComponents(json, renderOptions(links))}</>;
-}
-
-export default richTextOptions;
+};
+export default EMBEDDED_RICHTEXT_OPTIONS;
