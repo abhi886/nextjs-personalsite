@@ -1,12 +1,12 @@
 /* eslint-disable no-shadow */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
-import { Formik, Form, useField } from 'formik';
-import * as Yup from 'yup';
 import emailjs from 'emailjs-com';
+import { Form, Formik, useField } from 'formik';
+import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import * as Yup from 'yup';
 
 // variables for sending email
 
@@ -198,9 +198,12 @@ function ContactForm() {
               />
             </div>
           </div>
-
+          {/* */}
           <button
-            className="w-24 dark:text-personal_blue-text bg-transparent px-2 py-2 shadow-md border rounded-md dark:border-personal_blue-text font-bold my-3 hover:text-white hover:bg-personal_blue-text active:scale-90 transition duration-150"
+            className=" w-24 dark:text-personal_blue-text hover:font-bold
+bg-transparent px-2 py-2 text-xs lg:text-base
+rounded-lg border dark:border-personal_blue-text my-3 shadow-md
+hover:shadow-lg active:scale-90 transition duration-150 mt-8 lg:mt-12"
             type="submit"
           >
             Submit

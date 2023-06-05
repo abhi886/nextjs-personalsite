@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import myPhoto from '../../../public/images/me.jpg';
 import convertDate from '../../utils/convertDate';
-import Link from 'next/dist/client/link';
 
 function BlogCard({
   // eslint-disable-next-line react/prop-types
