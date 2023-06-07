@@ -1,13 +1,8 @@
 import React from 'react';
-import Layout from '../../src/components/LandingPageLayout';
 import ContactMe from '../../src/components/ContactMe';
 
 function index() {
-  return (
-    <Layout>
-      <ContactMe />
-    </Layout>
-  );
+  return <ContactMe />;
 }
 
 export default index;

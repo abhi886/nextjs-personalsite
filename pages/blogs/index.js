@@ -3,7 +3,6 @@ import { NextSeo } from 'next-seo';
 import query from '../../src/utils/queries/blog-pag-query';
 import BlogCard from '../../src/components/BlogCard/BlogCard';
 import useContentful from '../../src/customHooks/use-contentful';
-import Layout from '../../src/components/LandingPageLayout';
 import SearchBox from '../../src/components/SearchBox/SearchBox';
 
 export async function getStaticProps() {
@@ -29,7 +28,7 @@ function blog({ data }) {
   } = seoCollection.items[0];
 
   return (
-    <Layout>
+    <>
       <NextSeo
         title={title}
         description={description}
@@ -62,7 +61,7 @@ function blog({ data }) {
           displayComponent={BlogCard}
         />
       </section>
-    </Layout>
+    </>
   );
 }
 

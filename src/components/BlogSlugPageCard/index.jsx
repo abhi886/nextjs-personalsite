@@ -2,6 +2,7 @@
 import React from 'react';
 import { RewindIcon, ClockIcon } from '@heroicons/react/solid';
 import Image from 'next/image';
+import Link from 'next/link';
 import myPhoto from '../../../public/images/me.jpg';
 import convertDate from '../../utils/convertDate';
 // import RICHTEXT_OPTIONS from '../../utils/rich-text-general-options';
@@ -28,20 +29,17 @@ function BlogSlugPage({
         )}
 
         <div className="text-sm leading-6  xl:mb-0">
-          <div className=" mt-4 pb-5 border-b border-slate-200 xl:block  dark:border-slate-200/5">
-            <a
-              className="group flex font-semibold text-slate-700 dark:text-white hover:text-slate-900"
-              href={goBackLink}
-            >
-              <div className="flex items-center space-x-4 justify-end hover:text-blue-500">
-                <div className="flex items-center space-x-2 border-2 p-2 rounded-full ">
-                  <RewindIcon className="h-3 md:h-6 " />
+          <div className="mt-4 pb-5 xl:block">
+            <Link href={goBackLink}>
+              <div className="group flex items-center space-x-2 text-black">
+                <div className="group-hover:border-personal_blue-textTitle border-2 p-2 rounded-full  dark:border-personal_blue-textParagraph border-black">
+                  <RewindIcon className="dark:text-personal_blue-textParagraph h-3 group-hover:text-personal_blue-textTitle " />
                 </div>
-                <p className="inline-flex cursor-pointer hover:text-blue-500 underline ">
+                <p className="inline-flex cursor-pointer group-hover:text-personal_blue-textTitle underline ">
                   {`Go Back to blog's page`}
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
           <dl>
             <dt className="sr-only">Date</dt>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
 import BlogSlugPage from '../../src/components/BlogSlugPageCard';
-import Layout from '../../src/components/LandingPageLayout';
 import query from '../../src/utils/queries/blog-page-slug-quuery';
 import useContentful from '../../src/customHooks/use-contentful';
 import querySingleBlogPage from '../../src/utils/queries/blog-page-query-props';
@@ -62,20 +61,19 @@ export default function blogSlug({ blog: { blogData } }) {
           type: 'article',
         }}
       />
-      <Layout>
-        <BlogSlugPage
-          title={title}
-          readTime={readTime}
-          imageUrl={url}
-          imageWidth={width}
-          imageHeight={height}
-          description={blogDescription}
-          updatedDate={sys.publishedAt}
-          languages={languages}
-          goBackLink="/blogs"
-          data={blogDescription}
-        />
-      </Layout>
+
+      <BlogSlugPage
+        title={title}
+        readTime={readTime}
+        imageUrl={url}
+        imageWidth={width}
+        imageHeight={height}
+        description={blogDescription}
+        updatedDate={sys.publishedAt}
+        languages={languages}
+        goBackLink="/blogs"
+        data={blogDescription}
+      />
     </>
   );
 }
