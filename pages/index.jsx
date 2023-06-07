@@ -4,7 +4,6 @@ import { NextSeo } from 'next-seo';
 import HeroSection from '../src/components/HeroSection';
 import About from '../src/components/About';
 import ScrollToTop from '../src/components/ScrollToTop';
-import Layout from '../src/components/LandingPageLayout';
 import useContentful from '../src/customHooks/use-contentful';
 import query from '../src/utils/queries/index-page-query';
 import FeaturedBlog from '../src/components/FeaturedBlog';
@@ -35,7 +34,7 @@ export default function Home({ data }) {
   const blogData = data.blogCollection.items;
   const workData = data.worksCollection.items;
   return (
-    <Layout>
+    <>
       <NextSeo
         title={title}
         description={description}
@@ -68,7 +67,7 @@ export default function Home({ data }) {
         <GetHired />
         <ScrollToTop />
       </main>
-    </Layout>
+    </>
   );
 }
 

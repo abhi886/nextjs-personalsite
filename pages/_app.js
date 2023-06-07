@@ -6,24 +6,24 @@ import { DefaultSeo } from 'next-seo';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { ThemeProvider } from 'next-themes';
 import { Analytics } from '@vercel/analytics/react';
+import Layout from '../src/components/LandingPageLayout';
 
 function MyApp({ Component, pageProps }) {
-  const getLayout = Component.getLayout || ((page) => page);
-  return getLayout(
-    <>
-      {' '}
-      <DefaultSeo
-        twitter={{
-          handle: '@Abhishe19658428',
-          site: 'abhishekhmaharjan.com',
-          cardType: 'summary_large_image',
-        }}
-      />
-      <ThemeProvider enableSystem="true" attribute="class" defaultTheme="dark">
+  return (
+    <ThemeProvider enableSystem="true" attribute="class" defaultTheme="dark">
+      <Layout>
+        {' '}
+        <DefaultSeo
+          twitter={{
+            handle: '@Abhishe19658428',
+            site: 'abhishekhmaharjan.com',
+            cardType: 'summary_large_image',
+          }}
+        />
         <Component {...pageProps} />
         <Analytics />
-      </ThemeProvider>
-    </>
+      </Layout>
+    </ThemeProvider>
   );
 }
 
