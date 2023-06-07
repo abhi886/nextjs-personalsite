@@ -70,7 +70,3 @@ export default function Home({ data }) {
     </>
   );
 }
-
-// Home.getLayout = function getLayout(page) {
-//   return <Layout>{page}</Layout>;
-// };
