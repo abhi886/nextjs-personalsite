@@ -15,7 +15,7 @@ function BlogCard({
   return (
     <article className="group dark:bg-personal_blue-lightBlue rounded-lg shadow-md hover:scale-100 transition duration-700 ease-in-out hover:shadow-md ">
       <div className="relative overflow-hidden transition-all bg-white-100  aspect-video rounded-lg">
-        <Link href={`/blogs/${slug}`}>
+        <Link href={`/blogs/${slug}`} legacyBehavior>
           <Image
             src={blogImage.url}
             alt="Main picture of the blog"
@@ -29,7 +29,7 @@ function BlogCard({
         <span className=" text-personal_blue-textParagraph inline-block mt-5 text-xs font-medium tracking-wider uppercase">
           Javascript
         </span>
-        <Link href={`/blogs/${slug}`}>
+        <Link href={`/blogs/${slug}`} legacyBehavior>
           <h2 className="cursor-pointer mt-2 text-lg font-semibold tracking-normal text-brand-primary">
             <span className="bg-gradient-to-r from-green-500 to-green-500   bg-[length:0px_2px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_1px] group-hover:bg-[length:100%_1px]">
               {title}

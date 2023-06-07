@@ -19,7 +19,7 @@ function NavItems() {
           className="list-none text-center h-14 md:h-0 items-center justify-cente"
           key={value}
         >
-          <Link href={pathname}>
+          <Link href={pathname} legacyBehavior>
             <span
               className={`inline-block align-middle cursor-pointer transition-colors duration-300 transform hover:text-personal_blue-text md:mx-4 md:my-0 ${
                 currentRoute === paths[0] || currentRoute === paths[1]

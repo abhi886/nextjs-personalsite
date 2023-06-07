@@ -30,7 +30,7 @@ function BlogSlugPage({
 
         <div className="text-sm leading-6  xl:mb-0">
           <div className="mt-4 pb-5 xl:block">
-            <Link href={goBackLink}>
+            <Link href={goBackLink} legacyBehavior>
               <div className="group flex items-center space-x-2 text-black">
                 <div className="group-hover:border-personal_blue-textTitle border-2 p-2 rounded-full  dark:border-personal_blue-textParagraph border-black">
                   <RewindIcon className="dark:text-personal_blue-textParagraph h-3 group-hover:text-personal_blue-textTitle " />
