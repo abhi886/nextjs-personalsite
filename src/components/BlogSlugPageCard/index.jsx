@@ -89,7 +89,6 @@ function BlogSlugPage({
               <Image
                 src={imageUrl}
                 alt="Main picture of the blog"
-                objectFit="fill"
                 width={imageWidth}
                 height={imageHeight}
               />

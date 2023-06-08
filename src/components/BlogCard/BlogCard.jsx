@@ -41,11 +41,12 @@ function BlogCard({
             alt="Abhishekh Maharjan Photo"
             width={20}
             height={20}
-            objectFit="contain"
             className="rounded-full"
           />
           <span className="text-sm flex-1">Abhishekh Maharjan</span>
-          <time className="text-sm ">{convertDate(publishedAt)}</time>
+          <span dateTime={convertDate(publishedAt)} className="text-sm ">
+            {convertDate(publishedAt)}
+          </span>
         </div>
       </div>
     </article>

@@ -29,7 +29,7 @@ function about({ data }) {
                 className="rounded-full object-cover"
                 src={`${profileImage.url}`}
                 alt="Abhishekh Maharjans Photo"
-                layout="fill"
+                fill
               />
             </div>
           </div>
