@@ -19,7 +19,6 @@ function BlogCard({
           <Image
             src={blogImage.url}
             alt="Main picture of the blog"
-            objectFit="fill"
             width={1200}
             height={620}
           />

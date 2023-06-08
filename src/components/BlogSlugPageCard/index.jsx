@@ -56,8 +56,6 @@ function BlogSlugPage({
                   alt="Abhishekh Maharjan Photo"
                   width={60}
                   height={60}
-                  // layout='fill'
-                  objectFit="contain"
                   className="mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800"
                 />
                 <div className="ml-4">

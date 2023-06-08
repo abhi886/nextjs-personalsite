@@ -16,7 +16,6 @@ function NavLogo({ logo }) {
           alt="Abhishekh Maharjan Logo"
           width={40}
           height={31}
-          objectFit="contain"
           className="m-0 p-0"
         />
       </a>
