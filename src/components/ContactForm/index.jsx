@@ -93,11 +93,13 @@ function ContactForm() {
 
   const [setSuccessMessage] = useState('');
 
+  // eslint-disable-next-line @typescript-eslint/no-shadow
   const sendEmail = (serviceID, templateID, variables, userID) => {
     emailjs
       .send(serviceID, templateID, variables, userID)
       .then(() => {
         setSuccessMessage(
+          // eslint-disable-next-line @typescript-eslint/comma-dangle
           "Form sent successfully! I'll contact you as soon as possible."
         );
       })
@@ -151,6 +153,7 @@ function ContactForm() {
                 subject: values.subject,
                 description: values.description,
               },
+              // eslint-disable-next-line @typescript-eslint/comma-dangle
               userID
             );
           }, 200);

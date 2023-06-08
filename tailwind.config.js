@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-extraneous-dependencies */
 // #201e1c
 const plugin = require('tailwindcss/plugin');
 

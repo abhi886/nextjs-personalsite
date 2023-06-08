@@ -12,6 +12,7 @@ const useContentful = async (query, variables) => {
           'Content-type': 'application/json',
         },
         body: JSON.stringify({ query, variables }),
+        // eslint-disable-next-line @typescript-eslint/comma-dangle
       }
     );
     const { data } = await res.json();

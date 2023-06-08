@@ -36,7 +36,7 @@ function BlogSlugPage({
                   <RewindIcon className="dark:text-personal_blue-textParagraph h-3 group-hover:text-personal_blue-textTitle " />
                 </div>
                 <p className="inline-flex cursor-pointer group-hover:text-personal_blue-textTitle underline ">
-                  {`Go Back to blog's page`}
+                  Go Back to blogs page
                 </p>
               </div>
             </Link>

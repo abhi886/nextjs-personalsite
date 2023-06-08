@@ -1,7 +1,10 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
 
-function SEO({ title }) {
+interface Props {
+  title: string;
+}
+function SEO({ title }: Props) {
   return (
     <NextSeo
       title={title}
