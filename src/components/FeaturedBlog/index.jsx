@@ -50,7 +50,7 @@ function FeaturedBlog({ blogData }) {
                         className="rounded-full object-cover"
                         src={`${d.blogImage.url}`}
                         alt="Abhishekh Maharjans Photo"
-                        layout="fill"
+                        fill
                       />
                     </a>
                   </div>

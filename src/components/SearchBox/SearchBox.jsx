@@ -11,6 +11,7 @@ function SearchBox({ searchData, displayComponent }) {
 
   const getFilteredBlogs = useMemo(() => {
     return filteredBlogs.filter((b) =>
+      // eslint-disable-next-line @typescript-eslint/comma-dangle
       b.title.toLowerCase().startsWith(searchQuery.toLowerCase())
     );
   }, [filteredBlogs, searchQuery]);

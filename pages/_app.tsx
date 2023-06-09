@@ -1,18 +1,21 @@
 /* eslint-disable react/jsx-props-no-spreading */
-// pages/_app.js
+import { DefaultSeo } from 'next-seo';
 import React from 'react';
 import '../src/styles/globalStyles.css';
-import { DefaultSeo } from 'next-seo';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { ThemeProvider } from 'next-themes';
 import { Analytics } from '@vercel/analytics/react';
+import { ThemeProvider } from 'next-themes';
+import type { AppProps } from 'next/app';
 import Layout from '../src/components/LandingPageLayout';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps): React.JSX.Element {
+  const newLocal = true;
   return (
-    <ThemeProvider enableSystem="true" attribute="class" defaultTheme="dark">
+    <ThemeProvider
+      enableSystem={newLocal}
+      attribute="class"
+      defaultTheme="dark"
+    >
       <Layout>
-        {' '}
         <DefaultSeo
           twitter={{
             handle: '@Abhishe19658428',

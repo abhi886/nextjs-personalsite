@@ -30,13 +30,13 @@ function BlogSlugPage({
 
         <div className="text-sm leading-6  xl:mb-0">
           <div className="mt-4 pb-5 xl:block">
-            <Link href={goBackLink}>
+            <Link href={goBackLink} legacyBehavior>
               <div className="group flex items-center space-x-2 text-black">
                 <div className="group-hover:border-personal_blue-textTitle border-2 p-2 rounded-full  dark:border-personal_blue-textParagraph border-black">
                   <RewindIcon className="dark:text-personal_blue-textParagraph h-3 group-hover:text-personal_blue-textTitle " />
                 </div>
                 <p className="inline-flex cursor-pointer group-hover:text-personal_blue-textTitle underline ">
-                  {`Go Back to blog's page`}
+                  Go Back to blogs page
                 </p>
               </div>
             </Link>
@@ -56,8 +56,6 @@ function BlogSlugPage({
                   alt="Abhishekh Maharjan Photo"
                   width={60}
                   height={60}
-                  // layout='fill'
-                  objectFit="contain"
                   className="mr-3 w-12 h-12 rounded-full bg-slate-50 dark:bg-slate-800"
                 />
                 <div className="ml-4">
@@ -91,7 +89,6 @@ function BlogSlugPage({
               <Image
                 src={imageUrl}
                 alt="Main picture of the blog"
-                objectFit="fill"
                 width={imageWidth}
                 height={imageHeight}
               />

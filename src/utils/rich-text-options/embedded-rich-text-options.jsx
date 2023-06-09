@@ -26,6 +26,7 @@ const EMBEDDED_RICHTEXT_OPTIONS = (links) => {
           <div className="sm:col-span-10 space-y-3">
             {documentToReactComponents(
               entry.description.json,
+              // eslint-disable-next-line @typescript-eslint/comma-dangle
               RICHTEXT_OPTIONS
             )}
           </div>
