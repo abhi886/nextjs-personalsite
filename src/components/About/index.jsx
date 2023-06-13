@@ -18,7 +18,8 @@ function About({ profile, profileImage }) {
               className="rounded-full object-cover"
               src={`${profileImage.url}`}
               alt="Abhishekh Maharjans Photo"
-              fill
+              width={500}
+              height={500}
             />
           </div>
         </div>
