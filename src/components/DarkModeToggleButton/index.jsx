@@ -14,6 +14,7 @@ const index = () => {
         }}
       >
         <svg
+          aria-label="Buton to toggle dark mode"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -38,6 +39,7 @@ const index = () => {
       }}
     >
       <svg
+        aria-label="Buton to toggle dark mode"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
