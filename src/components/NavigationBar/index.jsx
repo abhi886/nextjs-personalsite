@@ -3,6 +3,7 @@ import NavContainer from './NavContainer';
 import NavLogo from './NavLogo';
 import NavItems from './NavItems';
 import NavHamburger from './NavHamburger';
+import DarkModeToggleButton from '../DarkModeToggleButton';
 
 const index = ({ logo }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,9 @@ const index = ({ logo }) => {
       >
         <ul className="flex flex-col pl-0 font-medium bg-transparent md:flex-row md:space-x-8">
           <NavItems />
+          <li className="list-none text-center">
+            <DarkModeToggleButton />
+          </li>
         </ul>
       </div>
     </NavContainer>
