@@ -26,6 +26,7 @@ function ScrollToTop() {
       role="button"
       tabIndex="0"
       className="fixed bottom-10 right-4 h-10 bg-transparent  dark:text-white z-20"
+      aria-label="Click to move to the top of the web page"
     >
       {' '}
       <ChevronUpIcon className="h-10 animate-bounce cursor-pointer" />
