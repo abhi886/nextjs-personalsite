@@ -15,8 +15,8 @@ function HeroSection({ aboutData }) {
     linkedinLink,
   } = aboutData;
   return (
-    <section className="relative h-screen dark:bg-personal_blue">
-      <article className="absolute top-1/4 w-full text-center">
+    <section className=" h-screen w-full dark:bg-personal_blue">
+      <div className="flex flex-col h-full text-center justify-center">
         <h1 className="dark:text-personal_blue-textTitle font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up">
           I&apos;m&nbsp;
           {fullName}.
@@ -63,22 +63,25 @@ function HeroSection({ aboutData }) {
           </a>
         </div>
         {/* Social Icons */}
-        <Social
-          facebookLink={facebookLink}
-          githubLink={githubLink}
-          linkedinLink={linkedinLink}
-        />
-      </article>
+        <div className="pt-4">
+          <Social
+            facebookLink={facebookLink}
+            githubLink={githubLink}
+            linkedinLink={linkedinLink}
+          />
+        </div>
+        <div className="flex justify-center pt-52">
+          <a
+            href="#about"
+            aria-label="Down button to navigate to the aboute section"
+          >
+            {' '}
+            <ChevronDownIcon className="h-10 animate-bounce cursor-pointer" />
+          </a>
+        </div>
+      </div>
+
       {/* scrollDown Button */}
-      <article className="absolute -ml-4  bottom-20 left-2/4 h-10 bg-transparent dark:text-white">
-        <a
-          href="#about"
-          aria-label="Down button to navigate to the aboute section"
-        >
-          {' '}
-          <ChevronDownIcon className="h-10 animate-bounce cursor-pointer" />
-        </a>
-      </article>
     </section>
   );
 }
