@@ -4,7 +4,7 @@ import { FacebookIcon, GitHubIcon, LinkedInIcon } from '../../../public/svgs';
 
 function Social({ facebookLink, githubLink, linkedinLink }) {
   return (
-    <div className="flex space-x-4 m-auto justify-center py-4">
+    <div className="flex space-x-4 justify-center">
       <div>
         <a
           target="_blank"
