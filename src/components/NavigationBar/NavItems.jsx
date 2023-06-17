@@ -1,7 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import DarkModeToggleButton from '../DarkModeToggleButton';
 
 function NavItems() {
   const router = useRouter();
@@ -16,7 +15,7 @@ function NavItems() {
     <>
       {navOptions.map(({ pathname, value, paths }) => (
         <li
-          className="list-none text-center h-14 md:h-0 items-center justify-cente"
+          className="list-none text-center h-14 md:h-0 items-center justify-center"
           key={value}
         >
           <Link href={pathname} legacyBehavior>
@@ -32,7 +31,6 @@ function NavItems() {
           </Link>
         </li>
       ))}
-      <DarkModeToggleButton />
     </>
   );
 }

@@ -17,7 +17,7 @@ function Newsletter() {
           <div className=" border-2 rounded-full py-2 md:shadow-sm">
             <input
               type="text"
-              className="flex-grow pl-5 bg-transparent outline-none dark:text-gray-600 dark:placeholder-gray-400"
+              className="flex-grow pl-5 bg-transparent outline-none dark:text-white dark:placeholde-white"
               placeholder="Enter Your Email"
             />
           </div>

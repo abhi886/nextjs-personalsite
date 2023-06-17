@@ -1,27 +1,20 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFacebookSquare,
-  faLinkedin,
-  faGithub,
-} from '@fortawesome/free-brands-svg-icons';
+import { FacebookIcon, GitHubIcon, LinkedInIcon } from '../../../public/svgs';
 
 function Social({ facebookLink, githubLink, linkedinLink }) {
   return (
-    <div className="text-center space-x-6 pt-4 dark:text-red">
-      <a
-        target="_blank"
-        aria-label="Facebook"
-        href={`${facebookLink}`}
-        rel="noopener noreferrer"
-      >
-        <FontAwesomeIcon
-          icon={('fab', faFacebookSquare)}
-          size="2x"
-          className="dark:text-personal_blue-social"
-        />
-      </a>
+    <div className="flex space-x-4 justify-center">
+      <div>
+        <a
+          target="_blank"
+          aria-label="Facebook"
+          href={`${facebookLink}`}
+          rel="noopener noreferrer"
+        >
+          <FacebookIcon className="h-10 w-10 dark:text-personal_blue-social" />
+        </a>
+      </div>
 
       <a
         target="_blank"
@@ -29,11 +22,7 @@ function Social({ facebookLink, githubLink, linkedinLink }) {
         href={`${githubLink}`}
         rel="noopener noreferrer"
       >
-        <FontAwesomeIcon
-          icon={('fab', faGithub)}
-          size="2x"
-          className="dark:text-personal_blue-social"
-        />
+        <GitHubIcon className="h-10 w-10 dark:text-personal_blue-social" />
       </a>
 
       <a
@@ -42,11 +31,7 @@ function Social({ facebookLink, githubLink, linkedinLink }) {
         href={`${linkedinLink}`}
         rel="noopener noreferrer"
       >
-        <FontAwesomeIcon
-          icon={('fab', faLinkedin)}
-          size="2x"
-          className="dark:text-personal_blue-social"
-        />
+        <LinkedInIcon className="h-10 w-10 dark:text-personal_blue-social" />
       </a>
     </div>
   );
