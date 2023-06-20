@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { FaBriefcase } from 'react-icons/fa';
+import Image from 'next/image';
 import WorkSocial from '../WorkSocial';
 import Button from '../Button';
 
@@ -25,7 +26,7 @@ function FeaturedWorkCard({ workData }) {
           </div>
         </div>
         <p className="font-regular dark:text-personal_blue-textParagraph pt-2 lg:pl-12 lg:pt-4">
-          View my noteworthy projects
+          View my noteworthy Projects and Case Studies
         </p>
         <div className="pt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8  lg:gap-16">
           {workData.map((w) => (
@@ -36,10 +37,12 @@ function FeaturedWorkCard({ workData }) {
               <div className="relative group">
                 <div className="group-:hidden">
                   <a target="_blank" href={`/works/${w.slug}`} rel="noreferrer">
-                    <img
+                    <Image
                       className="object-cover object-center w-full h-56 "
                       src={`${w.thumbnail.url}`}
                       alt="avatar"
+                      width={70}
+                      height={70}
                     />
                   </a>
 
