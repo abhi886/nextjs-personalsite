@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { FaBriefcase } from 'react-icons/fa';
+import Image from 'next/image';
 import WorkSocial from '../WorkSocial';
 import Button from '../Button';
 
@@ -36,10 +37,12 @@ function FeaturedWorkCard({ workData }) {
               <div className="relative group">
                 <div className="group-:hidden">
                   <a target="_blank" href={`/works/${w.slug}`} rel="noreferrer">
-                    <img
+                    <Image
                       className="object-cover object-center w-full h-56 "
                       src={`${w.thumbnail.url}`}
                       alt="avatar"
+                      width={70}
+                      height={70}
                     />
                   </a>
 
