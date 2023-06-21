@@ -36,6 +36,9 @@ query {
       slug
       readTime
       languages
+      thumbnail{
+        url
+      }
       blogImage{
         url
       }
