@@ -21,15 +21,15 @@ function HeroSection({ aboutData }) {
           I&apos;m&nbsp;
           {fullName}.
         </h1>
-        <div className="grid grid-cols-2 p-3">
-          <div className="text-right">
+        <div className="grid grid-cols-2 h-12 items-center">
+          <div className="text-right ">
             <h2 className="font-medium dark:text-personal_blue-textTitle">
               Based in {location}.
             </h2>
           </div>
           <div className="text-left">
             <Typed
-              className="font-medium pl-2 dark:text-gray-300"
+              className="font-medium pl-2 dark:text-gray-300 w-full"
               strings={position}
               typeSpeed={100}
               backSpeed={50}
@@ -42,7 +42,7 @@ function HeroSection({ aboutData }) {
           <a href="#contact">
             <button
               type="button"
-              className="w-32 dark:text-personal_blue-text bg-transparent px-3 py-3 shadow-md rounded-full border-2 dark:border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150"
+              className="w-32 dark:text-personal_blue-text bg-transparent px-2 py-3 shadow-md rounded-full border-2 dark:border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150"
             >
               Contact Me
             </button>

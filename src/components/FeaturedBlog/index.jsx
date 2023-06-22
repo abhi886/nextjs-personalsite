@@ -44,7 +44,7 @@ function FeaturedBlog({ blogData }) {
                     <div className="relative rounded-full w-16 h-16 pt-2 pl-2  md:w-24 md:h-24 lg:w-32 lg:h-32 lg:ml-6 lg:mt-2 bg-red-200 items-center">
                       <Image
                         className="rounded-full object-cover"
-                        src={`${d.blogImage.url}`}
+                        src={`${d.thumbnail.url}`}
                         alt="Abhishekh Maharjans Photo"
                         fill
                         sizes="w-18 h-18 md:w-32 md:h-24 lg:w-36 lg:h-30"
@@ -89,7 +89,7 @@ function FeaturedBlog({ blogData }) {
           ))}
         </div>
         <div className="flex justify-center">
-          <Button value="View More Articles" />
+          <Button hrefTo="/blogs" value="View More Articles" />
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function GetHired() {
@@ -16,12 +17,12 @@ export default function GetHired() {
         </p>
 
         <div className="mt-6 flex flex-col items-center space-x-2">
-          <a
+          <Link
             href="/contact"
             className="inline-flex items-center justify-center mt-6   py-2  overflow-hidden text-white transition-colors duration-300 bg-blue-600 rounded-lg shadow hover:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80"
           >
             <span className="mx-2 px-1 py-1">Contact Me</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

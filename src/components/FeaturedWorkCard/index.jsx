@@ -81,7 +81,7 @@ function FeaturedWorkCard({ workData }) {
           ))}
         </div>
         <div className="flex justify-end">
-          <Button value="View More Works" />
+          <Button hrefTo="/works" value="View More Works" />
         </div>
       </div>
     </section>

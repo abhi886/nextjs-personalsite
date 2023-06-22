@@ -15,17 +15,18 @@ function About({ profile, profileImage }) {
         <div className="w-60 h-60 lg:w-96 lg:h-96 border-2 border-dashed rounded-full m-auto lg:order-last">
           <div className="relative w-56 h-56 lg:h-80 lg:w-80 m-auto border-2 border-dashed rounded-full lg:mt-8 mt-1.5">
             <Image
-              className="rounded-full object-cover"
+              className="rounded-full object-cover  w-56 h-56 lg:h-80 lg:w-80"
               src={`${profileImage.url}`}
               alt="Abhishekh Maharjans Photo"
-              width={500}
-              height={500}
+              width={1280}
+              height={720}
+              priority
             />
           </div>
         </div>
         <div className="w-full">
           {documentToReactComponents(profile.json, RICHTEXT_OPTIONS)}
-          <Button value="MORE ABOUT ME" />
+          <Button hrefTo="/about" value="MORE ABOUT ME" />
         </div>
       </div>
     </section>
