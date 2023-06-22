@@ -89,7 +89,7 @@ function FeaturedBlog({ blogData }) {
           ))}
         </div>
         <div className="flex justify-center">
-          <Button value="View More Articles" />
+          <Button hrefTo="/blogs" value="View More Articles" />
         </div>
       </div>
     </section>

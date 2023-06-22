@@ -26,7 +26,7 @@ function About({ profile, profileImage }) {
         </div>
         <div className="w-full">
           {documentToReactComponents(profile.json, RICHTEXT_OPTIONS)}
-          <Button value="MORE ABOUT ME" />
+          <Button hrefTo="/about" value="MORE ABOUT ME" />
         </div>
       </div>
     </section>
