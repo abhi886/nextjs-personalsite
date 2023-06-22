@@ -3,6 +3,7 @@
 import React from 'react';
 import Typed from 'react-typed';
 import { ChevronDownIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 import Social from '../Social';
 
 function HeroSection({ aboutData }) {
@@ -39,18 +40,19 @@ function HeroSection({ aboutData }) {
         </div>
 
         <div className="space-x-2" aria-label="Contact Me">
-          <a href="#contact">
+          <Link href="/contact">
             <button
               type="button"
               className="w-32 dark:text-personal_blue-text bg-transparent px-2 py-3 shadow-md rounded-full border-2 dark:border-personal_blue-text font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150"
             >
               Contact Me
             </button>
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/files/Abhishekh_maharjan.pdf"
             aria-label="Download Resume"
+            target="__blank"
             download
           >
             {' '}
@@ -60,7 +62,7 @@ function HeroSection({ aboutData }) {
             >
               Resume
             </button>
-          </a>
+          </Link>
         </div>
         {/* Social Icons */}
         <div className="pt-4">
