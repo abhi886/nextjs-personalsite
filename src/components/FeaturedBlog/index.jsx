@@ -5,10 +5,12 @@ import Image from 'next/dist/client/image';
 import convertDate from '../../utils/convertDate';
 import readingTime from '../../utils/readtime';
 import Button from '../Button';
+import Section from '../hoc/withComponentSection';
+import ClickToScroll from '../ClickToScroll/index';
 
 function FeaturedBlog({ blogData }) {
   return (
-    <section className="dark:bg-personal_blue">
+    <Section id="featuredBlogSection">
       <div
         className="container flex flex-col items-center m-auto  px-4 h-full  dark:bg-personal_blue lg:px-56 md:px-24
       "
@@ -31,7 +33,7 @@ function FeaturedBlog({ blogData }) {
         <p className="font-regular dark:text-personal_blue-textParagraph pt-2 lg:pl-6 lg:pt-4">
           View my recent articles
         </p>
-        <div className="grid grid-cols-1 gap-10 pt-6 lg:py-16 w-full">
+        <div className="grid grid-cols-1 gap-6 pt-6 w-full">
           {blogData.map((d) => (
             <article
               key={d.slug}
@@ -88,11 +90,19 @@ function FeaturedBlog({ blogData }) {
             </article>
           ))}
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center h-full">
           <Button hrefTo="/blogs" value="View More Articles" />
         </div>
+        <div className="mb-2">
+          <ClickToScroll
+            linkUpward="#aboutSection"
+            linkDownward="#newsletterSection"
+            tooltipDownMessage="Newsletter"
+            tooltipUpMessage="About Me"
+          />
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
