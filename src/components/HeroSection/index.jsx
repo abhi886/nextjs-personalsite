@@ -2,9 +2,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Typed from 'react-typed';
-import { ChevronDownIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import Social from '../Social';
+import Section from '../hoc/withComponentSection';
+import ClickToScroll from '../ClickToScroll/index';
 
 function HeroSection({ aboutData }) {
   const {
@@ -16,7 +17,7 @@ function HeroSection({ aboutData }) {
     linkedinLink,
   } = aboutData;
   return (
-    <section className=" h-screen w-full dark:bg-personal_blue">
+    <Section id="heroSection">
       <div className="flex flex-col h-full text-center justify-center">
         <h1 className="dark:text-personal_blue-textTitle font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up">
           I&apos;m&nbsp;
@@ -72,19 +73,14 @@ function HeroSection({ aboutData }) {
             linkedinLink={linkedinLink}
           />
         </div>
-        <div className="flex justify-center pt-52">
-          <a
-            href="#about"
-            aria-label="Down button to navigate to the aboute section"
-          >
-            {' '}
-            <ChevronDownIcon className="h-10 animate-bounce cursor-pointer" />
-          </a>
+        <div className="flex justify-center pt-64">
+          <ClickToScroll
+            linkDownward="#aboutSection"
+            tooltipDownMessage="About Me"
+          />
         </div>
       </div>
-
-      {/* scrollDown Button */}
-    </section>
+    </Section>
   );
 }
 
