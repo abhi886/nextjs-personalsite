@@ -19,6 +19,7 @@ function ClickToScroll({
       {linkUpward && (
         <div>
           <a
+            data-testid="upwardArrow"
             data-tooltip-id="upward-tooltip"
             data-tooltip-content={tooltipUpMessage && tooltipUpMessage}
             href={linkUpward}
