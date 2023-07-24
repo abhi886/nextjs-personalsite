@@ -34,6 +34,7 @@ function ClickToScroll({
       {linkDownward && (
         <div>
           <a
+            data-testid="downwardArrow"
             data-tooltip-id="downward-tooltip"
             data-tooltip-content={tooltipDownMessage && tooltipDownMessage}
             href={linkDownward}
