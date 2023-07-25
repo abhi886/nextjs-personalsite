@@ -21,7 +21,7 @@ function ClickToScroll({
           <a
             data-testid="upwardArrow"
             data-tooltip-id="upward-tooltip"
-            data-tooltip-content={tooltipUpMessage && tooltipUpMessage}
+            data-tooltip-content={tooltipUpMessage || ''}
             href={linkUpward}
             aria-label={`Up button to navigate to the ${linkUpward} section`}
           >
@@ -36,7 +36,7 @@ function ClickToScroll({
           <a
             data-testid="downwardArrow"
             data-tooltip-id="downward-tooltip"
-            data-tooltip-content={tooltipDownMessage && tooltipDownMessage}
+            data-tooltip-content={tooltipDownMessage || ''}
             href={linkDownward}
             aria-label={`Down button to navigate to the ${linkDownward} section hover:text-red`}
           >
