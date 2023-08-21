@@ -1,41 +1,34 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faEye, faBook } from '@fortawesome/free-solid-svg-icons';
+import { EyeIcon, GitHubIcon, BookIcon } from '../../../public/svgs';
 
 // eslint-disable-next-line react/prop-types
 function WorkSocial({ siteUrl, gitUrl, slug }) {
   return (
-    <div className="flex justify-end space-x-2 p-2 pt-2">
+    <div className="flex space-x-2 justify-end">
+      {' '}
       {siteUrl && (
         <a
           href={siteUrl}
           rel="noreferrer"
           target="_blank"
-          title="Visit Website "
+          title="Visit Website"
         >
-          <FontAwesomeIcon
-            icon={('fas', faEye)}
-            size="1x"
-            className="dark:text-personal_blue-social"
-          />{' '}
+          <EyeIcon className="h-4 w-4 dark:text-personal_blue-paragraph" />
         </a>
       )}
       {gitUrl && (
-        <a href={gitUrl} rel="noreferrer" target="_blank" title="View Github">
-          <FontAwesomeIcon
-            icon={('fab', faGithub)}
-            size="1x"
-            className="dark:text-personal_blue-social"
-          />
+        <a
+          href={gitUrl}
+          rel="noreferrer"
+          target="_blank"
+          title="View Github"
+          className="text-white"
+        >
+          <GitHubIcon className="h-4 w-4 dark:text-personal_blue-paragraph" />
         </a>
       )}
       <a href={`/works/${encodeURIComponent(slug)}`} title="View Case Study ">
-        <FontAwesomeIcon
-          icon={('fab', faBook)}
-          size="1x"
-          className="dark:text-personal_blue-social"
-        />
+        <BookIcon className="h-4 w-4 dark:text-personal_blue-paragraph" />
       </a>
     </div>
   );
