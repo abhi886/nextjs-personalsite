@@ -59,7 +59,7 @@ function FeaturedWorkCard({ workData }) {
                   </a>
                 </div>
                 <div className="absolute animate-fade-in-down top-0 left-0 hidden group-hover:flex bg-white dark:bg-personal_blue-lightBlue h-56">
-                  <div className="px-8">
+                  <div className="px-8 flex flex-col">
                     <p className="py-4 dark:text-gray-400">
                       {w.shortDescription}
                     </p>
@@ -72,12 +72,13 @@ function FeaturedWorkCard({ workData }) {
                           </span>
                         ))}
                     </div>
-
-                    <WorkSocial
-                      siteUrl={w.siteUrl}
-                      gitUrl={w.gitUrl}
-                      slug={w.slug}
-                    />
+                    <div className="pt-4 w-full">
+                      <WorkSocial
+                        siteUrl={w.siteUrl}
+                        gitUrl={w.gitUrl}
+                        slug={w.slug}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
