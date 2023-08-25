@@ -6,7 +6,7 @@ import React from 'react';
 import renderEmbeddedNodeOptions from './embedded-rich-text-options';
 import richtextGeneralNodeOptions from './general-rich-text-options';
 
-function renderOptions(links) {
+function renderOptions(links = '') {
   if (links.entries || links.assets) {
     return {
       renderNode: {
