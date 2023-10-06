@@ -36,8 +36,8 @@ const index = ({ data }) => {
         </div>
 
         <div className="col-span-12 md:col-start-3 md:col-span-8 pt-10 space-y-10">
-          {everyDayData.map((ed, id) => (
-            <div className="flex flex-col cursor-pointer " key={id}>
+          {everyDayData.map((ed) => (
+            <div className="flex flex-col cursor-pointer " key={ed.heading}>
               <div className="flex items-top justify-center my-4">
                 <time className="inline-flex items-center justify-center text-xs font-semibold uppercase w-32 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">
                   {convertDate(ed.date)}
