@@ -10,7 +10,13 @@ const index = ({ shortDescription, data }) => {
   };
   return (
     <div className="text-slate-500 ml-2" onClick={() => handleModalClick()}>
-      {!openModal ? <p>{shortDescription}</p> : <RichTextOptions data={data} />}
+      {!openModal ? (
+        <p>{shortDescription}</p>
+      ) : (
+        <div className="animate-fade-in-down">
+          <RichTextOptions data={data} />
+        </div>
+      )}
       <div className="text-slate-500 text-right">
         <button type="button">{!openModal ? 'Read More' : 'Read Less'}</button>
       </div>
