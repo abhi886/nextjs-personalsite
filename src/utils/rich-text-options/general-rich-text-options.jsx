@@ -47,7 +47,9 @@ const RICHTEXT_OPTIONS = {
       <td className="p-0">{children}</td>
     ),
     [BLOCKS.HEADING_6]: (node, children) => (
-      <h6 className="pt-2 sm:pt-0 text-xl tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider  text-emerald-600 text-center">{children}</h6>
+      <h6 className="pt-2 sm:pt-0 text-xl tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider  text-emerald-600 text-center">
+        {children}
+      </h6>
     ),
     [BLOCKS.HEADING_5]: (node, children) => (
       // <h5 className="py-2">{children}</h5>
