@@ -3,6 +3,8 @@ import useContentful from '../../src/customHooks/use-contentful';
 import query from '../../src/utils/queries/timeline-page-query';
 import TimelineDescription from '../../src/components/TimelineDescription';
 import convertDate from '../../src/utils/convertDate';
+import RichTextOptions from '../../src/utils/rich-text-options';
+
 
 export async function getStaticProps() {
   const data = await useContentful(query);
@@ -15,17 +17,20 @@ export async function getStaticProps() {
 }
 
 const index = ({ data }) => {
-  const {
-    everyDay: {
-      links: {
-        entries: { block: everyDayData },
-      },
-    },
-  } = data.timelineCollection.items[0];
+  // const {
+  //   everyDay: {
+  //     links: {
+  //       entries: { block: everyDayData },
+  //     },
+  //   },
+  // } = data.timelineCollection.items[0];
+  const { everyDay } =
+  data.timelineCollection.items[0];
+  console.log(everyDay);
   return (
     <section className="container max-w-7xl mx-auto py-10 px-4 sm:py-14 sm:px-6 lg:px-8 ">
       <div className=" grid grid-cols-12 ">
-        <div className="col-span-12 md:col-start-3 md:col-span-8">
+        <div className="col-span-12 md:col-start-3 md:col-span-8 pb-10">
           <h1 className="pb-4 pt-8 text-3xl dark:text-personal_blue-textTitle text-gray-800 font-semibold text-center  mx-auto">
             <strong>My</strong> Timeline
           </h1>
@@ -36,7 +41,7 @@ const index = ({ data }) => {
         </div>
 
         <div className="col-span-12 md:col-start-3 md:col-span-8 pt-10 space-y-10">
-          {everyDayData.map((ed) => (
+          {/* {everyDayData.map((ed) => (
             <div className="flex flex-col cursor-pointer " key={ed.heading}>
               <div className="flex items-top justify-center my-4">
                 <time className="inline-flex items-center justify-center text-xs font-semibold uppercase w-32 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">
@@ -54,7 +59,10 @@ const index = ({ data }) => {
                 />
               </div>
             </div>
-          ))}
+          ))} */}
+        <div className="col-span-12 md:col-start-3 md:col-span-8">
+            <RichTextOptions data={everyDay} />
+        </div>
         </div>
       </div>
     </section>
