@@ -47,10 +47,18 @@ const RICHTEXT_OPTIONS = {
       <td className="p-0">{children}</td>
     ),
     [BLOCKS.HEADING_6]: (node, children) => (
-      <h6 className="text-gray-100 py-2">{children}</h6>
+      <h6 className="pt-2 sm:pt-0 text-xl tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider  text-emerald-600 text-center">
+        {children}
+      </h6>
     ),
     [BLOCKS.HEADING_5]: (node, children) => (
-      <h5 className="py-2">{children}</h5>
+      // <h5 className="py-2">{children}</h5>
+      // Timeline page date
+      <div className="flex items-top justify-center">
+        <time className="inline-flex items-center justify-center text-xs font-semibold uppercase w-32 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">
+          {children}
+        </time>
+      </div>
     ),
     [BLOCKS.HEADING_4]: (node, children) => (
       <h4 className="tracking-wider lg:text-2xl  lg:leading-10 lg:tracking-wider">
