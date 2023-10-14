@@ -13,7 +13,7 @@ function Newsletter() {
               Sign up for my Newsletter
             </h2>
           </div>
-          <p className="mt-4 dark:text-personal_blue-textParagraph">
+          <p className="mt-4 dark:text-personal_blue-textParagraph text-center">
             I write about modern Full Stack Web Development. Subscribe to my
             newsletter to notify when I publish new components
           </p>

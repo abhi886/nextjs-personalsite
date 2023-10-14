@@ -23,9 +23,18 @@ function ContactMe() {
       </div>
 
       <p className="font-regular text-center dark:text-personal_blue-textParagraph pt-2 lg:pl-12 lg:pt-4">
-        Please fill out the form and describe your project needs and I'll
-        contact you as soon as possible. Thank you.
+        It all starts with a conversation.
       </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6 pt-10 pb-10">
+        <div className="flex flex-col text-center ">
+          <div className="">Call Me</div>
+          <p>(04)51690025</p>
+        </div>
+        <div className="flex flex-col text-center">
+          <div>Email Me</div>
+          <p>abhishekmhrzn.14@gmail.com</p>
+        </div>
+      </div>
 
       <div className="grid-cols-1 md:grid-cols-2 pt-12">
         <ContactForm />
