@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import Typed from 'react-typed';
+// import Typed from 'react-typed';
 import Link from 'next/link';
 import Social from '../Social';
 import Section from '../hoc/withComponentSection';
@@ -30,13 +30,13 @@ function HeroSection({ aboutData }) {
             </h2>
           </div>
           <div className="text-left">
-            <Typed
+            {/* <Typed
               className="font-medium pl-2 dark:text-gray-300 w-full"
               strings={position}
               typeSpeed={100}
               backSpeed={50}
               loop
-            />
+            /> */}
           </div>
         </div>
 
