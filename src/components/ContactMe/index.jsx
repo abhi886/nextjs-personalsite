@@ -27,11 +27,11 @@ function ContactMe() {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6 pt-10 pb-10">
         <div className="flex flex-col text-center ">
-          <div className="">Call Me</div>
+          <p className="dark:text-personal_blue-textTitle">Call Me</p>
           <p>(04)51690025</p>
         </div>
         <div className="flex flex-col text-center">
-          <div>Email Me</div>
+          <p className="dark:text-personal_blue-textTitle">Email Me</p>
           <p>abhishekmhrzn.14@gmail.com</p>
         </div>
       </div>
