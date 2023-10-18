@@ -1,8 +1,8 @@
 import React from 'react';
 import useContentful from '../../src/customHooks/use-contentful';
 import query from '../../src/utils/queries/timeline-page-query';
-// import TimelineDescription from '../../src/components/TimelineDescription';
-// import convertDate from '../../src/utils/convertDate';
+import TimelineDescription from '../../src/components/TimelineDescription';
+import convertDate from '../../src/utils/convertDate';
 import RichTextOptions from '../../src/utils/rich-text-options';
 
 export async function getStaticProps() {
@@ -16,14 +16,7 @@ export async function getStaticProps() {
 }
 
 const index = ({ data }) => {
-  // const {
-  //   everyDay: {
-  //     links: {
-  //       entries: { block: everyDayData },
-  //     },
-  //   },
-  // } = data.timelineCollection.items[0];
-  const { everyDay } = data.timelineCollection.items[0];
+  const everyDayData = data.everyDayBlockCollection.items;
   return (
     <section className="container max-w-7xl mx-auto py-10 px-4 sm:py-14 sm:px-6 lg:px-8 ">
       <div className=" grid grid-cols-12 ">
@@ -38,31 +31,16 @@ const index = ({ data }) => {
         </div>
 
         <div className="col-span-12 md:col-start-3 md:col-span-8 pt-10 space-y-10">
-          {/* {everyDayData.map((ed) => (
-            <div className="flex flex-col cursor-pointer " key={ed.heading}>
-              <div className="flex items-top justify-center my-4">
-                <time className="inline-flex items-center justify-center text-xs font-semibold uppercase w-32 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">
-                  {convertDate(ed.date)}
-                </time>
-              </div>
-              <div>
-                {' '}
-                <div className="text-lg text-center font-medium text-slate-900 dark:text-personal_blue-text">
-                  {ed.heading}
-                </div>
-                <TimelineDescription
-                  shortDescription={ed.shortDescription}
-                  data={ed.description}
-                />
-              </div>
-            </div>
-          ))} */}
-          <div className="col-span-12 md:col-start-3 md:col-span-8">
-            <RichTextOptions data={everyDay} />
-          </div>
+          {everyDayData.map((ed) => (
+            <TimelineDescription
+              shortDescription={ed.shortDescription}
+              data={ed}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 };
+
 export default index;
