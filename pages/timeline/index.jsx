@@ -2,8 +2,6 @@ import React from 'react';
 import useContentful from '../../src/customHooks/use-contentful';
 import query from '../../src/utils/queries/timeline-page-query';
 import TimelineDescription from '../../src/components/TimelineDescription';
-import convertDate from '../../src/utils/convertDate';
-import RichTextOptions from '../../src/utils/rich-text-options';
 
 export async function getStaticProps() {
   const data = await useContentful(query);
