@@ -33,6 +33,7 @@ const index = ({ data }) => {
             <TimelineDescription
               shortDescription={ed.shortDescription}
               data={ed}
+              key={ed.date}
             />
           ))}
         </div>
