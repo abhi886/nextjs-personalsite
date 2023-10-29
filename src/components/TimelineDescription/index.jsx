@@ -40,7 +40,7 @@ const index = ({ data }) => {
           </div>
           <div className="flex justify-center ">
             {' '}
-            <ChevronUpIcon className="h-4 mt-6 cursor-pointer animate-bounce" />
+            {/* <ChevronUpIcon className="h-4 mt-6 cursor-pointer animate-bounce" /> */}
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@ const index = ({ data }) => {
         </div>
         <div className="flex justify-end ">
           {' '}
-          <ChevronDownIcon className="h-2 mt-6 cursor-pointer" />
+          {/* <ChevronDownIcon className="h-2 mt-6 cursor-pointer" /> */}
         </div>
       </div>
     </div>
