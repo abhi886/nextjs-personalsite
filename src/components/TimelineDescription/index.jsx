@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from 'react';
-import { ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/outline';
+// import { ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/outline';
 import RichTextOptions from '../../utils/rich-text-options';
 import convertDate from '../../utils/convertDate';
 
