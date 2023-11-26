@@ -45,7 +45,6 @@ const EMBEDDED_RICHTEXT_OPTIONS = (links) => {
       }
       return null;
     },
- 
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
       const asset = assetMap.get(node.data.target.sys.id);
       return (
