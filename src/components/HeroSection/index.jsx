@@ -1,21 +1,15 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import Typed from 'react-typed';
+// import Typed from 'react-typed';
 import Link from 'next/link';
 import Social from '../Social';
 import Section from '../hoc/withComponentSection';
 import ClickToScroll from '../ClickToScroll/index';
 
 function HeroSection({ aboutData }) {
-  const {
-    fullName,
-    location,
-    position,
-    facebookLink,
-    githubLink,
-    linkedinLink,
-  } = aboutData;
+  const { fullName, location, facebookLink, githubLink, linkedinLink } =
+    aboutData;
   return (
     <Section id="heroSection">
       <div className="flex flex-col h-full text-center justify-center">
@@ -29,7 +23,7 @@ function HeroSection({ aboutData }) {
               Based in {location}.
             </h2>
           </div>
-          <div className="text-left">
+          {/* <div className="text-left">
             <Typed
               className="font-medium pl-2 dark:text-gray-300 w-full"
               strings={position}
@@ -37,7 +31,7 @@ function HeroSection({ aboutData }) {
               backSpeed={50}
               loop
             />
-          </div>
+          </div> */}
         </div>
 
         <div className="space-x-2" aria-label="Contact Me">
