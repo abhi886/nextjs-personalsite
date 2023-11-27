@@ -23,5 +23,4 @@ const index = (props) => {
   return <span ref={typedTextRef} />;
 };
 
-
 export default index;
