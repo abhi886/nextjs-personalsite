@@ -3,13 +3,20 @@
 import React from 'react';
 // import Typed from 'react-typed';
 import Link from 'next/link';
+import Typed from '../Typed.js';
 import Social from '../Social';
 import Section from '../hoc/withComponentSection';
 import ClickToScroll from '../ClickToScroll/index';
 
 function HeroSection({ aboutData }) {
-  const { fullName, location, facebookLink, githubLink, linkedinLink } =
-    aboutData;
+  const {
+    fullName,
+    location,
+    facebookLink,
+    githubLink,
+    linkedinLink,
+    position,
+  } = aboutData;
   return (
     <Section id="heroSection">
       <div className="flex flex-col h-full text-center justify-center">
@@ -17,21 +24,15 @@ function HeroSection({ aboutData }) {
           I&apos;m&nbsp;
           {fullName}.
         </h1>
-        <div className="grid grid-cols-2 h-12 items-center">
-          <div className="text-right ">
+        <div className="grid grid-row-2 h-12 items-center">
+          <div className=" ">
             <h2 className="font-medium dark:text-personal_blue-textTitle">
-              Based in {location}.
+              Based in {location} &nbsp;
             </h2>
           </div>
-          {/* <div className="text-left">
-            <Typed
-              className="font-medium pl-2 dark:text-gray-300 w-full"
-              strings={position}
-              typeSpeed={100}
-              backSpeed={50}
-              loop
-            />
-          </div> */}
+          <div className="font-medium dark:text-gray-300 w-full">
+            <Typed strings={position} />
+          </div>
         </div>
 
         <div className="space-x-2" aria-label="Contact Me">
