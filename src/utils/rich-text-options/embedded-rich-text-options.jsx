@@ -32,6 +32,17 @@ const EMBEDDED_RICHTEXT_OPTIONS = (links) => {
           </div>
         );
       }
+      if (entry.__typename === 'EveryDayBlock') {
+        return (
+          <div className="sm:col-span-10 space-y-3">
+            {documentToReactComponents(
+              entry.description.json,
+              // eslint-disable-next-line @typescript-eslint/comma-dangle
+              RICHTEXT_OPTIONS
+            )}
+          </div>
+        );
+      }
       return null;
     },
     [BLOCKS.EMBEDDED_ASSET]: (node) => {

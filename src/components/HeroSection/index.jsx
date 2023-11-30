@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import Typed from 'react-typed';
+// import Typed from 'react-typed';
 import Link from 'next/link';
+import Typed from '../Typed.js';
 import Social from '../Social';
 import Section from '../hoc/withComponentSection';
 import ClickToScroll from '../ClickToScroll/index';
@@ -11,10 +12,10 @@ function HeroSection({ aboutData }) {
   const {
     fullName,
     location,
-    position,
     facebookLink,
     githubLink,
     linkedinLink,
+    position,
   } = aboutData;
   return (
     <Section id="heroSection">
@@ -26,17 +27,11 @@ function HeroSection({ aboutData }) {
         <div className="grid grid-cols-2 h-12 items-center">
           <div className="text-right ">
             <h2 className="font-medium dark:text-personal_blue-textTitle">
-              Based in {location}.
+              Based in {location} &nbsp;
             </h2>
           </div>
           <div className="text-left">
-            <Typed
-              className="font-medium pl-2 dark:text-gray-300 w-full"
-              strings={position}
-              typeSpeed={100}
-              backSpeed={50}
-              loop
-            />
+            <Typed strings={position} />
           </div>
         </div>
 

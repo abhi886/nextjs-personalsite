@@ -1,75 +1,60 @@
 const query = `
 query {
-    timelineCollection(limit: 2){
-      items{
-       sys {
-         publishedAt
-       }
-       everyDay{
-         json
-           links{
-                assets {
-                 block {
-                   sys {
-                     id
-                   }
-                   url
-                   title
-                   width
-                   height
-                   description
-                 }
-               }
-                 entries{
-             inline{
-               sys{
-                 id
-               }
+  everyDayBlockCollection(limit:10, order:date_DESC){
+    items{
+      date
+      heading
+      shortDescription
+     description{
+          json
+          links{
+            entries{
+              inline{
+                 sys{
+            id
+          }
+              __typename
+              ... on CodeBlocks{
+                title
+                codeBlockContent
+              }
+              }
+              block {
+                sys {
+                  id
+                }
                 __typename
-                   ... on EveryDayBlock {
-                     date
-                     description {
-                       json
-                       links{
-                         entries{
-                          inline {
-                           sys{
-                             id
-                           }
-                           
-                         }
-                         }
-                       }
-                       
-                     }
-                     heading
-                   }
-             }
-                     block {
-                   sys {
-                     id
-                   }
-                   __typename
-                   ... on EveryDayBlock {
-                    heading
-                     description {
-                       json
-                     }
-                     date
-                     shortDescription
-                     
-                                 }
-   
-                 }
-            
-       }
-             
-       }
-         
+                ... on CodeBlocks {
+                 title
+                 codeBlockContent
+                  
+                              }
+
+              
+              }
+              
+            }
+            assets {
+              block {
+                sys {
+                  id
+                }
+                url
+                title
+                width
+                height
+                description
+              }
+            }
+          }
+        }
+      sys{
+        publishedAt
+        
+      }
+    }
+  }
+  
      }
-   }
-   }
-   }
-     
-   `;
+`;
 export default query;
