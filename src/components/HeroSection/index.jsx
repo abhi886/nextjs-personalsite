@@ -24,13 +24,13 @@ function HeroSection({ aboutData }) {
           I&apos;m&nbsp;
           {fullName}.
         </h1>
-        <div className="grid grid-row-2 h-12 items-center">
-          <div className=" ">
+        <div className="grid grid-cols-2 h-12 items-center">
+          <div className="text-right ">
             <h2 className="font-medium dark:text-personal_blue-textTitle">
               Based in {location} &nbsp;
             </h2>
           </div>
-          <div className="font-medium dark:text-gray-300 w-full">
+          <div className="text-left">
             <Typed strings={position} />
           </div>
         </div>

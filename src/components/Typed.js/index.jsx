@@ -7,8 +7,8 @@ const index = (props) => {
   useEffect(() => {
     const options = {
       strings,
-      typeSpeed: 50,
-      backSpeed: 30,
+      typeSpeed: 100,
+      backSpeed: 50,
       loop: true,
     };
 
