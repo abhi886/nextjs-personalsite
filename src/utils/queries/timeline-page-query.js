@@ -1,6 +1,6 @@
 const query = `
 query {
-  everyDayBlockCollection(limit:10){
+  everyDayBlockCollection(limit:10, order:date_DESC){
     items{
       date
       heading
