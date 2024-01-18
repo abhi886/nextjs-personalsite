@@ -15,8 +15,6 @@ function BlogSlugPage({
   updatedDate,
   languages,
   goBackLink,
-  imageWidth,
-  imageHeight,
   data,
 }) {
   return (
@@ -75,35 +73,26 @@ function BlogSlugPage({
           </dl>
         </div>
         <div className="prose max-w-none prose-img:rounded-xl prose-slate dark:prose-dark col-span-2">
-          <div className="">
-            <div className="flex items-center space-x-4 justify-end dark:text-personal_blue-textParagraph">
-              <div className="flex items-center space-x-1">
-                <ClockIcon className="h-6" />
-              </div>
-              <p className="md:inline-flex cursor-pointer text-sm">
-                Read Time : {readTime} mins
-              </p>
+          <div className="flex items-center space-x-4 justify-end dark:text-personal_blue-textParagraph">
+            <div className="flex items-center space-x-1">
+              <ClockIcon className="h-6" />
             </div>
-
-            <div className="">
-              <Image
-                src={imageUrl}
-                alt="Main picture of the blog"
-                width={imageWidth}
-                height={imageHeight}
-              />
-            </div>
-          </div>
-          {languages && (
-            <p className="p-2 text-xs text-personal_blue-workBackground font-mono text-right">
-              {' '}
-              {languages &&
-                languages.map((lang) => <span key={lang}> {lang} | </span>)}
+            <p className="md:inline-flex cursor-pointer text-sm">
+              Read Time : {readTime} mins
             </p>
-          )}
+          </div>
+
+          <div className="relative aspect-video overflow-hidden">
+            <Image src={imageUrl} alt="Main picture of the blog" fill />
+          </div>
           <div>
-            {/* {documentToReactComponents(description.json, RICHTEXT_OPTIONS)}
-             */}
+            {languages && (
+              <p className="p-2 text-xs text-personal_blue-workBackground font-mono text-right">
+                {' '}
+                {languages &&
+                  languages.map((lang) => <span key={lang}> {lang} | </span>)}
+              </p>
+            )}
             <RichTextOptions data={data} />
           </div>
         </div>

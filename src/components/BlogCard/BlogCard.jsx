@@ -15,13 +15,8 @@ function BlogCard({
   return (
     <article className="group dark:bg-personal_blue-lightBlue rounded-lg shadow-md hover:scale-100 transition duration-700 ease-in-out hover:shadow-md ">
       <div className="relative overflow-hidden transition-all bg-white-100  aspect-video rounded-lg">
-        <Link href={`/blogs/${slug}`} legacyBehavior>
-          <Image
-            src={blogImage.url}
-            alt="Main picture of the blog"
-            width={1200}
-            height={620}
-          />
+        <Link href={`/blogs/${slug}`}>
+          <Image src={blogImage.url} alt="Main picture of the blog" fill />
         </Link>
       </div>
       <div className="px-6 pb-6  hover:transition duration-700 ease-in-out group-hover:px-4 group-hover:pb-4">
