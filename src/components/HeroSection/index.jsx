@@ -19,18 +19,18 @@ function HeroSection({ aboutData }) {
   } = aboutData;
   return (
     <Section id="heroSection">
-      <div className="flex flex-col h-full text-center justify-center">
+      <div className="flex flex-col h-full text-center justify-center mt-14">
         <h1 className="dark:text-personal_blue-textTitle font-extrabold text-4xl stroke-2 md:font-extrabold md:text-6xl animate-fade-in-up">
           I&apos;m&nbsp;
           {fullName}.
         </h1>
-        <div className="grid grid-cols-2 h-12 items-center">
-          <div className="text-right ">
+        <div className="grid grid-rows-2 md:grid-cols-2 h-12 items-center">
+          <div className="md:text-right ">
             <h2 className="font-medium dark:text-personal_blue-textTitle">
               Based in {location} &nbsp;
             </h2>
           </div>
-          <div className="text-left">
+          <div className="md:text-left">
             <Typed strings={position} />
           </div>
         </div>
