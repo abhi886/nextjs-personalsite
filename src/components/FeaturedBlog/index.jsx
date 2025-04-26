@@ -37,7 +37,7 @@ function FeaturedBlog({ blogData }) {
           {blogData.map((d) => (
             <article
               key={d.slug}
-              className="dark:bg-personal_blue-lightBlue h-full w-full lg:h-40 border-x-2 border-black dark:border-personal_blue-text rounded-lg"
+              className="dark:bg-personal_blue-lightBlue h-full w-full lg:h-40 border-x-2  dark:border-personal_blue-text rounded-lg"
             >
               <div className="grid grid-cols-4 gap-4">
                 <div className="m-auto">
