@@ -36,7 +36,7 @@ function FeaturedWorkCard({ workData }) {
           {workData.map((w) => (
             <article
               key={w.slug}
-              className="w-full m-auto max-w-xs lg:max-w-sm overflow-hidden rounded-lg shadow-lg dark:bg-personal_blue-lightBlue"
+              className="w-full m-auto lg:max-w-sm overflow-hidden rounded-lg shadow-lg dark:bg-personal_blue-lightBlue"
             >
               <div className="relative group">
                 <div className="group-:hidden">

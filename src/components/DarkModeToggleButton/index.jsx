@@ -33,18 +33,18 @@ const index = () => {
   }
   return (
     <Button
-      className="border px-1 border-personal_blue-text"
+      className="border px-1 border-black"
       onClick={() => {
         setTheme('dark');
       }}
     >
       <svg
-        aria-label="Buton to toggle dark mode"
+        aria-label="Button to toggle dark mode"
         xmlns="http://www.w3.org/2000/svg"
-        fill="none"
+        fill="black"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke="currentColor"
+        stroke="black" // Changed to black
         className="w-5 h-5 text-personal_blue-text"
       >
         <path
