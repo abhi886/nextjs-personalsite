@@ -49,7 +49,7 @@ function blog({ data }) {
         }}
       />
 
-      <section className="container max-w-7xl mx-auto py-10 px-4 sm:py-14 sm:px-6 lg:px-8 ">
+      <section className="container max-w-5xl mx-auto py-10 px-4 sm:py-14 sm:px-6 lg:px-8 ">
         <h1 className="pb-4 pt-8 text-3xl dark:text-personal_blue-textTitle text-gray-800 font-semibold text-center  mx-auto">
           <strong>Blog</strong> Posts
         </h1>
