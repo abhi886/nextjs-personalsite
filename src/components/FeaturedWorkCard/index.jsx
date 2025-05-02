@@ -10,10 +10,7 @@ import ClickToScroll from '../ClickToScroll/index';
 // eslint-disable-next-line react/prop-types
 function FeaturedWorkCard({ workData }) {
   return (
-    <section
-      id="featuredWorkSection"
-      className="dark:bg-personal_blue md:h-screen"
-    >
+    <section id="featuredWorkSection" className="w-full dark:bg-personal_blue">
       <div className="container flex flex-col items-center m-auto  px-4 h-full  dark:bg-personal_blue md:px-20  ">
         <div className="flex pt-28 space-x-4 items-center">
           <div>

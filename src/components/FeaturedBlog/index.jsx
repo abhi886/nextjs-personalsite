@@ -37,13 +37,13 @@ function FeaturedBlog({ blogData }) {
           {blogData.map((d) => (
             <article
               key={d.slug}
-              className="dark:bg-personal_blue-lightBlue h-full w-full lg:h-40 border-x-2  dark:border-personal_blue-text rounded-lg"
+              className="dark:bg-personal_blue-lightBlue h-full w-full lg:h-28 border-x-2  dark:border-personal_blue-text rounded-lg"
             >
               <div className="grid grid-cols-4 gap-4">
                 <div className="m-auto">
                   {' '}
                   <a target="_blank" href={`/blogs/${d.slug}`} rel="noreferrer">
-                    <div className="relative rounded-full w-16 h-16 pt-2 pl-2  md:w-24 md:h-24 lg:w-32 lg:h-32 lg:ml-6 lg:mt-2 bg-red-200 items-center">
+                    <div className="relative rounded-full w-16 h-16 pt-2 pl-2  md:w-24 md:h-24 lg:w-26 lg:h-26 lg:ml-6 lg:mt-2 bg-red-200 items-center">
                       <Image
                         className="rounded-full object-cover"
                         src={`${d.thumbnail.url}`}
@@ -73,7 +73,7 @@ function FeaturedBlog({ blogData }) {
                         {readingTime(d.blogDescription.json)} mins read
                       </p>
                     </div>
-                    <div className="py-3 lg:pt-7">
+                    <div className="py-3 lg:pt-1">
                       {d.languages &&
                         d.languages.map((l, i) => (
                           <span
