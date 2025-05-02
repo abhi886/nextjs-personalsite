@@ -7,7 +7,7 @@ function NavHamburger({ isOpen, handleOpen }) {
       <button
         onClick={() => handleOpen()}
         type="button"
-        className="text-white hover:text-personal_blue-text focus:outline-none focus:text-personal_blue-text"
+        className="text-black dark:text-personal_blue-text hover:text-personal_blue-text focus:outline-none dark:focus:text-personal_blue-text focus:text-black"
         aria-label="toggle menu"
       >
         {!isOpen && (

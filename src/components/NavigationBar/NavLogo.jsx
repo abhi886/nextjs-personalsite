@@ -1,12 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import logoBlack from '../../../public/images/logoDay.png';
+import logo from '../../../public/images/logo.png';
 
-// eslint-disable-next-line react/prop-types
-function NavLogo({ logo }) {
+function NavLogo() {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Option 1: avoid hydration mismatch by not rendering at all before mount
+  if (!mounted) return null;
 
   return (
     <Link

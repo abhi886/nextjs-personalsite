@@ -48,7 +48,8 @@ function blog({ data }) {
           type: 'article',
         }}
       />
-      <section className="px-4 lg:px-48 min-h-screen lg:py-8 dark:bg-personal_blue">
+
+      <section className="container max-w-5xl mx-auto py-10 px-4 sm:py-14 sm:px-6 lg:px-8 ">
         <h1 className="pb-4 pt-8 text-3xl dark:text-personal_blue-textTitle text-gray-800 font-semibold text-center  mx-auto">
           <strong>Blog</strong> Posts
         </h1>

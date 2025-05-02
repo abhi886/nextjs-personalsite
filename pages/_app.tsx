@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps): React.JSX.Element {
     <ThemeProvider
       enableSystem={newLocal}
       attribute="class"
-      defaultTheme="dark"
+      defaultTheme="light"
     >
       <Layout>
         <DefaultSeo
