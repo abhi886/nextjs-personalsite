@@ -43,7 +43,7 @@ function SearchBox({ searchData, displayComponent }) {
           Showing {totalCount} blog posts
         </p>
       </div>
-      <div className="grid gap-10 lg:gap-10 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="grid gap-10 lg:gap-10 sm:grid-cols-2 lg:grid-cols-3 ">
         {filteredData.map((fd) => (
           <div key={fd[Object.keys(fd)[0]]}>{displayComponent({ ...fd })}</div>
         ))}
