@@ -17,13 +17,7 @@ function WorkSocial({ siteUrl, gitUrl, slug }) {
         </a>
       )}
       {gitUrl && (
-        <a
-          href={gitUrl}
-          rel="noreferrer"
-          target="_blank"
-          title="View Github"
-          className="text-white"
-        >
+        <a href={gitUrl} rel="noreferrer" target="_blank" title="View Github">
           <GitHubIcon className="h-4 w-4 dark:text-personal_blue-paragraph" />
         </a>
       )}
