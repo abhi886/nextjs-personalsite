@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import React from 'react';
+import Button from '../Button';
 import Section from '../hoc/withComponentSection';
 import ClickToScroll from '../ClickToScroll/index';
 
@@ -21,12 +21,7 @@ export default function GetHired() {
           </p>
 
           <div className="flex flex-col items-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center mt-6   py-2  overflow-hidden text-white transition-colors duration-300 bg-blue-600 rounded-lg shadow hover:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80"
-            >
-              <span className="mx-2 px-1 py-1">LET&apos;S TALK</span>
-            </Link>
+            <Button hrefTo="/contact" value="Lets Talk" />
           </div>
         </div>
         <div className="flex content-end">

@@ -9,7 +9,7 @@ import ClickToScroll from '../ClickToScroll';
 
 function About({ profile, profileImage }) {
   return (
-    <Section id="aboutSection">
+    <Section id="aboutSection" className="height-screen">
       <div className="flex flex-col h-full justify-center px-4 md:px-20 lg:px-44">
         <div className="container grid grid-cols-1 h-full content-center gap-4 lg:grid-cols-2 m-auto ">
           <div className="w-60 h-60 lg:w-96 lg:h-96 border-2 border-dashed rounded-full m-auto lg:order-last">

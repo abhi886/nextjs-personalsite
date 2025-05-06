@@ -1,11 +1,11 @@
 import React from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
 import Section from '../hoc/withComponentSection';
 import ClickToScroll from '../ClickToScroll/index';
 
 function Newsletter() {
   return (
-    <Section id="newsletterSection">
+    <Section id="newsletterSection" className="height-screen">
       <div className="flex flex-col px-4 h-full lg:px-56 md:px-24 justify-center items-center">
         <div className="container grid grid-cols-1 h-full content-center">
           <div className="flex justify-center">
@@ -27,14 +27,14 @@ function Newsletter() {
               />
             </div>
           </div>
-          <div className="flex flex-col items-center">
+          {/* <div className="flex flex-col items-center">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center mt-6   py-2  overflow-hidden text-white transition-colors duration-300 bg-blue-600 rounded-lg shadow hover:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80"
             >
               <span className="mx-2 px-1 py-1">Contact Me</span>
             </Link>
-          </div>
+          </div> */}
         </div>
         <div className="flex content-end">
           <ClickToScroll
