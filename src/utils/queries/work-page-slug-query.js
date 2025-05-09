@@ -1,5 +1,5 @@
 const query = `query {
-    blogCollection{
+    worksCollection(where: { slug_exists: true }){
      items{
        slug
      }
