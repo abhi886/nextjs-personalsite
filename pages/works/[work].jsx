@@ -73,7 +73,16 @@ function aslug({ work: { workData } }) {
       </header>
 
       <main className="py-12 md:py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
+        <div
+          id="backgound"
+          className="flex justify-center text-personal_blue-textParagraph "
+        >
+          <ClickToScroll
+            linkDownward="#backgound"
+            tooltipDownMessage="Background"
+          />
+        </div>
+        <div className="max-w-3xl mt-20 mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
           <div className="flex-col md:flex justify-between items-center">
             <div className="flex items-center dark:text-personal_blue-textParagraph">
               <ClockIcon className="h-4" />
@@ -82,23 +91,14 @@ function aslug({ work: { workData } }) {
 
             <div className="dark:text-personal_blue-textParagraph text-right">
               {language && (
-                <p className="p-2 text-xs font-mono">
-                  Tech Stack:{' '}
-                  {language.map((lang) => (
-                    <span key={lang}>{lang} | </span>
-                  ))}
+                <p className="p-2 text-xs">
+                  Tech Stack: {language.join(' | ')}
                 </p>
               )}
             </div>
-            <div className="flex justify-center text-personal_blue-textParagraph ">
-              <ClickToScroll
-                linkDownward="#backgound"
-                tooltipDownMessage="Background"
-              />
-            </div>
           </div>
 
-          <article id="backgound">
+          <article>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 pb-3 border-b-2 border-personal_blue-text inline-block">
               Background
             </h2>
