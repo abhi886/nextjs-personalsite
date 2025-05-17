@@ -76,13 +76,13 @@ function aslug({ work: { workData } }) {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
           <div className="flex-col md:flex justify-between items-center">
             <div className="flex items-center dark:text-personal_blue-textParagraph">
-              <ClockIcon className="h-6" />
+              <ClockIcon className="h-4" />
               <p className="ml-1 text-sm">Read Time: {readTime} mins</p>
             </div>
 
             <div className="dark:text-personal_blue-textParagraph text-right">
               {language && (
-                <p className="p-2 text-xs text-personal_blue-workBackground font-mono">
+                <p className="p-2 text-xs font-mono">
                   Tech Stack:{' '}
                   {language.map((lang) => (
                     <span key={lang}>{lang} | </span>
